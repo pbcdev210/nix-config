@@ -1,15 +1,20 @@
+{ config, settings, ... }:
 {
   programs.wezterm = {
     enable = true;
 
     settings = {
-      front_end = "WebGpu";
-      window_decorations = "RESIZE";
-
-      hide_tab_bar_if_only_one_tab = true;
-      use_fancy_tab_bar = false;
+      background = [
+        {
+          source = {
+            File = config.lib.file.mkOutOfStoreSymlink "${settings.dirs.nixConfig}/assets/kawaii-cat-girl.png";
+          };
+          hsb = {
+            brightness = 0.10;
+          };
+        }
+      ];
     };
-
     extraConfig = builtins.readFile ./wezterm.lua;
   };
 
