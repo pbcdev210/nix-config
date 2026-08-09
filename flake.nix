@@ -7,6 +7,7 @@
       "https://cache.nixos.org"
       "https://nix-community.cachix.org"
       "https://niri.cachix.org"
+      "https://doom-emacs-unstraightened.cachix.org"
       "https://nyx-cache.chaotic.cx"
     ];
 
@@ -15,6 +16,7 @@
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+      "doom-emacs-unstraightened.cachix.org-1:O5oOlRPnmQEvVaFyuMTmthCEooHbrg54WgSLR07tmg4="
       "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk="
     ];
     allow-unfree = true;
@@ -154,11 +156,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     claude-desktop.url = "github:Reginleif88/claude-cowork-nix";
 
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
@@ -175,15 +172,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-doom-emacs-unstraightened = {
-      url = "github:marienz/nix-doom-emacs-unstraightened";
+    # ======================= nixvim ========================
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ======================= nixvim ========================
-
     treesitter-kanata = {
       url = "github:pbcdev210/treesitter-kanata";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # ======================= emacs =========================
+
+    nix-doom-emacs-unstraightened = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
