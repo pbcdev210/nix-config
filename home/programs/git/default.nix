@@ -24,6 +24,7 @@
         ];
       };
     };
+    inherit (settings) ignores;
   };
 
   programs.delta.enableGitIntegration = true;

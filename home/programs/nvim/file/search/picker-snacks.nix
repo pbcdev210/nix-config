@@ -93,6 +93,7 @@
           ignored = true;
         };
       };
+      exclude = settings.ignores;
     };
 
     keymaps = [
@@ -117,6 +118,5 @@
         options.desc = "List Buffers";
       }
     ];
-
   };
 }
