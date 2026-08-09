@@ -5,7 +5,6 @@ rec {
   locale = "en_US.UTF-8";
 
   identity = import ./identity.nix;
-  keybind = import ./keybind.nix;
   tools = import ./tools.nix;
   network = import ./network.nix;
 
