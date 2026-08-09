@@ -5,7 +5,7 @@
     settings = {
 
       options = {
-        transparent = false;
+        transparent = true;
         terminal_colors = true;
         dim_inactive = false;
         styles = {
