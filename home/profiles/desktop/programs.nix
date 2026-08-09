@@ -18,6 +18,7 @@
     "${programsDir}/home-manager"
     "${programsDir}/kitty"
     "${programsDir}/lazygit"
+    "${programsDir}/mpv"
     "${programsDir}/nix-helper"
     "${programsDir}/nix-index"
     "${programsDir}/nix-your-shell"
