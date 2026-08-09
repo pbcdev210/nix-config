@@ -113,7 +113,7 @@ let
     mkBase-standalone = { profile, hostPlatform, extraModules, raw ? false }:
       let
         common = {
-          inherit (home) specialArgs;
+          extraSpecialArgs = home.specialArgs;
 
           modules = home.mkModules { inherit profile extraModules; };
 
