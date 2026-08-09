@@ -30,6 +30,7 @@
     "${programsDir}/tirith"
     "${programsDir}/vivaldi"
     "${programsDir}/vscode"
+    "${programsDir}/wezterm"
     "${programsDir}/zoxide"
     "${programsDir}/zsh"
   ];
