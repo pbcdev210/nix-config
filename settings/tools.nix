@@ -3,6 +3,7 @@ rec {
   editor = "nvim";
   browser = "vivaldi";
   pager = "bat --plain --pager='less -FR'";
+  term = "kitty";
 
   alias = {
     cd = "z";
