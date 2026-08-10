@@ -7,6 +7,8 @@
 
     settings = {
       file_editor = settings.tools.editor;
+      nerdfont = true;
+      transparent_background = true;
     };
 
     pinnedFolders = [
