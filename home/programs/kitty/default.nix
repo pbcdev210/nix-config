@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, settings, ... }:
 {
   programs.kitty = {
     enable = true;
@@ -18,6 +18,11 @@
       bold_italic_font = "auto";
       window_padding_width = 5;
       cursor_trail = 1;
+
+      background_image = "${settings.dirs.nixConfig}/assets/kawaii-cat-girl.png";
+      background_image_layout = "scaled";
+      background_image_linear = true;
+      background_tint = "0.97";
     };
 
     keybindings = {
@@ -36,7 +41,7 @@
       "alt+7" = "goto_tab 7";
       "alt+8" = "goto_tab 8";
       "alt+9" = "goto_tab 9";
-      "alt+10" = "goto_tab 10";
+      "alt+0" = "goto_tab 10";
     };
 
     extraConfig = ''
