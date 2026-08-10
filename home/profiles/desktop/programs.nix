@@ -22,7 +22,7 @@
     "${programsDir}/nix-helper"
     "${programsDir}/nix-index"
     "${programsDir}/nix-your-shell"
-    "${programsDir}/nvim"
+    "${programsDir}/nixvim"
     "${programsDir}/packages"
     "${programsDir}/ripgrep"
     "${programsDir}/starship"
