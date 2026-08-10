@@ -18,7 +18,6 @@
 
   imports = [
     ./fonts.nix
-    ./targets.nix
   ];
 }
 
