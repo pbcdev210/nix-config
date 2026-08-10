@@ -108,19 +108,9 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    schemes = {
-      url = "github:pbcdev210/schemes";
-      flake = false;
     };
 
     # ==================== system ====================
@@ -135,7 +125,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     # ==================== home ====================
 
     home-manager = {
@@ -143,36 +132,37 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+    # ======================= theme ==========================
+
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
+
+    schemes = {
+      url = "github:pbcdev210/schemes";
+      flake = false;
+    };
+
+    # ======================= niri ==========================
 
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";
+    # ======================= plasma ========================
 
-    claude-desktop.url = "github:Reginleif88/claude-cowork-nix";
-
-    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    catppuccin.url = "github:catppuccin/nix";
-
-    wezterm-types = {
-      url = "github:/DrKJeff16/wezterm-types";
-      flake = false;
-    };
-
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     # ======================= nixvim ========================
+
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -183,10 +173,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wezterm-types = {
+      url = "github:/DrKJeff16/wezterm-types";
+      flake = false;
+    };
+
     # ======================= emacs =========================
 
     nix-doom-emacs-unstraightened = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # ======================= miscelaneous ===========================
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";
+    claude-desktop.url = "github:Reginleif88/claude-cowork-nix";
+    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
