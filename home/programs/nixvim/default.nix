@@ -12,10 +12,12 @@
     ./file
     ./git
     ./languages
+    ./learn
     ./project
     ./terminal
     ./ui
     ./utils
+    ./windown
     ./workspace
   ];
 
