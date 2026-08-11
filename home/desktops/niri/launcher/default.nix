@@ -1,1 +1,5 @@
-{}
+{
+  imports = [
+    ./fuzzel.nix
+  ];
+}
