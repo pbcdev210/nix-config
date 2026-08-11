@@ -1,11 +1,11 @@
 { config, ... }:
 {
   programs.niri.settings.layout = {
-    gaps = 6;
+    gaps = 5;
     focus-ring.enable = false;
     border = {
       enable = true;
-      width = 1.5;
+      width = 1.3;
     };
 
     insert-hint = {
@@ -32,9 +32,9 @@
     };
 
     preset-column-widths = [
-      { proportion = builtins.div 1.0 3.0; }
-      { proportion = builtins.div 1.0 2.0; }
-      { proportion = builtins.div 2.0 3.0; }
+      { proportion = builtins.div 1.0 3.0; } # 1/3
+      { proportion = builtins.div 1.0 2.0; } # 1/2
+      { proportion = builtins.div 2.0 3.0; } # 2/3
       { proportion = 1.0; }
     ];
 
