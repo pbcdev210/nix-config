@@ -22,7 +22,7 @@
       background_image = "${settings.dirs.nixConfig}/assets/kawaii-cat-girl.png";
       background_image_layout = "scaled";
       background_image_linear = true;
-      background_tint = "0.97";
+      background_tint = "0.95";
     };
 
     keybindings = {
