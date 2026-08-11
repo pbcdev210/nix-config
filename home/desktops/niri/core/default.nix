@@ -5,8 +5,7 @@
 
   imports = [
     ./binds.nix
-    ./layout.nix
-    ./windown.nix
+    ./windown
   ];
 
   stylix.targets.niri.enable = true;
