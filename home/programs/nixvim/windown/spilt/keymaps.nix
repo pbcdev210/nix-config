@@ -13,9 +13,8 @@
     }
 
     {
-      mode = " n ";
-      key = " <leader>
-        w=";
+      mode = "n";
+      key = " <leader> w=";
       action = "<cmd>wincmd + <CR>";
     }
 
