@@ -11,6 +11,7 @@
     ./edit
     ./file
     ./git
+    ./img
     ./languages
     ./learn
     ./project
