@@ -5,6 +5,8 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "input"
+      "uinput"
     ];
     shell = pkgs."${settings.tools.shell}";
     home = settings.dirs.home;
