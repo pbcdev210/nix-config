@@ -28,7 +28,7 @@ jobs:
 
       - name: Build System Configuration
         run: |
-          nix build .#nixosConfigurations.dp7530-desktop.config.system.build.toplevel --accept-flake-config
+          nix build .#nixosConfigurations.default.config.system.build.toplevel --accept-flake-config
 
       - name: Build Default Package
         run: nix build .#defaultPackage.x86_64-linux --dry-run
