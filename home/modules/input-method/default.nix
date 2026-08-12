@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, lib, ... }:
 {
   i18n.inputMethod = {
     enable = true;
@@ -14,10 +14,10 @@
 
   stylix.targets.fcitx5.enable = false;
 
-  xdg.configFile."fcitx5/config".source = config.lib.file.mkOutOfStoreSymlink ./fcitx5/config;
-  xdg.configFile."fcitx5/conf/clipboard.conf".source = config.lib.file.mkOutOfStoreSymlink ./fcitx5/conf/clipboard.conf;
-  xdg.configFile."fcitx5/conf/notifications.conf".source = config.lib.file.mkOutOfStoreSymlink ./fcitx5/conf/notifications.conf;
-  xdg.configFile."fcitx5/profile".source = config.lib.file.mkOutOfStoreSymlink ./fcitx5/profile;
+  xdg.configFile."fcitx5/config".source = ./fcitx5/config;
+  xdg.configFile."fcitx5/conf/clipboard.conf".source = ./fcitx5/conf/clipboard.conf;
+  xdg.configFile."fcitx5/conf/notifications.conf".source = ./fcitx5/conf/notifications.conf;
+  xdg.configFile."fcitx5/profile".source = ./fcitx5/profile;
 
 
   home.sessionVariables = {
