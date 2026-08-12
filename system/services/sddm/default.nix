@@ -15,14 +15,10 @@ let
   });
 in
 {
-  environment.systemPackages = [ sddm-astronaut ];
+  environment.systemPackages = [ sddm-astronaut pkgs.kdePackages.qtmultimedia ];
 
   services.displayManager.sddm = {
     enable = true;
-
-    extraPackages = with pkgs; [
-      kdePackages.qtmultimedia
-    ];
 
     theme = "sddm-astronaut-theme";
   };
