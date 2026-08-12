@@ -1,5 +1,6 @@
 {
   imports = [
+    ./colorizer
     ./lspkind
     ./mini
     ./plenary
