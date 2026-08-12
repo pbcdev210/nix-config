@@ -1,3 +1,6 @@
 {
-  imports = [ ./mpvpaper ];
+  imports = [
+    #./mpvpaper
+    ./awww
+  ];
 }
