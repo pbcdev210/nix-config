@@ -1,5 +1,5 @@
 {
-  description = "My nix configuration for nixos and Home Manager";
+  description = "PBCDev nix configuration for nixos and Home Manager";
 
   nixConfig = {
     extra-substituters = [
@@ -42,63 +42,63 @@
           };
         };
 
-        packages = import ./packages { inherit pkgs; };
         devShells.default = import ./modules/devshell.nix { inherit pkgs; };
       };
 
       flake =
         let
-          extraModulesHome = with inputs; [
-            plasma-manager.homeModules.plasma-manager
-            niri.homeModules.niri
-            niri.homeModules.stylix
-            stylix.homeModules.stylix
-            catppuccin.homeModules.catppuccin
+          builder = import ./modules/builder {
+            extraHomeModules = with inputs; [
+              plasma-manager.homeModules.plasma-manager
+              niri.homeModules.niri
+              niri.homeModules.stylix
+              stylix.homeModules.stylix
+              catppuccin.homeModules.catppuccin
 
-            nix-flatpak.homeManagerModules.nix-flatpak
-            nixvim.homeModules.nixvim
-            claude-desktop.homeManagerModules.default
-            nix-doom-emacs-unstraightened.homeModule
+              nix-flatpak.homeManagerModules.nix-flatpak
+              nixvim.homeModules.nixvim
+              claude-desktop.homeManagerModules.default
+              nix-doom-emacs-unstraightened.homeModule
 
-            nix-index-database.homeModules.default
+              nix-index-database.homeModules.default
 
-            treesitter-kanata.homeManagerModules.nixvim
-          ];
+              treesitter-kanata.homeManagerModules.nixvim
+            ];
 
-          extraModulesNixos = with inputs; [
-            lanzaboote.nixosModules.lanzaboote
-            chaotic.nixosModules.default
+            extraNixosModules = with inputs; [
+              lanzaboote.nixosModules.lanzaboote
+              chaotic.nixosModules.default
 
-            home-manager.nixosModules.home-manager
-          ];
+              home-manager.nixosModules.home-manager
+            ];
 
-          overlays = with inputs; [
-            treesitter-kanata.overlays.default
-            nur.overlays.default
-          ];
+            overlays = with inputs; [
+              treesitter-kanata.overlays.default
+              nur.overlays.default
+            ];
 
-          libx = import ./lib {
             inherit inputs;
-            overlays = overlays ++ (import ./overlays);
           };
         in
         {
-          overlays.default = overlays;
-
-          nixosConfigurations = libx.builders.mkNixos {
-            extraModules = [
-              {
-                # Embed Home Manager into Nixos
-                home-manager = libx.builders.mkHome {
-                  extraModules = extraModulesHome;
-                  standalone = false;
-                };
-              }
-            ]
-            ++ extraModulesNixos;
+          homeConfigurations = {
+            default = builder.home.mk {
+              name = "default";
+              profile = "desktop";
+              desktop = "plasma6";
+              system = "x86_64-linux";
+            };
           };
 
-          homeConfigurations = libx.builders.mkHome { extraModules = extraModulesHome; };
+          nixosConfigurations = {
+            default = builder.system.mk {
+              name = "default";
+              profile = "desktop";
+              desktop = "plasma6";
+              host = "dp7530";
+              system = "x86_64-linux";
+            };
+          };
         };
     };
 

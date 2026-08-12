@@ -1,0 +1,13 @@
+{ settings, pkgs, ... }:
+{
+  home.username = settings.identity.username;
+  home.homeDirectory = settings.dirs.home;
+  home.stateVersion = "26.05";
+
+  imports = [ ./themes ];
+
+  home.packages = [
+    pkgs.nixd
+    pkgs.treefmt
+  ];
+}

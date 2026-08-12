@@ -1,6 +1,4 @@
 rec {
-  stateVersion = "26.05";
-
   timeZone = "Asia/Ho_Chi_Minh";
   locale = "en_US.UTF-8";
 
