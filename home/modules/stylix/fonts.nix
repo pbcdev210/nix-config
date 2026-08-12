@@ -12,8 +12,8 @@
     };
 
     monospace = {
-      package = pkgs.fira-code;
-      name = "Fira Code";
+      package = pkgs.nerd-fonts.fira-code;
+      name = "FiraCode Nerd Font";
     };
 
     emoji = {
@@ -25,4 +25,10 @@
       terminal = 9;
     };
   };
+
+  fonts.fontconfig.enable = true;
+
+  home.packages = [
+    pkgs.nerd-fonts.fira-code
+  ];
 }
