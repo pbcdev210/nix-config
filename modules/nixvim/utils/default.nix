@@ -5,6 +5,7 @@
     ./mini
     ./plenary
     ./snacks
+    ./treesitter-context
     ./web-devicons
   ];
 }
