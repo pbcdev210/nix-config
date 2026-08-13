@@ -73,6 +73,8 @@
             ];
 
             overlays = with inputs; [
+              chaotic.overlays.default
+
               treesitter-kanata.overlays.default
               nur.overlays.default
             ];
