@@ -1,7 +1,8 @@
 { extraHomeModules, extraNixosModules, overlays, inputs }:
 let
   mkPkgs = { system, extraOverlays ? [ ] }: import inputs.nixpkgs {
-    overlays = overlays ++ extraOverlays;
+    overlays = overlays ++ extraOverlays ++
+      (import "${inputs.self}/overlays");
     localSystem = system;
     config.allowUnfree = true;
   };
