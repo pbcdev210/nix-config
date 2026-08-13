@@ -52,7 +52,6 @@
               plasma-manager.homeModules.plasma-manager
               niri.homeModules.niri
               niri.homeModules.stylix
-              stylix.homeModules.stylix
               catppuccin.homeModules.catppuccin
 
               nix-flatpak.homeManagerModules.nix-flatpak
@@ -70,6 +69,7 @@
               chaotic.nixosModules.default
 
               home-manager.nixosModules.home-manager
+              stylix.nixosModules.stylix
             ];
 
             overlays = with inputs; [
@@ -89,6 +89,11 @@
               profile = "desktop";
               desktop = "plasma6";
               system = "x86_64-linux";
+
+              extraModules = [
+                inputs.stylix.homeModules.stylix
+                ./modules/home/modules/stylix
+              ];
             };
           };
 

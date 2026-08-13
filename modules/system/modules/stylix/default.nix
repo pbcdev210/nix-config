@@ -14,12 +14,10 @@
     };
 
     autoEnable = false;
-
   };
 
   imports = [
     ./fonts.nix
   ];
-
 }
 

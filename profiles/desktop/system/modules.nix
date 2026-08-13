@@ -7,6 +7,7 @@
     "${dirs.system.modules}/networking"
     "${dirs.system.modules}/nix"
     "${dirs.system.modules}/security"
+    "${dirs.system.modules}/stylix"
     "${dirs.system.modules}/users"
     "${dirs.system.modules}/xdg"
   ];
