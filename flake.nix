@@ -62,11 +62,13 @@
               nix-index-database.homeModules.default
 
               treesitter-kanata.homeManagerModules.nixvim
+              sops-nix.homeManagerModules.sops
             ];
 
             extraNixosModules = with inputs; [
               lanzaboote.nixosModules.lanzaboote
               chaotic.nixosModules.default
+              sops-nix.nixosModules.sops
 
               home-manager.nixosModules.home-manager
               stylix.nixosModules.stylix
@@ -118,6 +120,11 @@
 
     nur = {
       url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -1,0 +1,8 @@
+keys:
+  - &dp7530 age1uz7lzuwnpxc6x0g9zvh7q8qwq48le9gs8h2f7rpwld3ppmvc39rq0el50c
+
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - age:
+          - *dp7530

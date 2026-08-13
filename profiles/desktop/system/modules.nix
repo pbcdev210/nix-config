@@ -10,5 +10,7 @@
     "${dirs.system.modules}/stylix"
     "${dirs.system.modules}/users"
     "${dirs.system.modules}/xdg"
+
+    "${dirs.modules}/sops"
   ];
 }

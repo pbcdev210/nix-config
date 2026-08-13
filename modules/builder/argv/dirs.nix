@@ -6,6 +6,7 @@ rec {
   desktops = "${nixConfig}/modules/desktops";
   profiles = "${nixConfig}/profiles";
   hosts = "${nixConfig}/hosts";
+  modules = "${nixConfig}/modules";
 
   system = rec {
     root = "${nixConfig}/modules/system";
