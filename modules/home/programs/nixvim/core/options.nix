@@ -19,6 +19,6 @@
     undofile = true;
 
     updatetime = 300;
-    mouse = "";
+    mouse = "a";
   };
 }
