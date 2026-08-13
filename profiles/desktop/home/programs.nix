@@ -22,7 +22,6 @@
     "${dirs.home.programs}/nix-helper"
     "${dirs.home.programs}/nix-index"
     "${dirs.home.programs}/nix-your-shell"
-    "${dirs.home.programs}/nixvim"
     "${dirs.home.programs}/packages"
     "${dirs.home.programs}/ripgrep"
     "${dirs.home.programs}/starship"
@@ -33,5 +32,7 @@
     "${dirs.home.programs}/wezterm"
     "${dirs.home.programs}/zoxide"
     "${dirs.home.programs}/zsh"
+
+    "${dirs.nixConfig}/modules/nixvim"
   ];
 }
