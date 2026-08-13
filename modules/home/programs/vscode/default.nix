@@ -1,9 +1,9 @@
-{ pkgs, inputs, config, ... }:
+{ pkgs, config, ... }:
 {
   programs.vscode = {
     enable = true;
     profiles.default = {
-      extensions = with inputs.vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+      extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
         pkief.material-icon-theme
         enkia.tokyo-night
 

@@ -76,6 +76,7 @@
               chaotic.overlays.default
 
               treesitter-kanata.overlays.default
+              vscode-extensions.overlays.default
               nur.overlays.default
             ];
 
