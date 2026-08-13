@@ -51,7 +51,7 @@
           lualine_z = [ "location" ];
         };
 
-        winbar = {
+        tabline = {
           lualine_a = [
             {
               __unkeyed-1 = "filename";
