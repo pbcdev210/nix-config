@@ -10,6 +10,7 @@ let
     config.name = name;
     config.desktop = desktop;
     config.profile = profile;
+    config.standalone = true;
   };
 in
 inputs.home-manager.lib.homeManagerConfiguration {
