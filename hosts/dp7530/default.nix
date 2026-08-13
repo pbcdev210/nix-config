@@ -20,7 +20,7 @@
   ];
 
   services.scx.enable = true;
-  services.scx.scheduler = "scx_rusty";
+  services.scx.scheduler = "scx_rustland";
 
   host-config.gpuDrivers = [ "intel" ];
 }
