@@ -13,11 +13,21 @@
         console-mode = "max";
       };
     };
+
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
   };
 
   imports = [
     ./hardware-configuration.nix
   ];
+
+  #stylix.targets.plymouth.enable = true;
 
   services.scx.enable = true;
   services.scx.scheduler = "scx_rustland";
