@@ -1,4 +1,4 @@
-{ inputs, settings, ... }:
+{ inputs, dirs, ... }:
 {
   programs.kitty = {
     enable = true;
@@ -19,7 +19,7 @@
       window_padding_width = 5;
       cursor_trail = 1;
 
-      background_image = "${settings.dirs.nixConfig}/assets/kawaii-cat-girl.png";
+      background_image = "${dirs.assets}/kawaii-cat-girl.png";
       background_image_layout = "scaled";
       background_image_linear = true;
       background_tint = "0.95";
