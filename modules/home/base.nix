@@ -9,5 +9,6 @@
   home.packages = [
     pkgs.nixd
     pkgs.treefmt
+    pkgs.sops
   ];
 }
