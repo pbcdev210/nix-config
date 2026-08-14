@@ -9,6 +9,7 @@ rec {
   dirs = {
     home = "/home/${identity.username}";
     nixConfig = "/workspaces/nix-config";
+    nixConfigBot = "/workspaces/nix-config-bot";
   };
 
   glyphs = import ./glyphs.nix;
@@ -18,5 +19,9 @@ rec {
 
   age = {
     publicKey = "age1uz7lzuwnpxc6x0g9zvh7q8qwq48le9gs8h2f7rpwld3ppmvc39rq0el50c";
+  };
+
+  repo = {
+    github = "https://github.com/pbcdev210/nix-config";
   };
 }
