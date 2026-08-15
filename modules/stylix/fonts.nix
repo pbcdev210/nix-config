@@ -2,13 +2,13 @@
 {
   stylix.fonts = {
     serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
+      package = pkgs.nerd-fonts.noto;
+      name = "NotoSerif Nerd Font";
     };
 
     sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
+      package = pkgs.nerd-fonts.ubuntu-sans;
+      name = "UbuntuSans Nerd Font";
     };
 
     monospace = {
