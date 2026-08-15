@@ -18,19 +18,20 @@
     };
     "XF86AudioPlay" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "--player" "spotify" "play-pause" ];
+      action.spawn = [ "playerctl" "play-pause" ];
     };
     "XF86AudioStop" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "--player" "spotify" "stop" ];
+      action.spawn = [ "playerctl" "stop" ];
     };
     "XF86AudioPrev" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "--player" "spotify" "previous" ];
+      action.spawn = [ "playerctl" "previous" ];
     };
     "XF86AudioNext" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "--player" "spotify" "next" ];
+      action.spawn = [ "playerctl" "next" ];
     };
   };
 }
+
