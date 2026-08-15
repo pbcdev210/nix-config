@@ -35,5 +35,15 @@
 
     "Mod+C".action.toggle-window-floating = { };
     "Mod+Shift+C".action.switch-focus-between-floating-and-tiling = { };
+
+
+    "Mod+Shift+Page_Down".action.move-workspace-down = { };
+    "Mod+Shift+Page_Up".action.move-workspace-up = { };
+
+
+    "Mod+WheelScrollRight".action.focus-column-right = { };
+    "Mod+WheelScrollLeft".action.focus-column-left = { };
+    "Mod+Ctrl+WheelScrollRight".action.move-column-right = { };
+    "Mod+Ctrl+WheelScrollLeft".action.move-column-left = { };
   };
 }
