@@ -1,7 +1,8 @@
 {
   programs.niri.settings.input = {
-    keyboard = {
-      
+    mouse = {
+      accel-speed = -1.0;
     };
+    keyboard = { };
   };
 }

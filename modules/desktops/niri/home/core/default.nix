@@ -6,6 +6,7 @@
   imports = [
     ./binds.nix
     ./windown
+    ./inputs.nix
   ];
 
   home.sessionVariables = {
