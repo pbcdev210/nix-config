@@ -22,5 +22,6 @@ in
 
     theme = "sddm-astronaut-theme";
   };
+  services.displayManager.defaultSession = "niri";
 }
 
