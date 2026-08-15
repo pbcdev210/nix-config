@@ -1,11 +1,11 @@
 { config, ... }:
 {
   programs.niri.settings.layout = {
-    gaps = 5;
+    gaps = 7;
     focus-ring.enable = false;
     border = {
       enable = true;
-      width = 1.3;
+      width = 2;
     };
 
     insert-hint = {
