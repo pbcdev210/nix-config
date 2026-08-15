@@ -1,4 +1,4 @@
-{ pkgs, settings, ... }: {
+{ pkgs, settings, config, ... }: {
   users.users.${settings.identity.username} = {
     isNormalUser = true;
     description = "user main";
@@ -10,6 +10,6 @@
     ];
     shell = pkgs."${settings.tools.shell}";
     home = settings.dirs.home;
-    hashedPassword = settings.hashedPassword;
+    hashedPasswordFile = config.sops.secrets."hashedPassword".path;
   };
 }

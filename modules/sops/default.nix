@@ -1,7 +1,9 @@
-{ settings, ... }:
+{ settings, dirs, ... }:
 {
   sops = {
-    defaultSopsFile = "${settings.dirs.nixConfig}/secrets/secrets.yaml";
-    age.keyFile = "${settings.dirs.home}/.config/sops/age/keys.txt";
+    defaultSopsFile = "${dirs.nixConfig}/secrets/main.yaml";
+    age.keyFile = settings.age.privateKeyPath;
+
+    secrets."hashedPassword" = { };
   };
 }

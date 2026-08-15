@@ -84,7 +84,7 @@ in
               db.sqlite3 rsa_key.pem | \
           ${pkgs.gzip}/bin/gzip > /tmp/vaultwarden-core.tar.gz
 
-          ${pkgs.age}/bin/age -e -r ${settings.age.publicKey} -o "${encryptedBackup}" /tmp/vaultwarden-core.tar.gz
+          ${pkgs.age}/bin/age -e -r "${settings.age.publicKey}" -o "${encryptedBackup}" /tmp/vaultwarden-core.tar.gz
 
           rm /tmp/vaultwarden-core.tar.gz
 
