@@ -8,5 +8,12 @@
     ./windown
   ];
 
+  home.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+    SDL_VIDEODRIVER = "wayland";
+    CLUTTER_BACKEND = "wayland";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
   stylix.targets.niri.enable = true;
 }
