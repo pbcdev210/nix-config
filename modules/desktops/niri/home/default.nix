@@ -1,5 +1,6 @@
 {
   imports = [
+    ./clipboard
     ./control
     ./core
     ./launcher
