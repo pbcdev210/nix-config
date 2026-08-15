@@ -6,6 +6,5 @@
     ./develop.nix
 
     ../../../modules/home/flatpak
-    ../../../modules/desktops/niri/home
   ];
 }

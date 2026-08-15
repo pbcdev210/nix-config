@@ -90,7 +90,7 @@
             default = builder.home.mk {
               name = "default";
               profile = "desktop";
-              desktop = "plasma6";
+              desktop = "niri";
               system = "x86_64-linux";
 
               extraModules = [
@@ -104,7 +104,7 @@
             default = builder.system.mk {
               name = "default";
               profile = "desktop";
-              desktop = "plasma6";
+              desktop = "niri";
               host = "dp7530";
               system = "x86_64-linux";
             };
