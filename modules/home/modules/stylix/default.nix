@@ -13,13 +13,14 @@
       size = 24;
     };
 
-    autoEnable = false;
+    opacity = {
+      terminal = 0.8;
+    };
 
+    autoEnable = false;
   };
 
   imports = [
     ./fonts.nix
   ];
-
 }
-
