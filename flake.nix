@@ -96,6 +96,7 @@
               extraModules = [
                 inputs.stylix.homeModules.stylix
                 ./modules/home/modules/stylix
+                ./modules/stylix
               ];
             };
           };
@@ -107,6 +108,10 @@
               desktop = "niri";
               host = "dp7530";
               system = "x86_64-linux";
+
+              extraModules = [
+                ./modules/stylix
+              ];
             };
           };
         };
