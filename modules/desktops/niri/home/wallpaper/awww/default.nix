@@ -8,4 +8,11 @@
     { command = [ "awww-daemon" ]; }
     { command = [ "awww" "img" "${dirs.assets}/kawaii-cat-girl.png" ]; }
   ];
+
+  programs.niri.settings.layer-rules = [
+    {
+      matches = [{ namespace = "^awww-daemon$"; }];
+      place-within-backdrop = true;
+    }
+  ];
 }

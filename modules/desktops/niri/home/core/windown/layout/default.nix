@@ -2,6 +2,7 @@
 {
   programs.niri.settings.layout = {
     gaps = 7;
+    background-color = "transparent";
     focus-ring.enable = false;
     border = {
       enable = true;
