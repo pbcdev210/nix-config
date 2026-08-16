@@ -1,8 +1,11 @@
-{ pkgs, ... }:
+{ config, ... }:
 {
   fonts.fontconfig.enable = true;
 
   home.packages = [
-    pkgs.nerd-fonts.fira-code
+    config.stylix.fonts.serif.package
+    config.stylix.sansSerif.package
+    config.stylix.monospace.package
+    config.stylix.emoji.package
   ];
 }
