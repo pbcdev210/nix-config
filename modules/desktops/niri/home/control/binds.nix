@@ -37,19 +37,19 @@ in
 
     "XF86AudioPlay" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "play-pause" ];
+      action.spawn = [ player-control "--player=spotify" "play-pause" ];
     };
     "XF86AudioStop" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "stop" ];
+      action.spawn = [ player-control "--player=spotify" "stop" ];
     };
     "XF86AudioPrev" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "previous" ];
+      action.spawn = [ player-control "--player=spotify" "previous" ];
     };
     "XF86AudioNext" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "next" ];
+      action.spawn = [ player-control "--player=spotify" "next" ];
     };
 
     "XF86MonBrightnessUp" = {

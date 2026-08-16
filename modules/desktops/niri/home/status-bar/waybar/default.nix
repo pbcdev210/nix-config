@@ -96,6 +96,7 @@ in
         modules-left = [
           "custom/right-arrow-dark"
           "custom/right-arrow-light"
+          "custom/spotify"
           "custom/mpris"
           "custom/right-arrow-dark"
         ];

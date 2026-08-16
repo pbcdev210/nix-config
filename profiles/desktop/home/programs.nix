@@ -24,6 +24,7 @@
     "${dirs.home.programs}/nix-your-shell"
     "${dirs.home.programs}/packages"
     "${dirs.home.programs}/ripgrep"
+    "${dirs.home.programs}/spotify"
     "${dirs.home.programs}/starship"
     "${dirs.home.programs}/sunix"
     "${dirs.home.programs}/superfile"
