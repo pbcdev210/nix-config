@@ -5,6 +5,7 @@
     ./core
     ./launcher
     ./notification
+    ./screenshot
     ./status-bar
     ./wallpaper
   ];
