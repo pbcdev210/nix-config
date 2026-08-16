@@ -1,21 +1,43 @@
+{ pkgs, dirs, ... }:
+let
+  sh = "${pkgs.bash}/bin/sh";
+  volumeControl = import ./scripts/volume-control.nix { inherit pkgs dirs; };
+in
 {
   programs.niri.settings.binds = {
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" ];
+      action.spawn = [
+        "${sh}"
+        "-c"
+        "${volumeControl}/bin/volume-control --inc"
+      ];
     };
     "XF86AudioLowerVolume" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-" ];
+      action.spawn = [
+        "${sh}"
+        "-c"
+        "${volumeControl}/bin/volume-control --dec"
+      ];
     };
     "XF86AudioMute" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+      action.spawn = [
+        "${sh}"
+        "-c"
+        "${volumeControl}/bin/volume-control --toggle"
+      ];
     };
     "XF86AudioMicMute" = {
       allow-when-locked = true;
-      action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
+      action.spawn = [
+        "${sh}"
+        "-c"
+        "${volumeControl}/bin/volume-control --toggle-mic"
+      ];
     };
+
     "XF86AudioPlay" = {
       allow-when-locked = true;
       action.spawn = [ "playerctl" "play-pause" ];
@@ -34,4 +56,3 @@
     };
   };
 }
-
