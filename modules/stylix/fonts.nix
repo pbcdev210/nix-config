@@ -2,8 +2,8 @@
 {
   stylix.fonts = {
     serif = {
-      package = pkgs.dejavu_fonts;
-      name = "Dejavu Serif";
+      package = pkgs.noto-fonts;
+      name = "Noto Serif";
     };
 
     sansSerif = {
