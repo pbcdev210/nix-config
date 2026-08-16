@@ -2,6 +2,7 @@
 let
   sh = "${pkgs.bash}/bin/sh";
   volumeControl = import ./scripts/volume-control.nix { inherit pkgs dirs; };
+  brightnessControl = import ./scripts/brightness-control.nix { inherit pkgs dirs; };
 in
 {
   programs.niri.settings.binds = {
@@ -53,6 +54,24 @@ in
     "XF86AudioNext" = {
       allow-when-locked = true;
       action.spawn = [ "playerctl" "next" ];
+    };
+
+    "XF86MonBrightnessUp" = {
+      allow-when-locked = true;
+      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--inc" ];
+    };
+    "XF86MonBrightnessDown" = {
+      allow-when-locked = true;
+      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--dec" ];
+    };
+
+    "XF86HomePage" = {
+      allow-when-locked = true;
+      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--inc" ];
+    };
+    "XF86Mail" = {
+      allow-when-locked = true;
+      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--dec" ];
     };
   };
 }
