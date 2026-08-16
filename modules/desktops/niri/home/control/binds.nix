@@ -1,59 +1,55 @@
 { pkgs, dirs, ... }:
 let
-  sh = "${pkgs.bash}/bin/sh";
   volumeControl = import ./scripts/volume-control.nix { inherit pkgs dirs; };
   brightnessControl = import ./scripts/brightness-control.nix { inherit pkgs dirs; };
+  player-control = "${pkgs.playerctl}/bin/playerctl";
 in
 {
   programs.niri.settings.binds = {
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
       action.spawn = [
-        "${sh}"
-        "-c"
-        "${volumeControl}/bin/volume-control --inc"
+        "${volumeControl}/bin/volume-control"
+        "--inc"
       ];
     };
     "XF86AudioLowerVolume" = {
       allow-when-locked = true;
       action.spawn = [
-        "${sh}"
-        "-c"
-        "${volumeControl}/bin/volume-control --dec"
+        "${volumeControl}/bin/volume-control"
+        "--dec"
       ];
     };
     "XF86AudioMute" = {
       allow-when-locked = true;
       action.spawn = [
-        "${sh}"
-        "-c"
-        "${volumeControl}/bin/volume-control --toggle"
+        "${volumeControl}/bin/volume-control"
+        "--toggle"
       ];
     };
     "XF86AudioMicMute" = {
       allow-when-locked = true;
       action.spawn = [
-        "${sh}"
-        "-c"
-        "${volumeControl}/bin/volume-control --toggle-mic"
+        "${volumeControl}/bin/volume-control"
+        "--toggle-mic"
       ];
     };
 
     "XF86AudioPlay" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "play-pause" ];
+      action.spawn = [ player-control "play-pause" ];
     };
     "XF86AudioStop" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "stop" ];
+      action.spawn = [ player-control "stop" ];
     };
     "XF86AudioPrev" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "previous" ];
+      action.spawn = [ player-control "previous" ];
     };
     "XF86AudioNext" = {
       allow-when-locked = true;
-      action.spawn = [ "playerctl" "next" ];
+      action.spawn = [ player-control "next" ];
     };
 
     "XF86MonBrightnessUp" = {
