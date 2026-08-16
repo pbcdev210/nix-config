@@ -2,7 +2,7 @@
 let
   mkPkgs = { system, extraOverlays ? [ ] }: import inputs.nixpkgs {
     overlays = overlays ++ extraOverlays ++
-      (import "${inputs.self}/overlays");
+      (import "${inputs.self}/overlays" { inherit inputs; });
     localSystem = system;
     config.allowUnfree = true;
   };

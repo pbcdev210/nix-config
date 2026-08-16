@@ -173,6 +173,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    waycal = {
+      url = "github:forrestknight/waycal";
+      flake = false;
+    };
+
     # ======================= plasma ========================
 
     plasma-manager = {
