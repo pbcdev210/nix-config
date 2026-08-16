@@ -63,6 +63,7 @@
 
               treesitter-kanata.homeManagerModules.nixvim
               sops-nix.homeManagerModules.sops
+              sunix.homeModules.default
             ];
 
             extraNixosModules = with inputs; [
@@ -218,6 +219,11 @@
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sunix = {
+      url = "github:gvolpe/sunix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

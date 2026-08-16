@@ -842,6 +842,7 @@
         "schemes": "schemes",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
+        "sunix": "sunix",
         "treefmt-nix": "treefmt-nix",
         "treesitter-kanata": "treesitter-kanata",
         "vscode-extensions": "vscode-extensions",
@@ -936,6 +937,26 @@
       "original": {
         "owner": "nix-community",
         "repo": "stylix",
+        "type": "github"
+      }
+    },
+    "sunix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785827163,
+        "narHash": "sha256-DBq5XwrNTGCk/wlVQTTcOfXR4fcYZFT9+jiX8fl27g4=",
+        "owner": "gvolpe",
+        "repo": "sunix",
+        "rev": "9cc8e9ae94edcca201c6d75f32e80c4d71576bc2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gvolpe",
+        "repo": "sunix",
         "type": "github"
       }
     },

@@ -25,6 +25,7 @@
     "${dirs.home.programs}/packages"
     "${dirs.home.programs}/ripgrep"
     "${dirs.home.programs}/starship"
+    "${dirs.home.programs}/sunix"
     "${dirs.home.programs}/superfile"
     "${dirs.home.programs}/tirith"
     "${dirs.home.programs}/vivaldi"
