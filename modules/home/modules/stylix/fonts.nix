@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   stylix.fonts = {
     serif = {
@@ -25,4 +25,14 @@
       terminal = 9;
     };
   };
+
+  fonts.fontconfig.enable = true;
+
+  home.packages = [
+    config.stylix.fonts.serif.package
+    config.stylix.fonts.sansSerif.package
+    config.stylix.fonts.monospace.package
+    config.stylix.fonts.emoji.package
+  ];
 }
+

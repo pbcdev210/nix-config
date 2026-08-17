@@ -64,6 +64,8 @@
               treesitter-kanata.homeManagerModules.nixvim
               sops-nix.homeManagerModules.sops
               sunix.homeModules.default
+
+              stylix.homeModules.stylix
             ];
 
             extraNixosModules = with inputs; [
@@ -72,7 +74,6 @@
               sops-nix.nixosModules.sops
 
               home-manager.nixosModules.home-manager
-              stylix.nixosModules.stylix
             ];
 
             overlays = with inputs; [
@@ -93,12 +94,6 @@
               profile = "desktop";
               desktop = "niri";
               system = "x86_64-linux";
-
-              extraModules = [
-                inputs.stylix.homeModules.stylix
-                ./modules/home/modules/stylix
-                ./modules/stylix
-              ];
             };
           };
 
@@ -109,10 +104,6 @@
               desktop = "niri";
               host = "dp7530";
               system = "x86_64-linux";
-
-              extraModules = [
-                ./modules/stylix
-              ];
             };
           };
         };
