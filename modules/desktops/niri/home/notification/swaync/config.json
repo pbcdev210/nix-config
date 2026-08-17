@@ -55,5 +55,12 @@
     "volume": {
       "label": ""
     }
+  },
+  "notification-visibility": {
+    "volume-control": {
+      "state": "transient",
+      "app-name": "volume-control",
+      "urgency": "Low"
+    }
   }
 }

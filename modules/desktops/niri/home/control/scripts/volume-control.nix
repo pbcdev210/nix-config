@@ -45,7 +45,7 @@ pkgs.writeShellApplication {
 
     # Notify
     notify_user() {
-    	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume : $(get_volume) %"
+    	notify-send -h string:x-canonical-private-synchronous:sys-notify -h string:transient:true -u low -i "$(get_icon)" -a "volume-control" "Volume : $(get_volume) %"
     }
 
     # Increase Volume
@@ -61,18 +61,18 @@ pkgs.writeShellApplication {
     # Toggle Mute
     toggle_mute() {
     	if ! is_muted; then
-    		wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
+    		wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 && notify-send -h string:x-canonical-private-synchronous:sys-notify -h string:transient:true -u low -a "volume-control" -i "$iDIR/volume-mute.png" "Volume Switched OFF"
     	else
-    		wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume Switched ON"
+    		wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && notify-send -h string:x-canonical-private-synchronous:sys-notify -h string:transient:true -u low -a "volume-control" -i "$(get_icon)" "Volume Switched ON"
     	fi
     }
 
     # Toggle Mic
     toggle_mic() {
     	if ! is_mic_muted; then
-    		wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
+    		wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 && notify-send -h string:x-canonical-private-synchronous:sys-notify -h string:transient:true -u low -a "volume-control" -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
     	else
-    		wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone.png" "Microphone Switched ON"
+    		wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && notify-send -h string:x-canonical-private-synchronous:sys-notify -h string:transient:true -u low -a "volume-control" -i "$iDIR/microphone.png" "Microphone Switched ON"
     	fi
     }
 
@@ -95,7 +95,7 @@ pkgs.writeShellApplication {
     notify_mic_user() {
     	current=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print $2}')
     	current=$(printf "%.0f" "$(echo "$current * 100" | bc)")
-    	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_mic_icon)" "Mic-Level : $current %"
+    	notify-send -h string:x-canonical-private-synchronous:sys-notify -h string:transient:true -u low -a "volume-control" -i "$(get_mic_icon)" "Mic-Level : $current %"
     }
 
     # Increase MIC Volume
