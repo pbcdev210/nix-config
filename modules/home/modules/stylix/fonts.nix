@@ -8,12 +8,12 @@
 
     sansSerif = {
       package = pkgs.nerd-fonts.ubuntu-sans;
-      name = "UbuntuSans Nerd Font";
+      name = "UbuntuSans NF";
     };
 
     monospace = {
       package = pkgs.nerd-fonts.fira-code;
-      name = "FiraCode Nerd Font";
+      name = "FiraCode Nerd Font Mono";
     };
 
     emoji = {
@@ -33,6 +33,8 @@
     config.stylix.fonts.sansSerif.package
     config.stylix.fonts.monospace.package
     config.stylix.fonts.emoji.package
+    pkgs.inter
+    pkgs.dejavu_fonts
   ];
 }
 
