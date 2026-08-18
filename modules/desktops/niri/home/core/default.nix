@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   programs.niri = {
     enable = true;
@@ -7,6 +8,9 @@
     ./binds.nix
     ./windown
     ./inputs.nix
+
+    inputs.niri.homeModules.niri
+    inputs.niri.homeModules.stylix
   ];
 
   home.sessionVariables = {

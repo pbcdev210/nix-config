@@ -24,6 +24,8 @@
   };
 
   imports = [
+    inputs.stylix.homeModules.stylix
+
     ./fonts.nix
   ];
 }

@@ -1,6 +1,6 @@
 {
   services.espanso = {
-    enable = false;
+    enable = true;
 
     configs = {
       auto_restarts = true;

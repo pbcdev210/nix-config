@@ -1,5 +1,9 @@
-{ pkgs, settings, ... }:
+{ pkgs, settings, inputs, ... }:
 {
+  imports = with inputs; [
+    sunix.homeModules.default
+  ];
+
   programs.sunix = {
     enable = true;
 

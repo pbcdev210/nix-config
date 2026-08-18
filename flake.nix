@@ -49,30 +49,12 @@
         let
           builder = import ./modules/builder {
             extraHomeModules = with inputs; [
-              plasma-manager.homeModules.plasma-manager
-              niri.homeModules.niri
-              niri.homeModules.stylix
-              catppuccin.homeModules.catppuccin
-
-              nix-flatpak.homeManagerModules.nix-flatpak
-              nixvim.homeModules.nixvim
-              claude-desktop.homeManagerModules.default
-              nix-doom-emacs-unstraightened.homeModule
-
-              nix-index-database.homeModules.default
-
-              treesitter-kanata.homeManagerModules.nixvim
               sops-nix.homeManagerModules.sops
-              sunix.homeModules.default
-
-              stylix.homeModules.stylix
             ];
 
             extraNixosModules = with inputs; [
-              lanzaboote.nixosModules.lanzaboote
               chaotic.nixosModules.default
               sops-nix.nixosModules.sops
-
               home-manager.nixosModules.home-manager
             ];
 

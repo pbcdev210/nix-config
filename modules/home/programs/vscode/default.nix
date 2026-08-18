@@ -23,8 +23,6 @@
         "workbench.activityBar.location" = "bottom";
         "workbench.iconTheme" = "catppuccin-mocha";
 
-        "catppuccin.accentColor" = "${config.catppuccin.accent}";
-
         "files.autoSave" = "afterDelay";
 
         "git.autofetch" = true;

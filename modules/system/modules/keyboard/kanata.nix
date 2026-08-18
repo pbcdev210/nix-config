@@ -1,3 +1,4 @@
+
 {
   services.kanata = {
     enable = true;

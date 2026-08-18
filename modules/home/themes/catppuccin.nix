@@ -1,6 +1,10 @@
+{ inputs, ... }:
 {
+  imports = with inputs; [
+    catppuccin.homeModules.catppuccin
+  ];
   catppuccin = {
-    enable = false;
+    enable = true;
     autoEnable = true;
     flavor = "mocha";
     accent = "blue";

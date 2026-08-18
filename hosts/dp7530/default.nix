@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, inputs, ... }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
     loader.systemd-boot.enable = lib.mkForce false;
@@ -25,6 +25,8 @@
 
   imports = [
     ./hardware-configuration.nix
+
+    inputs.lanzaboote.nixosModules.lanzaboote
   ];
 
   #stylix.targets.plymouth.enable = true;

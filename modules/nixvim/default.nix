@@ -6,6 +6,8 @@
   };
 
   imports = [
+    inputs.nixvim.homeModules.nixvim
+
     ./core
     ./direnv
     ./edit
