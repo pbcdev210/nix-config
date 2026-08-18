@@ -11,6 +11,7 @@
     "${dirs.home.programs}/eza"
     "${dirs.home.programs}/fastfetch"
     "${dirs.home.programs}/fd"
+    "${dirs.home.programs}/firefox"
     "${dirs.home.programs}/fish"
     "${dirs.home.programs}/fzf"
     "${dirs.home.programs}/gh"

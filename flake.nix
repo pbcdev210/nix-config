@@ -82,6 +82,8 @@
               treesitter-kanata.overlays.default
               vscode-extensions.overlays.default
               nur.overlays.default
+
+              nix-firefox-addons.overlays.default
             ];
 
             inherit inputs;
@@ -199,6 +201,13 @@
 
     nix-doom-emacs-unstraightened = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # ======================== firefox ==============================
+
+    nix-firefox-addons = {
+      url = "github:osipog/nix-firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
