@@ -3,6 +3,33 @@
   programs.nushell = {
     enable = true;
 
+    settings = {
+      show_banner = false;
+
+      cursor_shape = {
+        vi_insert = "line";
+        vi_normal = "block";
+        emacs = "line";
+      };
+
+      completions = {
+        external = {
+          enable = true;
+          max_results = 200;
+        };
+      };
+
+      color_config = {
+        error = {
+          fg = "red";
+        };
+
+        warning = {
+          fg = "yellow";
+        };
+      };
+    };
+
     plugins = with pkgs.nushellPlugins; [
       query
       formats
@@ -23,4 +50,5 @@
   programs.lazygit.enableNushellIntegration = true;
   programs.nix-index.enableNushellIntegration = true;
   programs.nix-your-shell.enableNushellIntegration = true;
+  programs.carapace.enableNushellIntegration = true;
 }

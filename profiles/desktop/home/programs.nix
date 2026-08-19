@@ -4,6 +4,7 @@
     "${dirs.home.programs}/bash"
     "${dirs.home.programs}/bat"
     "${dirs.home.programs}/btop"
+    "${dirs.home.programs}/carapace"
     "${dirs.home.programs}/claude-desktop"
     "${dirs.home.programs}/delta"
     "${dirs.home.programs}/direnv"
