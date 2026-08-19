@@ -24,24 +24,5 @@
       };
     }
 
-    {
-      mode = "n";
-      key = "<A-a>";
-      action = "<CMD>Telescope find_files<CR>";
-      options = {
-        silent = true;
-        desc = "Telescope find files";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<A-w>";
-      action = "<CMD>Telescope buffers<CR>";
-      options = {
-        silent = true;
-        desc = "Telescope open buffers";
-      };
-    }
   ];
 }

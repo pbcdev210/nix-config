@@ -2,14 +2,14 @@
   imports = [
     ./clipboard.nix
     ./history.nix
-    ./motions.nix
+    # ./motions.nix
   ];
 
   programs.nixvim.keymaps = [
     {
       mode = [ "i" "c" ];
       key = "<C-BS>";
-      action = "<C-W>";
+      action = "<C-w>";
       options = {
         silent = true;
         desc = "Delete inner word with Ctrl+Backspace";

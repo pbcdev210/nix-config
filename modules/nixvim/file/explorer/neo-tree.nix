@@ -19,7 +19,7 @@
           leave_dirs_open = false;
         };
 
-        window.mappings = { "<esc>" = "close_window"; };
+        use_libuv_file_watcher = true;
       };
 
       window = {
@@ -27,6 +27,11 @@
         popupBorderStyle = "rounded";
 
         popup = {
+          title = "";
+          title_pos = "none";
+
+          #border = settings.glyphs.border;
+          border = "single";
 
           position = {
             row = "50%";
@@ -37,6 +42,10 @@
             width = "90%";
             height = "90%";
           };
+        };
+        mappings = {
+          "l" = "open";
+          "h" = "close_node";
         };
       };
 
@@ -52,16 +61,34 @@
             untracked = settings.glyphs.git.diff.untracked;
           };
         };
+        created.enabled = false;
+        last_modified.enabled = false;
+        type.enabled = false;
+        symlink_target.enabled = true;
+        container.enable_character_fade = true;
       };
 
-      eventHandlers = {
-        file_opened = ''
-          function()
-            require("neo-tree.sources.manager").close_all()
-          end
-        '';
+      renderers = {
+        file = [
+          { __unkeyed-1 = "indent"; }
+          { __unkeyed-1 = "icon"; }
+          { __unkeyed-1 = "name"; useGitStatusColors = true; }
+        ];
       };
     };
   };
+
+  programs.nixvim.keymaps = [
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<CMD>Neotree toggle<CR>";
+      options = {
+        silent = true;
+        desc = "Toggle Neo-tree sidebar";
+      };
+    }
+  ];
+
   programs.nixvim.plugins.lualine.settings.extensions = [ "neo-tree" ];
 }
