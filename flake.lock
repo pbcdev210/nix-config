@@ -816,6 +816,24 @@
         "type": "github"
       }
     },
+    "nushell-highlight": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784806816,
+        "narHash": "sha256-0nwz32ECOWzrhq0Uu+Qq4G53RX1AcjpkCdkin581ICY=",
+        "ref": "refs/heads/main",
+        "rev": "c0e768d66e9cff17c791e1c5138d518409285599",
+        "revCount": 126,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/cptpiepmatz/nu-plugin-highlight"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/cptpiepmatz/nu-plugin-highlight"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -878,6 +896,7 @@
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
         "nur": "nur",
+        "nushell-highlight": "nushell-highlight",
         "plasma-manager": "plasma-manager",
         "schemes": "schemes",
         "sops-nix": "sops-nix",

@@ -193,6 +193,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # ======================= nushell ==============================
+
+    nushell-highlight = {
+      url = "git+https://github.com/cptpiepmatz/nu-plugin-highlight?submodules=1";
+      flake = false;
+    };
+
     # ======================= miscelaneous ===========================
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";

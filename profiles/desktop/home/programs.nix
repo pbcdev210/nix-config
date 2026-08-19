@@ -23,6 +23,7 @@
     "${dirs.home.programs}/nix-helper"
     "${dirs.home.programs}/nix-index"
     "${dirs.home.programs}/nix-your-shell"
+    "${dirs.home.programs}/nushell"
     "${dirs.home.programs}/packages"
     "${dirs.home.programs}/ripgrep"
     "${dirs.home.programs}/spotify"
