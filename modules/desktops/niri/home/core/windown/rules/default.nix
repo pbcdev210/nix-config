@@ -13,6 +13,22 @@
         };
         clip-to-geometry = true;
       }
+
+      {
+        matches = [{ title = "^Picture in picture$"; }];
+        open-floating = true;
+
+        default-floating-position = {
+          relative-to = "bottom-right";
+          x = 20;
+          y = 20;
+        };
+        default-column-width = { fixed = 400; };
+
+        default-window-height = { fixed = 200; };
+
+        # block-out-from = "screencast";
+      }
     ];
   };
 }
