@@ -19,6 +19,7 @@
         mappings = {
           n."q" = "close";
           n."<leader>ff" = "close";
+          n."<leader>fb" = "close";
 
           i."<C-BS>".__raw = ''
             function(prompt_bufnr)
@@ -45,8 +46,14 @@
           };
         };
       };
+
+      live-grep-args = {
+        enable = true;
+        settings.auto_quoting = true;
+      };
     };
   };
+
   programs.nixvim.keymaps = [
     {
       mode = "n";
@@ -66,6 +73,17 @@
         silent = true;
         desc = "Telescope open buffers";
       };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>fg";
+      action.__raw = ''
+        function()
+          require('telescope').extensions.live_grep_args.live_grep_args()
+        end
+      '';
+      options.desc = "Live grep (args)";
     }
   ];
 }
