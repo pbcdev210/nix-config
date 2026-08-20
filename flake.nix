@@ -66,6 +66,7 @@
               nur.overlays.default
 
               nix-firefox-addons.overlays.default
+              sklauncher.overlays.default
             ];
 
             inherit inputs;
@@ -213,6 +214,11 @@
 
     sunix = {
       url = "github:gvolpe/sunix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sklauncher = {
+      url = "github:pbcdev210/sklauncher-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

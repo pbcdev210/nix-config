@@ -27,6 +27,7 @@
     "${dirs.home.programs}/nushell"
     "${dirs.home.programs}/packages"
     "${dirs.home.programs}/ripgrep"
+    "${dirs.home.programs}/sklauncher"
     "${dirs.home.programs}/spotify"
     "${dirs.home.programs}/starship"
     "${dirs.home.programs}/sunix"

@@ -899,6 +899,7 @@
         "nushell-highlight": "nushell-highlight",
         "plasma-manager": "plasma-manager",
         "schemes": "schemes",
+        "sklauncher": "sklauncher",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "sunix": "sunix",
@@ -944,6 +945,39 @@
         "owner": "pbcdev210",
         "repo": "schemes",
         "type": "github"
+      }
+    },
+    "sklauncher": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "sklauncher-appimage": "sklauncher-appimage"
+      },
+      "locked": {
+        "lastModified": 1787232499,
+        "narHash": "sha256-0wF9ytazXaXKPmXI8igtSrWlYWscphp8ySDbhHAKxMI=",
+        "owner": "pbcdev210",
+        "repo": "sklauncher-flake",
+        "rev": "7b861d69ccb2b88df134d8cdeb371c20b9255254",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pbcdev210",
+        "repo": "sklauncher-flake",
+        "type": "github"
+      }
+    },
+    "sklauncher-appimage": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-kN39li4YHOFfdbigk/off5GouJFMx+1tDvUpVbNOMU0=",
+        "type": "file",
+        "url": "https://github.com/sklauncher/binaries/releases/download/v4.0.43/SKlauncher-4.0.43-x86_64.AppImage"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/sklauncher/binaries/releases/download/v4.0.43/SKlauncher-4.0.43-x86_64.AppImage"
       }
     },
     "sops-nix": {
