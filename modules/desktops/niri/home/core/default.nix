@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   programs.niri = {
     enable = true;
@@ -25,6 +25,7 @@
     { command = [ "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "NIRI_ID" ]; }
     { command = [ "systemctl" "--user" "restart" "graphical-session.target" ]; }
   ];
+  home.packages = [ pkgs.xwayland-satellite ];
 
   stylix.targets.niri.enable = true;
 }
