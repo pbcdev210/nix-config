@@ -17,7 +17,7 @@
     "${dirs.home.programs}/fzf"
     "${dirs.home.programs}/gh"
     "${dirs.home.programs}/git"
-    "${dirs.home.programs}/home-manager"
+    # "${dirs.home.programs}/home-manager"
     "${dirs.home.programs}/kitty"
     "${dirs.home.programs}/lazygit"
     "${dirs.home.programs}/mpv"
