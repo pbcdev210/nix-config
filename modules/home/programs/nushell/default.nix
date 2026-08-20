@@ -18,16 +18,6 @@
           max_results = 200;
         };
       };
-
-      color_config = {
-        error = {
-          fg = "red";
-        };
-
-        warning = {
-          fg = "yellow";
-        };
-      };
     };
 
     plugins = with pkgs.nushellPlugins; [
@@ -37,9 +27,13 @@
 
       highlight
     ];
+
+    extraConfig = ''
+      source ${./carbonfox.theme.nu}
+    '';
   };
 
-  stylix.targets.nushell.enable = true;
+  stylix.targets.nushell.enable = false;
 
   programs.zoxide.enableNushellIntegration = true;
   programs.fzf.enableNushellIntegration = true;
