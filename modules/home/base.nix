@@ -10,5 +10,6 @@
     pkgs.nixd
     pkgs.treefmt
     pkgs.sops
+    pkgs.jq
   ];
 }
