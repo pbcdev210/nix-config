@@ -8,6 +8,7 @@
     ./binds.nix
     ./windown
     ./inputs.nix
+    ./workspace.nix
 
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
