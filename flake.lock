@@ -955,11 +955,11 @@
         "sklauncher-appimage": "sklauncher-appimage"
       },
       "locked": {
-        "lastModified": 1787232499,
-        "narHash": "sha256-0wF9ytazXaXKPmXI8igtSrWlYWscphp8ySDbhHAKxMI=",
+        "lastModified": 1787327429,
+        "narHash": "sha256-cKwNCkXBplgeyQszH3I3mF26PPm26LFxnbGNkJ58/zI=",
         "owner": "pbcdev210",
         "repo": "sklauncher-flake",
-        "rev": "7b861d69ccb2b88df134d8cdeb371c20b9255254",
+        "rev": "97c4099cdae0815c3afd45afe833963235de4fc8",
         "type": "github"
       },
       "original": {
