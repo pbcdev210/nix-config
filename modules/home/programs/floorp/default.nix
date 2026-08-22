@@ -1,10 +1,23 @@
-{ inputs, pkgs, ... }@args:
+{ pkgs, ... }:
 let
-  settings-profile = { };
+  settings-profile = {
+    "extensions.autoDisableScopes" = 0;
+    "browser.ctrlTab.sortByRecentlyUsed" = true;
 
-  extensions = import ./extensions.nix args;
-  keyboardShortcuts = import ./shortcuts.nix;
-  policies = import ./policies.nix args;
+    "browser.tabs.allow_transparent_browser" = true;
+
+    "browser.startup.page" = 3;
+
+    "floorp.keyboardshortcut.config" = builtins.readFile ./shortcuts.json;
+    "floorp.keyboardshortcut.enabled" = true;
+
+    "floorp.zenmode.enabled" = false;
+
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+  };
+
+  extensions = import ./extensions.nix { inherit pkgs; };
+  policies = import ./policies.nix { inherit pkgs; };
 
   search = {
     force = true;

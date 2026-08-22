@@ -71,6 +71,16 @@
       "key": "D",
       "action": "gecko-show-next-tab"
     },
+    "gecko-show-next-tab-1": {
+      "modifiers": {
+        "alt": true,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "key": "J",
+      "action": "gecko-show-next-tab"
+    },
     "gecko-show-previous-tab": {
       "modifiers": {
         "alt": true,
@@ -79,6 +89,16 @@
         "shift": false
       },
       "key": "F",
+      "action": "gecko-show-previous-tab"
+    },
+    "gecko-show-previous-tab-1": {
+      "modifiers": {
+        "alt": true,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "key": "K",
       "action": "gecko-show-previous-tab"
     },
     "gecko-show-all-tabs-panel": {
