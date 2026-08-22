@@ -1,6 +1,8 @@
 {
   programs.niri.settings.binds = {
     "Mod+S".action.close-window = { };
+    "Mod+Q".action.close-window = { };
+
     "Mod+R".action.switch-preset-column-width = { };
     "Mod+W".action.toggle-column-tabbed-display = { };
 
