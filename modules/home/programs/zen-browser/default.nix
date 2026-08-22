@@ -44,13 +44,15 @@ let
         name = "home-manager";
         urls = [{ template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }];
         icon = "https://nixos.org/favicon.ico";
-        definedAliases = [ ":nos" ];
+        definedAliases = [ ":hm" ];
       };
     };
   };
 
   mkProfile = { name, id, extraConfig ? { } }: {
     inherit id name;
+
+    presets.betterfox.enable = true;
 
     settings = settings-profile;
     inherit keyboardShortcuts;
