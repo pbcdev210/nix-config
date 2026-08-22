@@ -14,7 +14,6 @@
 
     packages = [
       "com.valvesoftware.Steam"
-      "com.wps.Office"
       "com.bitwarden.desktop"
       "com.usebottles.bottles"
       "com.discordapp.Discord"

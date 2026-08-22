@@ -36,6 +36,7 @@
     "${dirs.home.programs}/vivaldi"
     "${dirs.home.programs}/vscode"
     "${dirs.home.programs}/wezterm"
+    "${dirs.home.programs}/wps-office"
     "${dirs.home.programs}/zen-browser"
     "${dirs.home.programs}/zoxide"
     "${dirs.home.programs}/zsh"

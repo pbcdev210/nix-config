@@ -234,5 +234,10 @@
       url = "github:pbcdev210/sklauncher-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    wps-office = {
+      url = "github:alex-karev/wpsoffice-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

@@ -908,6 +908,7 @@
         "vscode-extensions": "vscode-extensions",
         "waycal": "waycal",
         "wezterm-types": "wezterm-types",
+        "wps-office": "wps-office",
         "zen-browser": "zen-browser",
         "zen-browser-package": "zen-browser-package"
       }
@@ -1281,6 +1282,26 @@
       "original": {
         "owner": "DrKJeff16",
         "repo": "wezterm-types",
+        "type": "github"
+      }
+    },
+    "wps-office": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763010066,
+        "narHash": "sha256-6CHqEYyIBm+NK+pyCWDk04To2ZuX4TFH1tSwL+FbUMc=",
+        "owner": "alex-karev",
+        "repo": "wpsoffice-flake",
+        "rev": "ebd64051f3ac2f7ca82111af300e3e01531e15c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alex-karev",
+        "repo": "wpsoffice-flake",
         "type": "github"
       }
     },
