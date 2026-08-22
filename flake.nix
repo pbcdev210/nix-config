@@ -110,7 +110,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ==================== system ====================
+    # system
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.1.0";
@@ -122,14 +122,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ==================== home ====================
+    # home
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ======================= theme ==========================
+    # theme
 
     stylix = {
       url = "github:nix-community/stylix";
@@ -143,7 +143,7 @@
       flake = false;
     };
 
-    # ======================= niri ==========================
+    # niri
 
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -155,7 +155,7 @@
       flake = false;
     };
 
-    # ======================= plasma ========================
+    # plasma
 
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
@@ -163,7 +163,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # ======================= nixvim ========================
+    # nixvim
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -180,28 +180,41 @@
       flake = false;
     };
 
-    # ======================= emacs =========================
+    # emacs
 
     nix-doom-emacs-unstraightened = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ======================== firefox ==============================
+    # firefox
 
     nix-firefox-addons = {
       url = "github:osipog/nix-firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ======================= nushell ==============================
+    # zen browser
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    zen-browser-package = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # nushell
 
     nushell-highlight = {
       url = "git+https://github.com/cptpiepmatz/nu-plugin-highlight?submodules=1";
       flake = false;
     };
 
-    # ======================= miscelaneous ===========================
+    # miscelaneous
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";
     claude-desktop.url = "github:Reginleif88/claude-cowork-nix";
