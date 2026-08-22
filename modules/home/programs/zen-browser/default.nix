@@ -1,20 +1,11 @@
 { inputs, pkgs, ... }@args:
 let
-  settings-profile = {
-    "extensions.autoDisableScopes" = 0;
-    "browser.ctrlTab.sortByRecentlyUsed" = true;
-
-    "browser.tabs.allow_transparent_browser" = true;
-    "zen.widget.linux.transparency" = true;
-  };
-
-  mods = [
-
-  ];
+  settings-profile = { };
+  mods = [ ];
 
   extensions = import ./extensions.nix args;
   keyboardShortcuts = import ./shortcuts.nix;
-  policies = { };
+  policies = import ./policies.nix args;
 
   search = {
     force = true;
