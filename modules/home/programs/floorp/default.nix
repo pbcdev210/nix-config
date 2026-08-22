@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }@args:
 let
   settings-profile = { };
-  mods = [ ];
 
   extensions = import ./extensions.nix args;
   keyboardShortcuts = import ./shortcuts.nix;
@@ -26,6 +25,13 @@ let
         definedAliases = [ ":gh" ];
       };
 
+      nuget = {
+        name = "nuget";
+        urls = [{ template = "https://www.nuget.org/packages?q={searchTerms}"; }];
+        icon = "https://nuget.org/public/favicon.ico";
+        definedAliases = [ ":ng" ];
+      };
+
       nixpkgs = {
         name = "nixpkgs";
         urls = [{ template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; }];
@@ -46,24 +52,26 @@ let
         icon = "https://nixos.org/favicon.ico";
         definedAliases = [ ":hm" ];
       };
+
+      youtube = {
+        name = "youtube";
+        urls = [{ template = "https://www.youtube.com/results?search_query={searchTerms}"; }];
+        icon = "https://youtube.com/favicon.ico";
+        definedAliases = [ ":yt" ];
+      };
     };
   };
 
   mkProfile = { name, id, extraConfig ? { } }: {
     inherit id name;
 
-    presets.betterfox.enable = true;
-
     settings = settings-profile;
-    inherit keyboardShortcuts;
-    keyboardShortcutsVersion = 20;
-    inherit extensions mods search;
+    inherit extensions search;
   } // extraConfig;
 in
 {
-  programs.zen-browser = {
+  programs.floorp = {
     enable = true;
-    package = inputs.zen-browser-package.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
     inherit policies;
 
@@ -84,18 +92,4 @@ in
       };
     };
   };
-
-  programs.niri.settings.window-rules = [{
-    matches = [{ title = "Zen Browser$"; }];
-    # background-effect = {
-    #   blur = true;
-    # };
-    #
-    # geometry-corner-radius = 12.0;
-    clip-to-geometry = true;
-  }];
-
-  imports = [
-    inputs.zen-browser.homeModules.beta
-  ];
 }

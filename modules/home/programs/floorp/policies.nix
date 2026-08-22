@@ -5,12 +5,15 @@
     "browser.ctrlTab.sortByRecentlyUsed" = true;
 
     "browser.tabs.allow_transparent_browser" = true;
-    "zen.widget.linux.transparency" = true;
+
+    "browser.startup.page" = 3;
+
+    "floorp.keyboardshortcut.config" = builtins.readFile ./shortcuts.json;
   };
 
   TranslateEnabled = true;
   AutofillAddressEnabled = true;
-  AutofillCreditCardEnabled =false;
+  AutofillCreditCardEnabled = false;
 
   DisableFirefoxStudies = true;
   DisablePocket = true;

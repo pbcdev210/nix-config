@@ -14,6 +14,7 @@
     "${dirs.home.programs}/fd"
     "${dirs.home.programs}/firefox"
     "${dirs.home.programs}/fish"
+    "${dirs.home.programs}/floorp"
     "${dirs.home.programs}/fzf"
     "${dirs.home.programs}/gh"
     "${dirs.home.programs}/git"
@@ -37,7 +38,7 @@
     "${dirs.home.programs}/vscode"
     "${dirs.home.programs}/wezterm"
     "${dirs.home.programs}/wps-office"
-    "${dirs.home.programs}/zen-browser"
+    # "${dirs.home.programs}/zen-browser"
     "${dirs.home.programs}/zoxide"
     "${dirs.home.programs}/zsh"
 
