@@ -33,7 +33,7 @@
   };
 
   programs.nsticky.settings = {
-    pip.app-id = "Picture in picture";
+    pip.title = "Picture in picture";
   };
 
   imports = [
