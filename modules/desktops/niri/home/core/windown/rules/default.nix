@@ -32,8 +32,8 @@
     ];
   };
 
-  programs.nsticky.settings = {
-    pip.title = "Picture in picture";
+  programs.nsticky.settings.sticky = {
+    pip.title = "^Picture in picture$";
   };
 
   imports = [
