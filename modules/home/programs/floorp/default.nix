@@ -7,7 +7,7 @@ let
     "browser.tabs.allow_transparent_browser" = true;
 
     "browser.startup.page" = 3;
-    "firefoxcss.disable.tab.preview.panel.fully" = true;
+    "browser.tabs.warnOnClose" = true;
 
     "floorp.zenmode.enabled" = false;
     "floorp.panelSidebar.enabled" = false;
@@ -18,11 +18,13 @@ let
     "browser.uiCustomization.state" = builtins.readFile ./toolbar.json;
     "browser.toolbars.bookmarks.visibility" = "alway";
 
+    # core
     "devtools.chrome.enabled" = true;
     "devtools.debugger.remote-enabled" = true;
     "devtools.debugger.prompt-connection" = false;
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
+    # keymaps
     "floorp.keyboardshortcut.config" = builtins.readFile ./shortcuts.json;
     "floorp.keyboardshortcut.enabled" = true;
   } // customCss.settings;
