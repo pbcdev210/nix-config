@@ -29,10 +29,6 @@ let
     "floorp.keyboardshortcut.enabled" = true;
   } // customCss.settings;
 
-  extensions = (import ./extensions.nix) args;
-  policies = (import ./policies.nix) args;
-  customCss = (import ./customCss.nix) args;
-
   search = {
     force = true;
     default = "google";
@@ -88,6 +84,12 @@ let
       };
     };
   };
+
+  bookmarks = {};
+
+  extensions = (import ./extensions.nix) args;
+  policies = (import ./policies.nix) args;
+  customCss = (import ./customCss.nix) args;
 
   mkProfile = { name, id, extraConfig ? { } }: {
     inherit id name;
