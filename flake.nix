@@ -155,6 +155,11 @@
       flake = false;
     };
 
+    nsticky = {
+      url = "github:lonerOrz/nsticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # plasma
 
     plasma-manager = {

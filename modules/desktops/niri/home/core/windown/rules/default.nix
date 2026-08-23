@@ -31,4 +31,12 @@
       }
     ];
   };
+
+  programs.nsticky.settings = {
+    pip.app-id = "Picture in picture";
+  };
+
+  imports = [
+    ./nsticky.nix
+  ];
 }
