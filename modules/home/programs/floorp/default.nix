@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }@args:
 let
   settings-profile = {
     "extensions.autoDisableScopes" = 0;
@@ -7,17 +7,29 @@ let
     "browser.tabs.allow_transparent_browser" = true;
 
     "browser.startup.page" = 3;
+    "firefoxcss.disable.tab.preview.panel.fully" = true;
+
+    "floorp.zenmode.enabled" = false;
+    "floorp.panelSidebar.enabled" = false;
+
+    "sidebar.verticalTabs" = true;
+    "sidebar.expandOnHover" = true;
+
+    "browser.uiCustomization.state" = builtins.readFile ./toolbar.json;
+    "browser.toolbars.bookmarks.visibility" = "alway";
+
+    "devtools.chrome.enabled" = true;
+    "devtools.debugger.remote-enabled" = true;
+    "devtools.debugger.prompt-connection" = false;
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
     "floorp.keyboardshortcut.config" = builtins.readFile ./shortcuts.json;
     "floorp.keyboardshortcut.enabled" = true;
+  } // customCss.settings;
 
-    "floorp.zenmode.enabled" = false;
-
-    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-  };
-
-  extensions = import ./extensions.nix { inherit pkgs; };
-  policies = import ./policies.nix { inherit pkgs; };
+  extensions = (import ./extensions.nix) args;
+  policies = (import ./policies.nix) args;
+  customCss = (import ./customCss.nix) args;
 
   search = {
     force = true;
@@ -80,6 +92,9 @@ let
 
     settings = settings-profile;
     inherit extensions search;
+
+    userChrome = customCss.chrome;
+    userContent = customCss.content;
   } // extraConfig;
 in
 {

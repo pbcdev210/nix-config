@@ -187,25 +187,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # firefox
+    # firefox/floorp
 
     nix-firefox-addons = {
       url = "github:osipog/nix-firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # zen browser
-    #
-    # zen-browser = {
-    #   url = "github:0xc000022070/zen-browser-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.home-manager.follows = "home-manager";
-    # };
-    #
-    # zen-browser-package = {
-    #   url = "github:youwen5/zen-browser-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    firefox-mods = {
+      url = "github:datguypiko/Firefox-Mod-Blur";
+      flake = false;
+    };
+
+    firefox-mods-2 = {
+      url = "github:MrOtherGuy/firefox-csshacks";
+      flake = false;
+    };
 
     # nushell
 

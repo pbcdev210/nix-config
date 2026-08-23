@@ -231,6 +231,38 @@
         "type": "github"
       }
     },
+    "firefox-mods": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787331198,
+        "narHash": "sha256-1lt7nGS+Ufxu2MUIdSKf9KKW2k+8+RczsBNr5sg04xk=",
+        "owner": "datguypiko",
+        "repo": "Firefox-Mod-Blur",
+        "rev": "8860f7d38cf6ea1f0eea58bee521cfd5cf897c27",
+        "type": "github"
+      },
+      "original": {
+        "owner": "datguypiko",
+        "repo": "Firefox-Mod-Blur",
+        "type": "github"
+      }
+    },
+    "firefox-mods-2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787237533,
+        "narHash": "sha256-+6rNH0DFL72thjDCsmptibrnxcsg8jxjyhuhgqR7RMQ=",
+        "owner": "MrOtherGuy",
+        "repo": "firefox-csshacks",
+        "rev": "d61130b4f4d056daa7018948193f1356e14841c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MrOtherGuy",
+        "repo": "firefox-csshacks",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -885,6 +917,8 @@
         "catppuccin": "catppuccin",
         "chaotic": "chaotic",
         "claude-desktop": "claude-desktop",
+        "firefox-mods": "firefox-mods",
+        "firefox-mods-2": "firefox-mods-2",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
         "lanzaboote": "lanzaboote",
