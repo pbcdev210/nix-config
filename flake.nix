@@ -42,12 +42,12 @@
           };
         };
 
-        devShells.default = import ./modules/devshell.nix { inherit pkgs; };
+        devShells.default = import ./devshell.nix { inherit pkgs; };
       };
 
       flake =
         let
-          builder = import ./modules/builder {
+          builder = import ./builder {
             extraHomeModules = with inputs; [
               sops-nix.homeManagerModules.sops
             ];
