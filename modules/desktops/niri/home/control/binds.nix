@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  volumeControl = pkgs.myScripts.volume-control;
-  brightnessControl = pkgs.myScripts.brightness-control;
+  volume-control = pkgs.myScripts.volume-control;
+  brightness-control = pkgs.myScripts.brightness-control;
   player-control = "${pkgs.playerctl}/bin/playerctl";
 in
 {
@@ -9,28 +9,28 @@ in
     "XF86AudioRaiseVolume" = {
       allow-when-locked = true;
       action.spawn = [
-        "${volumeControl}/bin/volume-control"
+        "${volume-control}/bin/volume-control"
         "--inc"
       ];
     };
     "XF86AudioLowerVolume" = {
       allow-when-locked = true;
       action.spawn = [
-        "${volumeControl}/bin/volume-control"
+        "${volume-control}/bin/volume-control"
         "--dec"
       ];
     };
     "XF86AudioMute" = {
       allow-when-locked = true;
       action.spawn = [
-        "${volumeControl}/bin/volume-control"
+        "${volume-control}/bin/volume-control"
         "--toggle"
       ];
     };
     "XF86AudioMicMute" = {
       allow-when-locked = true;
       action.spawn = [
-        "${volumeControl}/bin/volume-control"
+        "${volume-control}/bin/volume-control"
         "--toggle-mic"
       ];
     };
@@ -54,20 +54,20 @@ in
 
     "XF86MonBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--inc" ];
+      action.spawn = [ "${brightness-control}/bin/brightness-control" "--inc" ];
     };
     "XF86MonBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--dec" ];
+      action.spawn = [ "${brightness-control}/bin/brightness-control" "--dec" ];
     };
 
     "XF86HomePage" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--inc" ];
+      action.spawn = [ "${brightness-control}/bin/brightness-control" "--inc" ];
     };
     "XF86Mail" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightnessControl}/bin/brightness-control" "--dec" ];
+      action.spawn = [ "${brightness-control}/bin/brightness-control" "--dec" ];
     };
   };
 }
