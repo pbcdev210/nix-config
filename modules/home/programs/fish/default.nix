@@ -25,6 +25,7 @@
       bind alt-tab complete-and-search
       bind tab accept-autosuggestion
       bind alt-q _fzf_search_directory
+      bind alt-l clear-screen
 
       bind ctrl-l forward-token
       bind ctrl-h backward-token
