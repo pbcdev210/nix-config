@@ -33,7 +33,7 @@
         inputs.treefmt-nix.flakeModule
       ];
 
-      perSystem = { pkgs, ... }: {
+      perSystem = { ... }: {
         treefmt.config = {
           projectRootFile = "flake.nix";
           programs = {
@@ -42,7 +42,7 @@
           };
         };
 
-        devShells.default = import ./devshell.nix { inherit pkgs; };
+        # devShells.default = import ./devshell.nix { inherit pkgs; };
       };
 
       flake =
