@@ -10,7 +10,6 @@
     "${dirs.system.services}/ngrok"
     # "${dirs.system.services}/openssh"
     "${dirs.system.services}/pipewire"
-    "${dirs.system.services}/sddm"
     "${dirs.system.services}/systemd-resolved"
     "${dirs.system.services}/vaultwarden"
     "${dirs.system.services}/wayland"
