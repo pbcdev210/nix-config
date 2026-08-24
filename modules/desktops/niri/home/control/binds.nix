@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  volume-control = pkgs.myScripts.volume-control;
-  brightness-control = pkgs.myScripts.brightness-control;
+  volume-control = pkgs.myPkgs.volume-control;
+  brightness-control = pkgs.myPkgs.brightness-control;
   player-control = "${pkgs.playerctl}/bin/playerctl";
 in
 {

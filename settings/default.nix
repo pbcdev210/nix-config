@@ -6,10 +6,11 @@ rec {
   tools = import ./tools.nix;
   network = import ./network.nix;
 
-  dirs = {
+  dirs = rec {
     home = "/home/${identity.username}";
     nixConfig = "/workspaces/nix-config";
     nixConfigBot = "/workspaces/nix-config-bot";
+    data = "${nixConfigBot}/data";
   };
 
   glyphs = import ./glyphs.nix;
@@ -21,7 +22,7 @@ rec {
   };
 
   ssh = {
-    pub = builtins.readFile ../secrets/ssh.pub;
+    pub = builtins.readFile "${dirs.data}/ssh.pub";
     privateKeyPath = "${dirs.home}/.ssh/id_ed25519";
   };
 

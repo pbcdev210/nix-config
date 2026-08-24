@@ -1,11 +1,11 @@
 { pkgs, settings, config, ... }:
 let
-  repoBot = settings.dirs.nixConfigBot;
+  dataDir = settings.dirs.data;
   dbFile = "${config.services.vaultwarden.backupDir}/db.sqlite3";
   rsaFile = "${config.services.vaultwarden.backupDir}/rsa_key.pem";
 
-  hashFile = "${repoBot}/secrets/vaultwarden.sha256";
-  encryptedBackup = "${repoBot}/secrets/vaultwarden.backup.tar.gz.age";
+  hashFile = "${dataDir}/vaultwarden.sha256";
+  encryptedBackup = "${dataDir}/vaultwarden.backup.tar.gz.age";
 in
 {
   services.vaultwarden = {
@@ -52,16 +52,16 @@ in
         exit 1
       fi
 
-      if ! ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${repoBot}" rev-parse --git-dir > /dev/null 2>&1; then
-        rm -rf "${repoBot}"
+      if ! ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" rev-parse --git-dir > /dev/null 2>&1; then
+        rm -rf "${dataDir}"
         echo "INFO: Clone repo ${settings.repo.github}"
-        ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git clone ${settings.repo.github} ${repoBot}
+        ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git clone ${settings.repo.github} ${dataDir}
       else
-        ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${repoBot}" fetch
+        ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" fetch
 
-        if [ "$(${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${repoBot}" rev-parse HEAD)" != "$(${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${repoBot}" rev-parse @{u})" ]; then
-          echo "INFO: Pull repo ${repoBot}"
-          ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${repoBot}" pull
+        if [ "$(${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" rev-parse HEAD)" != "$(${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" rev-parse @{u})" ]; then
+          echo "INFO: Pull repo"
+          ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" pull
         fi
       fi
 
@@ -91,7 +91,7 @@ in
           chown ${settings.identity.username}:wheel "${encryptedBackup}" "${hashFile}"
 
           ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.bash}/bin/bash << EOF
-            cd ${repoBot}
+            cd ${settings.dirs.nixConfigBot}
 
             ${pkgs.git}/bin/git reset
             ${pkgs.git}/bin/git add ${encryptedBackup} ${hashFile}
