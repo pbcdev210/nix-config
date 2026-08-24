@@ -1,7 +1,7 @@
-{ pkgs, dirs, ... }:
+{ pkgs, ... }:
 let
-  volumeControl = import ./scripts/volume-control.nix { inherit pkgs dirs; };
-  brightnessControl = import ./scripts/brightness-control.nix { inherit pkgs dirs; };
+  volumeControl = pkgs.myScripts.volume-control;
+  brightnessControl = pkgs.myScripts.brightness-control;
   player-control = "${pkgs.playerctl}/bin/playerctl";
 in
 {

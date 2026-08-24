@@ -19,7 +19,6 @@
       volume = 80;
       volume-max = 150;
 
-      # Lưu lại vị trí đang xem khi thoát (Resume playback)
       save-position-on-quit = true;
 
       osc = "no";
