@@ -13,7 +13,7 @@
 # Preferences path: ~/.config/vivaldi/$VIVALDI_PROFILE/Preferences (profile defaults to "Default")
 # Version priority: $VIVALDI_VERSION > Preferences.browser.last_known_version > Preferences.last_known_version
 
-const ACTIONS_FILENAME = "actions.json"
+const ACTIONS_FILENAME = "actions.vivaldi.json"
 const CHECKSUM_FILENAME = "actions.vivaldi.sha256"
 const VERSION_FILENAME = "vivaldi.version"
 const DEFAULT_REPO_DIR = "~/.local/share/vivaldi-backup"
