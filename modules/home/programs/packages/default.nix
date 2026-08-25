@@ -10,5 +10,6 @@
     sops
     jq
     file
+    myPkgs.vivaldi-backup
   ];
 }
