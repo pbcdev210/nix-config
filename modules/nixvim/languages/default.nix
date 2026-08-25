@@ -15,6 +15,7 @@
     ./md
     ./mdx
     ./nix
+    ./nushell
     ./python
     ./rust
     ./sh
