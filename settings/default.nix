@@ -2,9 +2,31 @@ rec {
   timeZone = "Asia/Ho_Chi_Minh";
   locale = "en_US.UTF-8";
 
-  identity = import ./identity.nix;
+  identity = {
+    name = "PBCDev";
+    username = "pbcdev";
+
+    email = {
+      main = "baochaupham4096@gmail.com";
+      sub = "baochaupham3205@gmail.com";
+    };
+  };
+
   tools = import ./tools.nix;
-  network = import ./network.nix;
+
+  network = {
+    dns = {
+      ipv4 = [
+        "1.1.1.1"
+        "8.8.8.8"
+      ];
+
+      ipv6 = [
+        "2606:4700:4700::1111"
+        "2001:4860:4860::8888"
+      ];
+    };
+  };
 
   dirs = rec {
     home = "/home/${identity.username}";
