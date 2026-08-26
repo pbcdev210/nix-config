@@ -6,7 +6,7 @@
         volume-control = final.callPackage ./volume-control extraArgv;
         brightness-control = final.callPackage ./brightness-control extraArgv;
         vivaldi-backup = final.callPackage ./vivaldi-backup extraArgv;
-        audio-ducking = final.callPackage ./audio-ducking extraArgv;
+        audio-manager = final.callPackage ./audio-manager extraArgv;
       };
     })
 ]

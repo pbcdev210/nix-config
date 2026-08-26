@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  systemd.user.services.audio-ducking = {
+  systemd.user.services.audio-manager = {
     Unit = {
       Description = "Smart Audio Ducking Service (PipeWire/WirePlumber)";
       After = [ "pipewire.service" "wireplumber.service" ];
@@ -10,12 +10,7 @@
     Service = {
       Type = "simple";
       ExecStart = ''
-        ${pkgs.myPkgs.audio-ducking}/bin/audio-ducking \
-          --source-a "spotify" \
-          --source-b "*" \
-          --duck-vol 0.50 \
-          --check-interval 0.2 \
-          --grace-period 1.5
+        ${pkgs.myPkgs.audio-manager}/bin/audio-manager
       '';
 
       Restart = "on-failure";
@@ -30,3 +25,4 @@
     };
   };
 }
+

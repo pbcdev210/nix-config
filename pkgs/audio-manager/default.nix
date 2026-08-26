@@ -1,11 +1,12 @@
 { pkgs, ... }:
 pkgs.writeShellApplication {
-  name = "audio-ducking";
+  name = "audio-manager";
 
   runtimeInputs = with pkgs; [
     python3
     pipewire
     wireplumber
+    playerctl
   ];
 
   text = ''
