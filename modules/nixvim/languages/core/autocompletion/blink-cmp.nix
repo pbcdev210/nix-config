@@ -9,8 +9,8 @@
       keymap = {
         preset = "none";
 
-        "<A-Tab>" = [ "select_next" "fallback" ];
-        "<A-q>" = [ "select_prev" "fallback" ];
+        "<A-j>" = [ "select_next" "fallback" ];
+        "<A-k>" = [ "select_prev" "fallback" ];
 
         "<Down>" = [ "select_next" "fallback" ];
         "<Up>" = [ "select_prev" "fallback" ];
@@ -21,67 +21,72 @@
 
       appearance = {
         nerd_font_variant = "mono";
-        use_nvim_cmp_as_default = false;
+        use_nvim_cmp_as_default = true;
       };
 
       completion = {
         accept.auto_brackets.enabled = true;
+        trigger = {
+          show_on_keyword = true;
+          show_on_trigger_character = true;
+        };
+
+        documentation = {
+          auto_show = true;
+          auto_show_delay_ms = 200;
+          window.border = "rounded";
+          windown.winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None,CurSearch:None";
+        };
+
+        ghost_text = {
+          enabled = true;
+          show_with_menu = true;
+        };
 
         menu = {
+          auto_show = true;
+
           border = "rounded";
-          max_height = 10;
-          min_width = 15;
           draw = {
-            columns = [
-              [ "kind_icon" "label" "label_description" ]
-              [ "kind" ]
-            ];
-            kind_icon = {
-              ellipsis = false;
+            columns.__raw = ''
+              { { "label", "label_description", gap = 1 }, { "kind_icon", gap = 1, "kind" } }
+            '';
+            components = {
+              kind_icon = {
+                ellipsis = false;
 
-              text.__raw = ''
-                function(ctx)
-                  local icon = ctx.kind_icon
-                  if ctx.item.source_name == "Path" then
-                    local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
-                    if dev_icon then
-                      icon = dev_icon
+                text.__raw = ''
+                  function(ctx)
+                    local icon = ctx.kind_icon
+                    if ctx.item.source_name == "Path" then
+                      local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
+                      if dev_icon then
+                        icon = dev_icon
+                      end
+                    else
+                      icon = require("lspkind").symbolic(ctx.kind, { mode = "symbol" })
                     end
-                  else
-                    icon = require("lspkind").symbolic(ctx.kind, { mode = "symbol" })
+                    return icon .. ctx.icon_gap
                   end
-                  return icon .. ctx.icon_gap
-                end
-              '';
+                '';
 
-              highlight.__raw = ''
-                function(ctx)
-                  local hl = ctx.kind_hl
-                  if ctx.item.source_name == "Path" then
-                    local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
-                    if dev_icon then
-                      hl = dev_hl
+                highlight.__raw = ''
+                  function(ctx)
+                    local hl = ctx.kind_hl
+                    if ctx.item.source_name == "Path" then
+                      local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
+                      if dev_icon then
+                        hl = dev_hl
+                      end
                     end
+                    return hl
                   end
-                  return hl
-                end
-              '';
+                '';
+              };
             };
           };
         };
       };
-
-      documentation = {
-        auto_show = true;
-        auto_show_delay_ms = 200;
-        window.border = "rounded";
-      };
-
-      ghost_text.enabled = true;
-
-      trigger.show_on_keyword = true;
-
-      window.border = "rounded";
 
       fuzzy = {
         frecency.enabled = true;
@@ -93,27 +98,32 @@
       snippets = {
         preset = "luasnip";
       };
+
       sources = {
         default = [ "lsp" "path" "snippets" "buffer" ];
 
         providers = {
           lsp = {
+            enabled = true;
             name = "LSP";
             module = "blink.cmp.sources.lsp";
             score_offset = 90;
           };
           path = {
+            enabled = true;
             name = "Path";
             module = "blink.cmp.sources.path";
             score_offset = 3;
             opts.trailing_slash = false;
           };
           snippets = {
+            enabled = true;
             name = "Snippets";
             module = "blink.cmp.sources.snippets";
             score_offset = 85;
           };
           buffer = {
+            enabled = true;
             name = "Buffer";
             module = "blink.cmp.sources.buffer";
             score_offset = 0;
@@ -121,7 +131,10 @@
           };
         };
       };
+
+      signature = {
+        enabled = true;
+      };
     };
   };
 }
-
