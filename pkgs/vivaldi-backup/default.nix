@@ -13,13 +13,6 @@ pkgs.writeShellApplication {
     REPO_BACKUP="${settings.dirs.nixConfigBot}"
     export VIVALDI_VERSION
     export REPO_BACKUP
-    nu ${./vivaldi_actions_manager.nu} --backup
+    nu ${./vivaldi_actions_manager.nu} "$@"
   '';
 }
-
-
-
-
-
-
-
