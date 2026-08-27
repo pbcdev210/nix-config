@@ -16,6 +16,7 @@
     ./img
     ./languages
     ./learn
+    ./neovide
     ./project
     ./terminal
     ./ui
