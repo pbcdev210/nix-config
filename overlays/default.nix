@@ -1,6 +1,6 @@
 { inputs }:
 [
-  (import ./dotnet-sdk10-bin)
+  (import ./dotnet)
   (import ./waycal { inherit inputs; })
   (import ./nushell-plugins { inherit inputs; })
 ]
