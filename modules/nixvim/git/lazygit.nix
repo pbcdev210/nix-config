@@ -25,7 +25,7 @@
       {
         mode = "t";
         key = "<C-;>";
-        action = "<cmd>close<CR>";
+        action = "q";
         options = {
           desc = "close lazygit";
           silent = true;
