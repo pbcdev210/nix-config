@@ -78,6 +78,17 @@
     };
   };
 
+  programs.nixvim.plugins.neo-tree.settings.event_handlers = [
+    {
+      event = "file_opened";
+      handler.__raw = ''
+        function(file_path)
+          require("neo-tree.command").execute({ action = "close" })
+        end
+      '';
+    }
+  ];
+
   programs.nixvim.keymaps = [
     {
       mode = "n";
