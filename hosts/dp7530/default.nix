@@ -23,16 +23,15 @@
     };
   };
 
+  services.scx.enable = true;
+  services.scx.scheduler = "scx_rustland";
+
+  host-config.gpuDrivers = [ "intel" ];
+
+
   imports = [
     ./hardware-configuration.nix
 
     inputs.lanzaboote.nixosModules.lanzaboote
   ];
-
-  #stylix.targets.plymouth.enable = true;
-
-  services.scx.enable = true;
-  services.scx.scheduler = "scx_rustland";
-
-  host-config.gpuDrivers = [ "intel" ];
 }

@@ -17,7 +17,3 @@ inputs.home-manager.lib.homeManagerConfiguration {
   inherit pkgs modules;
   extraSpecialArgs = extraArgv;
 }
-
-
-
-

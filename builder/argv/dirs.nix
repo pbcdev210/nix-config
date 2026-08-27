@@ -3,24 +3,21 @@ rec {
   nixConfig = "${inputs.self}";
   overlay = "${nixConfig}/overlays";
   assets = "${nixConfig}/assets";
-  desktops = "${nixConfig}/modules/desktops";
+  desktops = "${nixConfig}/desktops";
   profiles = "${nixConfig}/profiles";
   hosts = "${nixConfig}/hosts";
-  modules = "${nixConfig}/modules";
   data = "${nixConfig}/data";
 
   system = rec {
-    root = "${nixConfig}/modules/system";
+    root = "${nixConfig}/system";
     programs = "${root}/programs";
     services = "${root}/services";
-    modules = "${root}/modules";
   };
 
   home = rec {
-    root = "${nixConfig}/modules/home";
+    root = "${nixConfig}/home";
     programs = "${root}/programs";
     services = "${root}/services";
-    modules = "${root}/modules";
     develop = "${root}/develop";
   };
 }
