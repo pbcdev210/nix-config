@@ -1,5 +1,5 @@
 {
-  programs.nixvim.diagnostic = {
+  diagnostic = {
     settings = {
       update_in_insert = true;
       float = {

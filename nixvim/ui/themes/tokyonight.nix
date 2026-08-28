@@ -1,6 +1,6 @@
 {
-  programs.nixvim.colorschemes.tokyonight = {
-    enable = false;
+  colorschemes.tokyonight = {
+    enable = true;
 
     settings = {
       style = "night";

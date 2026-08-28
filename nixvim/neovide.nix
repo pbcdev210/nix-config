@@ -1,17 +1,5 @@
-{ config, ... }:
 {
-  # home.packages = with pkgs; [ neovide ];
-
-  programs.neovide = {
-    enable = true;
-    settings = {
-      font.size = config.stylix.fonts.sizes.terminal;
-      font.normal = config.stylix.fonts.monospace.name;
-      wayland-app-id = "neovim";
-    };
-  };
-
-  programs.nixvim.globals = {
+  globals = {
     # https://github.com/neovide/neovide/issues/2275
     neovide_opacity = 1;
 

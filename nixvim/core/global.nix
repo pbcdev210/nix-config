@@ -1,5 +1,5 @@
 {
-  programs.nixvim.globals = {
+  globals = {
     editorconfig.enable = true;
   };
 }

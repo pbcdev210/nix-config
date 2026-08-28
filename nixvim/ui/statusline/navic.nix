@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.navic = {
+  plugins.navic = {
     enable = true;
     settings = {
       highlight = true;
@@ -21,7 +21,7 @@
     };
   };
 
-  programs.nixvim.lsp.onAttach = ''
+  lsp.onAttach = ''
     if client.server_capabilities.documentSymbolProvider then
       require("nvim-navic").attach(client, bufnr)
     end

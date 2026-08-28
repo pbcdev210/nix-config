@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.web-devicons = {
+  plugins.web-devicons = {
     enable = true;
     settings = {
       default = true;

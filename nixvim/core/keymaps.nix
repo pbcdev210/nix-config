@@ -1,13 +1,11 @@
 {
-  programs.nixvim = {
-    globals.mapleader = " ";
+  globals.mapleader = " ";
 
-    keymaps = [
-      {
-        mode = "n";
-        key = ";";
-        action = ":";
-      }
-    ];
-  };
+  keymaps = [
+    {
+      mode = "n";
+      key = ";";
+      action = ":";
+    }
+  ];
 }

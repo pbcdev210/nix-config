@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  programs.nixvim.plugins.lsp.servers.lua_ls = {
+  plugins.lsp.servers.lua_ls = {
     enable = true;
     extraOptions = {
       settings = {
@@ -19,7 +19,7 @@
     };
   };
 
-  programs.nixvim.plugins.treesitter.settings.ensure_installed = [ "lua" ];
-  programs.nixvim.plugins.conform-nvim.settings.formatters_by_ft = { lua = [ "stylua" ]; };
+  plugins.treesitter.settings.ensure_installed = [ "lua" ];
+  plugins.conform-nvim.settings.formatters_by_ft = { lua = [ "stylua" ]; };
 }
 

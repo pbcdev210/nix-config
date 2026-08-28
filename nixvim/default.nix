@@ -1,13 +1,8 @@
 { inputs, ... }:
 {
-  programs.nixvim = {
-    enable = true;
-    nixpkgs.source = inputs.nixpkgs;
-  };
+  nixpkgs.source = inputs.nixpkgs;
 
   imports = [
-    inputs.nixvim.homeModules.nixvim
-
     ./core
     ./edit
     ./file
@@ -24,7 +19,4 @@
     ./direnv.nix
     ./neovide.nix
   ];
-
-  stylix.targets.nixvim.enable = false;
-  stylix.targets.neovim.enable = false;
 }

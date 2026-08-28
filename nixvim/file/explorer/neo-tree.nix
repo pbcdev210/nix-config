@@ -1,6 +1,6 @@
 { settings, ... }:
 {
-  programs.nixvim.plugins.neo-tree = {
+  plugins.neo-tree = {
     enable = true;
 
     settings = {
@@ -78,7 +78,7 @@
     };
   };
 
-  programs.nixvim.plugins.neo-tree.settings.event_handlers = [
+  plugins.neo-tree.settings.event_handlers = [
     {
       event = "file_opened";
       handler.__raw = ''
@@ -89,7 +89,7 @@
     }
   ];
 
-  programs.nixvim.keymaps = [
+  keymaps = [
     {
       mode = "n";
       key = "<leader>e";
@@ -101,5 +101,5 @@
     }
   ];
 
-  programs.nixvim.plugins.lualine.settings.extensions = [ "neo-tree" ];
+  plugins.lualine.settings.extensions = [ "neo-tree" ];
 }

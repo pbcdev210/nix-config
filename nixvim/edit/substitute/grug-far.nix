@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.grug-far = {
+  plugins.grug-far = {
     enable = true;
 
     settings = {
@@ -78,7 +78,7 @@
   };
 
 
-  programs.nixvim.keymaps = [
+  keymaps = [
     {
       mode = "n";
       key = "<leader>fr";

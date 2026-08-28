@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.lsp.servers.jsonls = {
+  plugins.lsp.servers.jsonls = {
     enable = true;
 
     settings = {
@@ -12,9 +12,9 @@
     };
   };
 
-  programs.nixvim.plugins.schemastore.json.enable = true;
+  plugins.schemastore.json.enable = true;
 
-  programs.nixvim.plugins.treesitter.settings.ensure_installed = [ "json" ];
+  plugins.treesitter.settings.ensure_installed = [ "json" ];
 
-  programs.nixvim.plugins.conform-nvim.settings.formatters_by_ft = { json = [ "prettier" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = { json = [ "prettier" ]; };
 }

@@ -1,5 +1,5 @@
 {
-  plugins.direnv = {
+  plugins.snacks = {
     enable = true;
   };
 }

@@ -1,7 +1,7 @@
 {
   imports = [
-    ./catppuccin.nix
-    ./tokyonight.nix
+    # ./catppuccin.nix
+    # ./tokyonight.nix
     ./nightfox.nix
   ];
 }

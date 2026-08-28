@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.lsp.servers.ts_ls = {
+  plugins.lsp.servers.ts_ls = {
     enable = true;
     settings = {
       typescript.inlayHints = {
@@ -20,12 +20,12 @@
     };
   };
 
-  programs.nixvim.plugins.conform-nvim.settings.formatters_by_ft = {
+  plugins.conform-nvim.settings.formatters_by_ft = {
     javascript = [ "prettier" ];
     typescript = [ "prettier" ];
     javascriptreact = [ "prettier" ];
     typescriptreact = [ "prettier" ];
   };
 
-  programs.nixvim.plugins.treesitter.settings.ensure_installed = [ "javascript" "typescript" ];
+  plugins.treesitter.settings.ensure_installed = [ "javascript" "typescript" ];
 }

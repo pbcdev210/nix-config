@@ -26,10 +26,17 @@ let
     (import dirs.desktops { inherit desktop; }).home
   ];
 
+  mkNixvimModules = { extraNixvimModules }: extraModules.nixvim ++ extraNixvimModules ++ [
+    "${dirs.nixConfig}/nixvim"
+  ];
+
+
   home = import ./home.nix { inherit mkPkgs mkHomeModules argv; };
   nixos = import ./nixos.nix { inherit mkPkgs mkNixosModules argv; mkHome = home.mkNonStandalone; };
+  nixvim = import ./nixvim.nix { inherit mkPkgs mkNixvimModules argv; };
 in
 {
   mkNixos = nixos.mk;
   mkHome = home.mk;
+  nixvim = nixvim.mk;
 }

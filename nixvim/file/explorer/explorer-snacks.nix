@@ -1,12 +1,12 @@
 {
-  programs.nixvim.plugins.snacks.settings.explorer = {
+  plugins.snacks.settings.explorer = {
     enabled = true;
 
     replace_netrw = true;
     trash = true;
   };
 
-  programs.nixvim.plugins.snacks.settings.picker.sources.explorer = {
+  plugins.snacks.settings.picker.sources.explorer = {
     tree = true;
     watch = true;
     follow_file = true;
@@ -52,7 +52,7 @@
     };
   };
 
-  programs.nixvim.keymaps = [
+  keymaps = [
     {
       key = "q";
       mode = "n";

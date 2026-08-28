@@ -1,5 +1,5 @@
 {
-  programs.nixvim.lsp.servers.clangd = {
+  lsp.servers.clangd = {
     enable = true;
     config = {
       cmd = [
@@ -20,8 +20,8 @@
     };
   };
 
-  programs.nixvim.plugins.treesitter.settings.ensure_installed = [ "cpp" "c" ];
-  programs.nixvim.plugins.conform-nvim.settings.formatters_by_ft = {
+  plugins.treesitter.settings.ensure_installed = [ "cpp" "c" ];
+  plugins.conform-nvim.settings.formatters_by_ft = {
     h = [ "clang-format" ];
     hpp = [ "clang-format" ];
     c = [ "clang-format" ];

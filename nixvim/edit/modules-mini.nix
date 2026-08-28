@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.mini.modules = {
+  plugins.mini.modules = {
     move = {
       mappings = {
         left = "<C-h>";

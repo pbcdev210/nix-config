@@ -1,5 +1,5 @@
 { pkgs, ... }:
 {
-  programs.nixvim.extraPackages = [ pkgs.imagemagick ];
+  extraPackages = [ pkgs.imagemagick ];
   imports = [ ./image-snacks.nix ];
 }

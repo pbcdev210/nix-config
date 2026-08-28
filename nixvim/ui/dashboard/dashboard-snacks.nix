@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.snacks.settings.dashboard = {
+  plugins.snacks.settings.dashboard = {
     enabled = true;
     width = 60;
     row = null;

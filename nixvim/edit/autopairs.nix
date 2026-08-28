@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.nvim-autopairs = {
+  plugins.nvim-autopairs = {
     enable = true;
     settings = {
       check_ts = true;
@@ -23,7 +23,7 @@
     };
   };
 
-  programs.nixvim.plugins.cmp.settings.event = [
+  plugins.cmp.settings.event = [
     {
       name = "confirm_done";
       user_data = ''

@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.lsp = {
+  plugins.lsp = {
     enable = true;
 
     keymaps = {

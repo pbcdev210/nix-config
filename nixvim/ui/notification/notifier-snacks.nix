@@ -1,6 +1,6 @@
 { settings, ... }:
 {
-  programs.nixvim.plugins.snacks.settings.notifier = {
+  plugins.snacks.settings.notifier = {
     enabled = true;
 
     timeout = 3000;
@@ -40,7 +40,7 @@
     '';
   };
 
-  programs.nixvim.extraConfigLua = ''
+  extraConfigLua = ''
     vim.notify = require("snacks").notifier.notify
   '';
 }

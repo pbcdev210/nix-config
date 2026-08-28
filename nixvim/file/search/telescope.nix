@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.telescope = {
+  plugins.telescope = {
     enable = true;
     settings = {
       defaults = {
@@ -53,7 +53,7 @@
     };
   };
 
-  programs.nixvim.keymaps = [
+  keymaps = [
     {
       mode = "n";
       key = "<leader>ff";

@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.lsp.servers.lemminx = {
+  plugins.lsp.servers.lemminx = {
     enable = true;
     settings = {
       xml = {
@@ -13,7 +13,7 @@
     };
   };
 
-  programs.nixvim.plugins.treesitter.settings.ensure_installed = [ "xml" ];
+  plugins.treesitter.settings.ensure_installed = [ "xml" ];
 
-  programs.nixvim.plugins.conform-nvim.settings.formatters_by_ft = { xml = [ "xmlformatter" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = { xml = [ "xmlformatter" ]; };
 }

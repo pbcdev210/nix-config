@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.lsp.servers.pyright = {
+  plugins.lsp.servers.pyright = {
     enable = true;
 
     settings = {
@@ -12,7 +12,7 @@
     };
   };
 
-  programs.nixvim.plugins.conform-nvim.settings.formatters_by_ft = { py = [ "ruff_format" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = { py = [ "ruff_format" ]; };
 
-  programs.nixvim.plugins.treesitter.settings.ensure_installed = [ "python" ];
+  plugins.treesitter.settings.ensure_installed = [ "python" ];
 }

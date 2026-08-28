@@ -1,5 +1,5 @@
 {
-  programs.nixvim.colorschemes.nightfox = {
+  colorschemes.nightfox = {
     enable = true;
     flavor = "carbonfox";
     settings = {

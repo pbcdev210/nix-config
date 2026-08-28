@@ -11,7 +11,6 @@
       imports = [
         "${r}/flatpak"
 
-
         "${a}/claude-desktop.nix"
         "${a}/sklauncher.nix"
         "${a}/spotify.nix"
@@ -47,6 +46,7 @@
         "${p}/nh.nix"
         "${p}/nix-index.nix"
         "${p}/nix-your-shell.nix"
+        "${p}/nixvim.nix"
         "${p}/ripgrep.nix"
         "${p}/starship.nix"
         "${p}/sunix.nix"
@@ -60,9 +60,7 @@
         "${s}/clipse.nix"
         # "${s}/espanso.nix"
 
-
         "${d}/dotnet"
-        "${dirs.nixConfig}/nixvim"
       ];
     };
 

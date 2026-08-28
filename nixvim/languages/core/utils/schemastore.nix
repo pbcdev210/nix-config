@@ -1,3 +1,3 @@
 {
-  programs.nixvim.plugins.schemastore.enable = true;
+  plugins.schemastore.enable = true;
 }

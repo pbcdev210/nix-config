@@ -1,3 +1,3 @@
 {
-  programs.nixvim.plugins.luasnip = { enable = true; };
+  plugins.luasnip = { enable = true; };
 }

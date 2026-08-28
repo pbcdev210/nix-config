@@ -1,8 +1,8 @@
 {
-  programs.nixvim.plugins.lsp-lines = {
+  plugins.lsp-lines = {
     enable = true;
   };
-  programs.nixvim.diagnostic.settings = {
+  diagnostic.settings = {
     virtual_text = false;
     virtual_lines = true;
   };

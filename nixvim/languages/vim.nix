@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.cmp.cmdline = {
+  plugins.cmp.cmdline = {
     "/" = {
       mapping = {
         __raw = "cmp.mapping.preset.cmdline()";
@@ -23,7 +23,7 @@
     };
   };
 
-  programs.nixvim.plugins.blink-cmp.settings = {
+  plugins.blink-cmp.settings = {
     cmdline = {
       enabled = true;
 

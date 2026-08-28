@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  imports = with inputs; [
-    treesitter-kanata.homeManagerModules.nixvim
+{ inputs, pkgs, ... }: {
+  extraPlugins = with inputs; [
+    treesitter-kanata.packages.${pkgs.stdenv.system}.default
   ];
 }

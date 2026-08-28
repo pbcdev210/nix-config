@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.auto-session = {
+  plugins.auto-session = {
     enable = true;
 
     settings = {
