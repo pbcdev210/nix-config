@@ -35,14 +35,14 @@ window#waybar {
 /* gpu usage */
 #custom-gpu-usage {
   background: @background-color;
-  color: #8BAEF0;
+  color: #8baef0;
   padding: 0 10px;
 }
 
 /* software updates for nix */
 #custom-sunix {
   background: @background-color;
-  color: #8BAEF0;
+  color: #8baef0;
   padding: 0 10px;
 }
 
@@ -165,7 +165,7 @@ window#waybar {
 }
 
 #custom-audio_idle_inhibitor {
-  color: #A66EDB;
+  color: #a66edb;
   background: @background-color;
   padding: 0px 15px;
 }
@@ -209,6 +209,6 @@ window#waybar {
 
 #custom-notification {
   font-family: "JetBrainsMono Nerd Font";
-  color: #A66EDB;
+  color: #a66edb;
   background: @background-color;
 }

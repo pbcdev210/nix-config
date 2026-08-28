@@ -11,7 +11,7 @@
 
   programs.niri.settings = {
     spawn-at-startup = [
-    { argv = [ "nsticky" ]; }
+      { argv = [ "nsticky" ]; }
     ];
 
     workspaces = {

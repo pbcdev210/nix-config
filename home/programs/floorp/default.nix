@@ -85,7 +85,7 @@ let
     };
   };
 
-  bookmarks = {};
+  bookmarks = { };
 
   extensions = (import ./extensions.nix) args;
   policies = (import ./policies.nix) args;

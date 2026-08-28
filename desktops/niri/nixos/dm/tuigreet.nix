@@ -5,7 +5,7 @@
 
     settings = {
       default_session = {
-       user = "greeter";
+        user = "greeter";
         command = "${pkgs.tuigreet}/bin/tuigreet"
           + " --time"
           + " --remember"

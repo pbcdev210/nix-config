@@ -1,8 +1,6 @@
 { ... }:
 {
-  Preferences = {
-    
-  };
+  Preferences = { };
 
   TranslateEnabled = true;
   AutofillAddressEnabled = true;

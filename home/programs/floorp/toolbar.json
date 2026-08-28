@@ -20,21 +20,11 @@
       "customizableui-special-spring2",
       "reset-pbm-toolbar-button"
     ],
-    "toolbar-menubar": [
-      "menubar-items"
-    ],
+    "toolbar-menubar": ["menubar-items"],
     "TabsToolbar": [],
-    "vertical-tabs": [
-      "tabbrowser-tabs"
-    ],
-    "PersonalToolbar": [
-      "personal-bookmarks"
-    ],
-    "nora-statusbar": [
-      "screenshot-button",
-      "fullscreen-button",
-      "status-text"
-    ]
+    "vertical-tabs": ["tabbrowser-tabs"],
+    "PersonalToolbar": ["personal-bookmarks"],
+    "nora-statusbar": ["screenshot-button", "fullscreen-button", "status-text"]
   },
   "seen": [
     "reset-pbm-toolbar-button",
