@@ -3,12 +3,12 @@
   plugins.lsp.servers.nixd = {
     enable = true;
     settings.nixd = {
-      formatting.command = [ "nixpkgs-fmt" ];
+      formatting.command = [ "alejandra" ];
       options = {
         nixpkgs.expr = "import <nixpkgs> { }";
-        nixos.expr = ''(builtins.getFlake "${settings.dirs.nixConfig}").nixosConfigurations.default.options'';
-        home_manager.expr = ''(builtins.getFlake "${settings.dirs.nixConfig}".homeConfigurations.default.options'';
-        nixvim.expr = ''(builtins.getFlake "${settings.dirs.nixConfig}".legacyPackages.${pkgs.stdenv.system}.nixvimEval.options'';
+        nixos.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").nixosConfigurations.default.options'';
+        home_manager.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").homeConfigurations.default.options'';
+        nixvim.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").legacyPackages.${pkgs.stdenv.system}.nixvimEval.options'';
       };
     };
   };
