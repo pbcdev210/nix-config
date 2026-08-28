@@ -78,6 +78,7 @@
               packages = {
                 nixvim = nixvimConfiguration.config.build.package;
               };
+              legacyPackages.nixvimEval = nixvimConfiguration;
 
               # devShells.default = import ./devshell.nix { inherit pkgs; };
             };
