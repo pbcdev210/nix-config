@@ -24,7 +24,7 @@ in
         # "delete" = "x";
 
         "filter" = "f";
-        "quit" = "q";
+        "quit" = "q,esc";
       };
 
       imageDisplay = {
