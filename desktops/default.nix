@@ -1,5 +1,5 @@
 { desktop }: {
-  system = ./${desktop}/system;
+  nixos = ./${desktop}/nixos;
   home = ./${desktop}/home;
 }
 

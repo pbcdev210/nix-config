@@ -1,53 +1,35 @@
-{ extraHomeModules, extraNixosModules, overlays, inputs }:
+{ extraModules, extraOverlays, inputs }:
 let
-  mkPkgs = { system, extraOverlays ? [ ] }: import inputs.nixpkgs {
-    overlays = overlays ++ extraOverlays ++
-      (import "${inputs.self}/overlays" { inherit inputs; }) ++
-      (import "${inputs.self}/pkgs" { inherit extraArgv; });
+  argv' = import ./argv { inherit inputs; };
+  argv = { argv = argv'; } // argv';
+  inherit (argv) dirs;
+  overlays = extraOverlays ++
+    (import "${dirs.overlays}" argv) ++
+    (import "${dirs.pkgs}" argv);
+
+  mkPkgs = { system }: import inputs.nixpkgs {
+    inherit overlays;
     localSystem = system;
     config.allowUnfree = true;
   };
 
-  extraArgv = import ./argv { inherit inputs; };
-
-  homeRaw = import ./home {
-    inherit inputs extraHomeModules extraArgv mkPkgs;
-    inherit mkHomeModules; #  to support the non-standalone configuration
-  };
-
-  systemRaw = import ./system { inherit inputs extraNixosModules extraArgv mkPkgs; mkHome = homeRaw.mkNonStandalone; };
-
-  mkHomeModules = { profile, desktop }: [
-    (import extraArgv.dirs.profiles { inherit profile; }).home
-    (import extraArgv.dirs.desktops { inherit desktop; }).home
-    "${extraArgv.dirs.home.root}/base.nix"
-    ./home/options.nix
+  mkNixosModules = { host, profile, desktop, extraNixosModules }: extraModules.nixos ++ extraNixosModules ++ [
+    "${dirs.modules}/nixos"
+    (import dirs.hosts { inherit host; })
+    (import dirs.profiles { inherit profile; }).nixos
+    (import dirs.desktops { inherit desktop; }).nixos
   ];
 
-  mkSystemModules = { profile, desktop, host }: [
-    (import extraArgv.dirs.profiles { inherit profile; }).system
-    (import extraArgv.dirs.desktops { inherit desktop; }).system
-    (import extraArgv.dirs.hosts { inherit host; })
-    "${extraArgv.dirs.system.root}/base.nix"
-    ./system/options.nix
+  mkHomeModules = { profile, desktop, extraHomeModules }: extraModules.home ++ extraHomeModules ++ [
+    "${dirs.modules}/home"
+    (import dirs.profiles { inherit profile; }).home
+    (import dirs.desktops { inherit desktop; }).home
   ];
+
+  home = import ./home.nix { inherit mkPkgs mkHomeModules argv; };
+  nixos = import ./nixos.nix { inherit mkPkgs mkNixosModules argv; mkHome = home.mkNonStandalone; };
 in
 {
-  home = {
-    mk =
-      { name, desktop, profile, extraModules ? [ ], extraOverlays ? [ ], system }:
-      homeRaw.mk {
-        inherit name desktop profile extraOverlays system;
-        extraModules = extraModules ++ (mkHomeModules { inherit desktop profile; });
-      };
-  };
-
-  system = {
-    mk =
-      { name, desktop, profile, extraModules ? [ ], extraOverlays ? [ ], system, host, homeManager ? true }:
-      systemRaw.mk {
-        inherit name desktop profile extraOverlays system host homeManager;
-        extraModules = extraModules ++ (mkSystemModules { inherit profile desktop host; });
-      };
-  };
+  mkNixos = nixos.mk;
+  mkHome = home.mk;
 }

@@ -1,5 +1,5 @@
 { profile, }:
 {
-  system = import ./${profile}/system.nix;
-  home = import ./${profile}/home.nix;
+  nixos = (import ./${profile}.nix).nixos;
+  home = (import ./${profile}.nix).home;
 }

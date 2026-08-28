@@ -1,4 +1,4 @@
-{ inputs }:
+{ inputs, ... }:
 [
   (import ./dotnet)
   (import ./waycal { inherit inputs; })

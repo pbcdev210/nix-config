@@ -4,4 +4,3 @@
   settings = import "${inputs.self}/settings";
   inherit inputs;
 }
-

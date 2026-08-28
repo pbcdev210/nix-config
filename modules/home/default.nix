@@ -4,5 +4,10 @@
   home.homeDirectory = settings.dirs.home;
   home.stateVersion = "26.05";
 
-  imports = [ ./apps ];
+  imports = [
+    ./input-method
+    ./stylix
+    ./gtk.nix
+    ./systemd.nix
+  ];
 }

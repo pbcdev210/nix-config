@@ -1,4 +1,0 @@
-{ mkHome, ... }:
-{
-  home-manager = mkHome { };
-}

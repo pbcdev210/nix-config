@@ -1,0 +1,83 @@
+{
+  home = { dirs, ... }:
+    let
+      a = dirs.home.apps;
+      r = dirs.home.root;
+      p = dirs.home.programs;
+      s = dirs.home.services;
+      d = dirs.home.develop;
+    in
+    {
+      imports = [
+        "${r}/flatpak"
+
+
+        "${a}/claude-desktop.nix"
+        "${a}/sklauncher.nix"
+        "${a}/spotify.nix"
+        "${a}/vivaldi.nix"
+        "${a}/wps.nix"
+
+
+        "${p}/emacs"
+        "${p}/fastfetch"
+        # "${p}/firefox"
+        # "${p}/floorp"
+        "${p}/nushell"
+        "${p}/packages"
+        "${p}/wezterm"
+        "${p}/zsh"
+
+        "${p}/atuin.nix"
+        "${p}/bash.nix"
+        "${p}/bat.nix"
+        "${p}/btop.nix"
+        "${p}/carapace.nix"
+        "${p}/delta.nix"
+        "${p}/direnv.nix"
+        "${p}/eza.nix"
+        "${p}/fd.nix"
+        "${p}/fish.nix"
+        "${p}/fzf.nix"
+        "${p}/gh.nix"
+        "${p}/git.nix"
+        "${p}/kitty.nix"
+        "${p}/lazygit.nix"
+        "${p}/mpv.nix"
+        "${p}/nh.nix"
+        "${p}/nix-index.nix"
+        "${p}/nix-your-shell.nix"
+        "${p}/ripgrep.nix"
+        "${p}/starship.nix"
+        "${p}/sunix.nix"
+        "${p}/superfile.nix"
+        "${p}/tirith.nix"
+        "${p}/vscode.nix"
+        "${p}/zoxide.nix"
+
+
+        "${s}/audio-manager"
+        "${s}/clipse.nix"
+        # "${s}/espanso.nix"
+
+
+        "${d}/dotnet"
+        "${dirs.nixConfig}/nixvim"
+      ];
+    };
+
+  nixos = { dirs, ... }:
+    let
+      s = dirs.nixos.services;
+    in
+    {
+      imports = [
+        # "${s}/caddy.nix"
+        "${s}/envfs.nix"
+        "${s}/flatpak.nix"
+        # "${s}/nginx.nix"
+        "${s}/ngrok.nix"
+        "${s}/vaultwarden.nix"
+      ];
+    };
+}

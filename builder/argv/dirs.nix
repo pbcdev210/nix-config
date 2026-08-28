@@ -7,10 +7,12 @@ rec {
   profiles = "${nixConfig}/profiles";
   hosts = "${nixConfig}/hosts";
   data = "${nixConfig}/data";
+  modules = "${nixConfig}/modules";
+  pkgs = "${nixConfig}/pkgs";
+  overlays = "${nixConfig}/overlays";
 
-  system = rec {
-    root = "${nixConfig}/system";
-    programs = "${root}/programs";
+  nixos = rec {
+    root = "${nixConfig}/nixos";
     services = "${root}/services";
   };
 
@@ -19,5 +21,6 @@ rec {
     programs = "${root}/programs";
     services = "${root}/services";
     develop = "${root}/develop";
+    apps = "${root}/apps";
   };
 }

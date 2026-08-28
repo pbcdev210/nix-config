@@ -1,4 +1,4 @@
-{ settings, dirs, ... }:
+{ inputs, settings, dirs, ... }:
 {
   sops = {
     defaultSopsFile = "${dirs.data}/main.private.yaml";
@@ -6,4 +6,8 @@
 
     secrets."hashedPassword" = { };
   };
+
+  imports = with inputs; [
+    sops-nix.nixosModules.sops
+  ];
 }

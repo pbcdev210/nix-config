@@ -48,17 +48,16 @@
       flake =
         let
           builder = import ./builder {
-            extraHomeModules = with inputs; [
-              sops-nix.homeManagerModules.sops
-            ];
+            extraModules = {
+              home = [ ];
 
-            extraNixosModules = with inputs; [
-              chaotic.nixosModules.default
-              sops-nix.nixosModules.sops
-              home-manager.nixosModules.home-manager
-            ];
+              nixos = with inputs; [
+                chaotic.nixosModules.default
+                home-manager.nixosModules.home-manager
+              ];
+            };
 
-            overlays = with inputs; [
+            extraOverlays = with inputs; [
               chaotic.overlays.default
 
               treesitter-kanata.overlays.default
@@ -74,7 +73,7 @@
         in
         {
           homeConfigurations = {
-            default = builder.home.mk {
+            default = builder.mkHome {
               name = "default";
               profile = "desktop";
               desktop = "niri";
@@ -83,7 +82,7 @@
           };
 
           nixosConfigurations = {
-            default = builder.system.mk {
+            default = builder.mkNixos {
               name = "default";
               profile = "desktop";
               desktop = "niri";

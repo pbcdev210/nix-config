@@ -1,12 +1,12 @@
-{ extraArgv }:
+{ argv, ... }:
 [
   (final: prev:
     {
       myPkgs = {
-        volume-control = final.callPackage ./volume-control extraArgv;
-        brightness-control = final.callPackage ./brightness-control extraArgv;
-        vivaldi-backup = final.callPackage ./vivaldi-backup extraArgv;
-        audio-manager = final.callPackage ./audio-manager extraArgv;
+        volume-control = final.callPackage ./volume-control argv;
+        brightness-control = final.callPackage ./brightness-control argv;
+        vivaldi-backup = final.callPackage ./vivaldi-backup argv;
+        audio-manager = final.callPackage ./audio-manager argv;
       };
     })
 ]
