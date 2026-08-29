@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./shell-plugins.nix
-  ];
-
   home.packages = with pkgs; [
     nixd
     treefmt
@@ -11,5 +7,8 @@
     jq
     file
     wifitui
+    fzf
+    grc
+    libnotify
   ];
 }

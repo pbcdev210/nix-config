@@ -23,7 +23,6 @@
         # "${p}/firefox"
         # "${p}/floorp"
         "${p}/nushell"
-        "${p}/packages"
         "${p}/wezterm"
         "${p}/zsh"
 
@@ -47,6 +46,7 @@
         "${p}/nix-index.nix"
         "${p}/nix-your-shell.nix"
         "${p}/nixvim.nix"
+        "${p}/packages.nix"
         "${p}/ripgrep.nix"
         "${p}/starship.nix"
         "${p}/sunix.nix"
