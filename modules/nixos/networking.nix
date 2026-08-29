@@ -1,6 +1,11 @@
-{ settings, config, ... }:
+{
+  settings,
+  config,
+  ...
+}:
 {
   networking = {
+    hostName = config.name;
     nameservers = settings.network.dns.ipv4 ++ settings.network.dns.ipv6;
 
     firewall = {
