@@ -9,5 +9,6 @@
     ./stylix
     ./gtk.nix
     ./systemd.nix
+    ./xdg.nix
   ];
 }
