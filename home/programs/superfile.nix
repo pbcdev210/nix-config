@@ -12,9 +12,14 @@
     };
 
     pinnedFolders = [
-      { name = "Nix Config"; location = "/workspaces/nix-config"; }
-      { name = "Projects"; location = "/workspaces"; }
+      {
+        name = "Nix Config";
+        location = "/workspaces/nix-config";
+      }
+      {
+        name = "Projects";
+        location = "/workspaces";
+      }
     ];
   };
 }
-

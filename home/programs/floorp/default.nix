@@ -27,7 +27,8 @@ let
     # keymaps
     "floorp.keyboardshortcut.config" = builtins.readFile ./shortcuts.json;
     "floorp.keyboardshortcut.enabled" = true;
-  } // customCss.settings;
+  }
+  // customCss.settings;
 
   search = {
     force = true;
@@ -36,49 +37,53 @@ let
     engines = {
       google = {
         name = "google";
-        urls = [{ template = "https://www.google.com/search?q={searchTerms}"; }];
+        urls = [ { template = "https://www.google.com/search?q={searchTerms}"; } ];
         icon = "https://www.google.com/favicon.ico";
         definedAliases = [ ":g" ];
       };
 
       github = {
         name = "github";
-        urls = [{ template = "https://github.com/search?q={searchTerms}&type=repositories"; }];
+        urls = [ { template = "https://github.com/search?q={searchTerms}&type=repositories"; } ];
         icon = "https://github.com/favicon.ico";
         definedAliases = [ ":gh" ];
       };
 
       nuget = {
         name = "nuget";
-        urls = [{ template = "https://www.nuget.org/packages?q={searchTerms}"; }];
+        urls = [ { template = "https://www.nuget.org/packages?q={searchTerms}"; } ];
         icon = "https://nuget.org/public/favicon.ico";
         definedAliases = [ ":ng" ];
       };
 
       nixpkgs = {
         name = "nixpkgs";
-        urls = [{ template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; }];
+        urls = [ { template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; } ];
         icon = "https://nixos.org/favicon.ico";
         definedAliases = [ ":pkgs" ];
       };
 
       nixos = {
         name = "nixos";
-        urls = [{ template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}&type=options"; }];
+        urls = [
+          { template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}&type=options"; }
+        ];
         icon = "https://nixos.org/favicon.ico";
         definedAliases = [ ":nos" ];
       };
 
       home-manager = {
         name = "home-manager";
-        urls = [{ template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }];
+        urls = [
+          { template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
+        ];
         icon = "https://nixos.org/favicon.ico";
         definedAliases = [ ":hm" ];
       };
 
       youtube = {
         name = "youtube";
-        urls = [{ template = "https://www.youtube.com/results?search_query={searchTerms}"; }];
+        urls = [ { template = "https://www.youtube.com/results?search_query={searchTerms}"; } ];
         icon = "https://youtube.com/favicon.ico";
         definedAliases = [ ":yt" ];
       };
@@ -91,15 +96,22 @@ let
   policies = (import ./policies.nix) args;
   customCss = (import ./customCss.nix) args;
 
-  mkProfile = { name, id, extraConfig ? { } }: {
-    inherit id name;
+  mkProfile =
+    {
+      name,
+      id,
+      extraConfig ? { },
+    }:
+    {
+      inherit id name;
 
-    settings = settings-profile;
-    inherit extensions search;
+      settings = settings-profile;
+      inherit extensions search;
 
-    userChrome = customCss.chrome;
-    userContent = customCss.content;
-  } // extraConfig;
+      userChrome = customCss.chrome;
+      userContent = customCss.content;
+    }
+    // extraConfig;
 in
 {
   programs.floorp = {

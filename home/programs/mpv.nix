@@ -9,7 +9,6 @@
       mpris
     ];
 
-
     config = {
       slang = "vie,vi,eng,en";
       alang = "jpn,ja,eng,en";

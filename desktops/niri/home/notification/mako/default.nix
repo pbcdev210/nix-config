@@ -14,7 +14,16 @@
     };
   };
 
-  programs.niri.settings.spawn-at-startup = [{ command = [ "systemctl" "--user" "restart" "mako" ]; }];
+  programs.niri.settings.spawn-at-startup = [
+    {
+      command = [
+        "systemctl"
+        "--user"
+        "restart"
+        "mako"
+      ];
+    }
+  ];
 
   stylix.targets.mako = {
     enable = true;

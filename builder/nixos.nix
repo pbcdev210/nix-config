@@ -1,4 +1,9 @@
-{ mkPkgs, mkNixosModules, argv, mkHome }:
+{
+  mkPkgs,
+  mkNixosModules,
+  argv,
+  mkHome,
+}:
 let
   inherit (argv) inputs;
 
@@ -26,19 +31,39 @@ let
   };
 in
 {
-  mk = { host, name, system, profile, desktop, extraModules ? [ ] }:
+  mk =
+    {
+      host,
+      name,
+      system,
+      profile,
+      desktop,
+      extraModules ? [ ],
+    }:
     let
       pkgs = mkPkgs {
         inherit system;
       };
-      modules = mkNixosModules { inherit host profile desktop; extraNixosModules = extraModules; } ++ [
-        configOptions
-        { inherit desktop profile host name; }
-        ({ config, ... }: {
-          imports = with inputs; [ home-manager.nixosModules.home-manager ];
-          home-manager = mkHome { inherit config; };
-        })
-      ];
+      modules =
+        mkNixosModules {
+          inherit host profile desktop;
+          extraNixosModules = extraModules;
+        }
+        ++ [
+          configOptions
+          {
+            inherit
+              desktop
+              profile
+              host
+              name
+              ;
+          }
+          ({ config, ... }: {
+            imports = with inputs; [ home-manager.nixosModules.home-manager ];
+            home-manager = mkHome { inherit config; };
+          })
+        ];
     in
     inputs.nixpkgs.lib.nixosSystem {
       inherit modules pkgs;

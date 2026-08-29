@@ -13,5 +13,7 @@
   };
 
   plugins.treesitter.settings.ensure_installed = [ "rust" ];
-  plugins.conform-nvim.settings.formatters_by_ft = { rs = [ "rustfmt" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = {
+    rs = [ "rustfmt" ];
+  };
 }

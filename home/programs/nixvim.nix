@@ -1,4 +1,9 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   home.packages = [
     inputs.self.packages.${pkgs.stdenv.system}.nixvim

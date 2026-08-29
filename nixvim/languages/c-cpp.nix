@@ -20,7 +20,10 @@
     };
   };
 
-  plugins.treesitter.settings.ensure_installed = [ "cpp" "c" ];
+  plugins.treesitter.settings.ensure_installed = [
+    "cpp"
+    "c"
+  ];
   plugins.conform-nvim.settings.formatters_by_ft = {
     h = [ "clang-format" ];
     hpp = [ "clang-format" ];

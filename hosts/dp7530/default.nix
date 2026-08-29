@@ -1,4 +1,10 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
     loader.systemd-boot.enable = lib.mkForce false;
@@ -27,7 +33,6 @@
   services.scx.scheduler = "scx_rustland";
 
   host-config.gpuDrivers = [ "intel" ];
-
 
   imports = [
     ./hardware-configuration.nix

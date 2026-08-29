@@ -20,6 +20,7 @@
   };
 
   plugins.treesitter.settings.ensure_installed = [ "lua" ];
-  plugins.conform-nvim.settings.formatters_by_ft = { lua = [ "stylua" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = {
+    lua = [ "stylua" ];
+  };
 }
-

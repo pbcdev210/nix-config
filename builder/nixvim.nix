@@ -1,9 +1,17 @@
-{ mkPkgs, mkNixvimModules, argv }:
+{
+  mkPkgs,
+  mkNixvimModules,
+  argv,
+}:
 let
   inherit (argv) inputs;
 in
 {
-  mk = { system, extraNixvimModules ? [ ] }:
+  mk =
+    {
+      system,
+      extraNixvimModules ? [ ],
+    }:
     let
       pkgs = mkPkgs { inherit system; };
       modules = (mkNixvimModules { inherit extraNixvimModules; }) ++ [

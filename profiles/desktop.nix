@@ -1,5 +1,6 @@
 {
-  home = { dirs, ... }:
+  home =
+    { dirs, ... }:
     let
       a = dirs.home.apps;
       r = dirs.home.root;
@@ -16,7 +17,6 @@
         "${a}/spotify.nix"
         "${a}/vivaldi.nix"
         "${a}/wps.nix"
-
 
         "${p}/emacs"
         "${p}/fastfetch"
@@ -55,7 +55,6 @@
         "${p}/vscode.nix"
         "${p}/zoxide.nix"
 
-
         "${s}/audio-manager"
         "${s}/clipse.nix"
         # "${s}/espanso.nix"
@@ -64,7 +63,8 @@
       ];
     };
 
-  nixos = { dirs, ... }:
+  nixos =
+    { dirs, ... }:
     let
       s = dirs.nixos.services;
     in

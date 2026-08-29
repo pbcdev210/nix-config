@@ -1,9 +1,8 @@
-{ settings, pkgs, ... }:
-{
+{ settings, pkgs, ... }: {
   plugins.lsp.servers.nixd = {
     enable = true;
     settings.nixd = {
-      formatting.command = [ "alejandra" ];
+      formatting.command = [ "nixfmt" ];
       options = {
         nixpkgs.expr = "import <nixpkgs> { }";
         nixos.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").nixosConfigurations.default.options'';
@@ -13,9 +12,11 @@
     };
   };
 
-  plugins.conform-nvim.settings.formatters_by_ft = { nix = [ "alejandra" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = {
+    nix = [ "nixfmt" ];
+  };
 
   plugins.treesitter.settings.ensure_installed = [ "nix" ];
 
-  extraPackages = [ pkgs.alejandra ];
+  extraPackages = [ pkgs.nixfmt ];
 }

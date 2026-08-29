@@ -1,4 +1,9 @@
-{ pkgs, settings, inputs, ... }:
+{
+  pkgs,
+  settings,
+  inputs,
+  ...
+}:
 {
   imports = with inputs; [
     sunix.homeModules.default

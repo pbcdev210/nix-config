@@ -27,5 +27,8 @@
     typescriptreact = [ "prettier" ];
   };
 
-  plugins.treesitter.settings.ensure_installed = [ "javascript" "typescript" ];
+  plugins.treesitter.settings.ensure_installed = [
+    "javascript"
+    "typescript"
+  ];
 }

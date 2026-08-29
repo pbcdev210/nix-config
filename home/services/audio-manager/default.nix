@@ -3,8 +3,14 @@
   systemd.user.services.audio-manager = {
     Unit = {
       Description = "Smart Audio Ducking Service (PipeWire/WirePlumber)";
-      After = [ "pipewire.service" "wireplumber.service" ];
-      Wants = [ "pipewire.service" "wireplumber.service" ];
+      After = [
+        "pipewire.service"
+        "wireplumber.service"
+      ];
+      Wants = [
+        "pipewire.service"
+        "wireplumber.service"
+      ];
     };
 
     Service = {
@@ -25,4 +31,3 @@
     };
   };
 }
-

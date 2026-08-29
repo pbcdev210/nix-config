@@ -24,87 +24,85 @@
   };
 
   outputs =
-    inputs@{ flake-parts
-    , ...
-    }:
-    flake-parts.lib.mkFlake { inherit inputs; }
-      (
-        let
-          builder = import ./builder {
-            extraModules = {
-              home = [ ];
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } (
+      let
+        builder = import ./builder {
+          extraModules = {
+            home = [ ];
 
-              nixos = with inputs; [
-                chaotic.nixosModules.default
-                home-manager.nixosModules.home-manager
-              ];
-
-              nixvim = [ ];
-            };
-
-            extraOverlays = with inputs; [
-              chaotic.overlays.default
-
-              treesitter-kanata.overlays.default
-              vscode-extensions.overlays.default
-              nur.overlays.default
-
-              nix-firefox-addons.overlays.default
-              sklauncher.overlays.default
+            nixos = with inputs; [
+              chaotic.nixosModules.default
+              home-manager.nixosModules.home-manager
             ];
 
-            inherit inputs;
+            nixvim = [ ];
           };
-        in
-        {
-          systems = [ "x86_64-linux" ];
-          imports = [
-            inputs.treefmt-nix.flakeModule
+
+          extraOverlays = with inputs; [
+            chaotic.overlays.default
+
+            treesitter-kanata.overlays.default
+            vscode-extensions.overlays.default
+            nur.overlays.default
+
+            nix-firefox-addons.overlays.default
+            sklauncher.overlays.default
           ];
 
-          perSystem = { system, ... }:
-            let
-              nixvimConfiguration = builder.nixvim { inherit system; };
-            in
-            {
-              treefmt.config = {
-                projectRootFile = "flake.nix";
-                programs = {
-                  nixpkgs-fmt.enable = true;
-                  prettier.enable = true;
-                };
-              };
+          inherit inputs;
+        };
+      in
+      {
+        systems = [ "x86_64-linux" ];
+        imports = [ inputs.treefmt-nix.flakeModule ];
 
-              packages = {
-                nixvim = nixvimConfiguration.config.build.package;
-              };
-              legacyPackages.nixvimEval = nixvimConfiguration;
-
-              # devShells.default = import ./devshell.nix { inherit pkgs; };
-            };
-
-          flake = {
-            homeConfigurations = {
-              default = builder.mkHome {
-                name = "default";
-                profile = "desktop";
-                desktop = "niri";
-                system = "x86_64-linux";
+        perSystem =
+          { system, ... }:
+          let
+            nixvimConfiguration = builder.nixvim { inherit system; };
+            pkgs = builder.mkPkgs { inherit system; };
+          in
+          {
+            _module.args.pkgs = pkgs;
+            treefmt.config = {
+              projectRootFile = "flake.nix";
+              programs = {
+                nixfmt.enable = true;
+                prettier.enable = true;
+                shfmt.enable = true;
+                # ruff.enable = true;
               };
             };
 
-            nixosConfigurations = {
-              default = builder.mkNixos {
-                name = "default";
-                profile = "desktop";
-                desktop = "niri";
-                host = "dp7530";
-                system = "x86_64-linux";
-              };
+            packages.nixvim = nixvimConfiguration.config.build.package;
+            legacyPackages.nixvimEval = nixvimConfiguration;
+
+            # devShells.default = import ./devshell.nix { inherit pkgs; };
+          };
+
+        flake = {
+          homeConfigurations = {
+            default = builder.mkHome {
+              name = "default";
+              profile = "desktop";
+              desktop = "niri";
+              system = "x86_64-linux";
             };
           };
-        }
-      );
+
+          nixosConfigurations = {
+            default = builder.mkNixos {
+              name = "default";
+              profile = "desktop";
+              desktop = "niri";
+              host = "dp7530";
+              system = "x86_64-linux";
+            };
+          };
+        };
+      }
+    );
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

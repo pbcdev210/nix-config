@@ -47,5 +47,3 @@ in
     "firefoxcss.disable.tab.preview.panel.fully" = true;
   };
 }
-
-

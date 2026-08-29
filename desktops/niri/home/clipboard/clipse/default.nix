@@ -1,20 +1,34 @@
 {
   programs.niri.settings = {
     binds = {
-      "Mod+V".action.spawn = [ "kitty" "--class" "clipse" "-e" "clipse" ];
+      "Mod+V".action.spawn = [
+        "kitty"
+        "--class"
+        "clipse"
+        "-e"
+        "clipse"
+      ];
     };
 
-    window-rules = [{
-      matches = [{
-        app-id = "clipse";
-      }];
+    window-rules = [
+      {
+        matches = [
+          {
+            app-id = "clipse";
+          }
+        ];
 
-      open-floating = true;
+        open-floating = true;
 
-      default-column-width = { fixed = 600; };
-      default-window-height = { fixed = 650; };
+        default-column-width = {
+          fixed = 600;
+        };
+        default-window-height = {
+          fixed = 650;
+        };
 
-      draw-border-with-background = false;
-    }];
+        draw-border-with-background = false;
+      }
+    ];
   };
 }

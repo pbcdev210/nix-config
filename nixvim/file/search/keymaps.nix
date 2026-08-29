@@ -4,14 +4,20 @@
       mode = "n";
       key = "<A-f>";
       action = "<CMD>bnext<CR>";
-      options = { silent = true; desc = "Next buffer"; };
+      options = {
+        silent = true;
+        desc = "Next buffer";
+      };
     }
 
     {
       mode = "n";
       key = "<A-d>";
       action = "<CMD>bprevious<CR>";
-      options = { silent = true; desc = "Previous buffer"; };
+      options = {
+        silent = true;
+        desc = "Previous buffer";
+      };
     }
 
     {

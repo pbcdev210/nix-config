@@ -50,9 +50,11 @@
       };
     }
 
-
     {
-      mode = [ "i" "c" ];
+      mode = [
+        "i"
+        "c"
+      ];
       key = "<C-BS>";
       action = "<C-w>";
       options = {
@@ -62,14 +64,20 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "x";
       action = ''"_x'';
       options.desc = "Delete char into black hole";
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>d";
       action = ''"_d'';
       options = {
@@ -86,9 +94,11 @@
       options.desc = "Clear search highlight";
     }
 
-
     {
-      mode = [ "i" "c" ];
+      mode = [
+        "i"
+        "c"
+      ];
       key = "<C-BS>";
       action = "<C-w>";
       options = {
@@ -98,14 +108,20 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "x";
       action = ''"_x'';
       options.desc = "Delete char into black hole";
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>d";
       action = ''"_d'';
       options = {
@@ -121,7 +137,6 @@
       options.silent = true;
       options.desc = "Clear search highlight";
     }
-
 
     {
       mode = "n";

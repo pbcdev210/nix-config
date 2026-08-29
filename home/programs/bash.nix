@@ -3,10 +3,8 @@
   programs.bash = {
     enable = true;
 
-
     shellAliases = settings.tools.alias;
   };
-
 
   programs.zoxide.enableBashIntegration = true;
   programs.fzf.enableBashIntegration = true;

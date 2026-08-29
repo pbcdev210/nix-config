@@ -16,5 +16,7 @@
 
   plugins.treesitter.settings.ensure_installed = [ "json" ];
 
-  plugins.conform-nvim.settings.formatters_by_ft = { json = [ "prettier" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = {
+    json = [ "prettier" ];
+  };
 }

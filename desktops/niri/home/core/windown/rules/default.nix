@@ -4,7 +4,7 @@
 
     window-rules = [
       {
-        matches = [{ }];
+        matches = [ { } ];
         geometry-corner-radius = {
           top-left = 6.0;
           top-right = 6.0;
@@ -15,7 +15,7 @@
       }
 
       {
-        matches = [{ title = "^Picture in picture$"; }];
+        matches = [ { title = "^Picture in picture$"; } ];
         open-floating = true;
 
         default-floating-position = {
@@ -23,9 +23,13 @@
           x = 20;
           y = 20;
         };
-        default-column-width = { fixed = 400; };
+        default-column-width = {
+          fixed = 400;
+        };
 
-        default-window-height = { fixed = 200; };
+        default-window-height = {
+          fixed = 200;
+        };
 
         # block-out-from = "screencast";
       }

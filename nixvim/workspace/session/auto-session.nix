@@ -6,7 +6,11 @@
       auto_save_enabled = true;
       auto_restore_enabled = true;
 
-      suppressed_dirs = [ "/" "~/" "/tmp" ];
+      suppressed_dirs = [
+        "/"
+        "~/"
+        "/tmp"
+      ];
     };
   };
 }

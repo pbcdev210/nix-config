@@ -1,4 +1,9 @@
-{ inputs, settings, dirs, ... }:
+{
+  inputs,
+  settings,
+  dirs,
+  ...
+}:
 {
   sops = {
     defaultSopsFile = "${dirs.data}/main.private.yaml";

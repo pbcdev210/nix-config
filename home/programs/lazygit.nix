@@ -10,10 +10,12 @@
 
       git = {
         autoFetch = true;
-        pagers = [{
-          colorArg = "always";
-          pager = "delta --dark --paging=never --line-numbers";
-        }];
+        pagers = [
+          {
+            colorArg = "always";
+            pager = "delta --dark --paging=never --line-numbers";
+          }
+        ];
       };
     };
   };

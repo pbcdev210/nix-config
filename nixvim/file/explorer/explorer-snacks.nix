@@ -32,7 +32,6 @@
       fuzzy = false;
     };
 
-
     layout = {
       preview = false;
       layout = {
@@ -47,7 +46,9 @@
           title = " Explorer ";
           border = "single";
         };
-        __unkeyed-2 = { win = "list"; };
+        __unkeyed-2 = {
+          win = "list";
+        };
       };
     };
   };

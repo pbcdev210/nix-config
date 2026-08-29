@@ -1,4 +1,9 @@
-{ pkgs, settings, config, ... }:
+{
+  pkgs,
+  settings,
+  config,
+  ...
+}:
 let
   dataDir = settings.dirs.data;
   dbFile = "${config.services.vaultwarden.backupDir}/db.sqlite3";
@@ -37,7 +42,10 @@ in
 
   systemd.services.vaultwarden-backup-github = {
     description = "Vaultwarden Backup";
-    after = [ "network.target" "vaultwarden.service" ];
+    after = [
+      "network.target"
+      "vaultwarden.service"
+    ];
 
     script = ''
       set -e

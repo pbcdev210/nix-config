@@ -9,14 +9,33 @@
       keymap = {
         preset = "none";
 
-        "<A-j>" = [ "select_next" "fallback" ];
-        "<A-k>" = [ "select_prev" "fallback" ];
+        "<A-j>" = [
+          "select_next"
+          "fallback"
+        ];
+        "<A-k>" = [
+          "select_prev"
+          "fallback"
+        ];
 
-        "<Down>" = [ "select_next" "fallback" ];
-        "<Up>" = [ "select_prev" "fallback" ];
+        "<Down>" = [
+          "select_next"
+          "fallback"
+        ];
+        "<Up>" = [
+          "select_prev"
+          "fallback"
+        ];
 
-        "<C-space>" = [ "show" "show_documentation" "hide_documentation" ];
-        "<Tab>" = [ "accept" "fallback" ];
+        "<C-space>" = [
+          "show"
+          "show_documentation"
+          "hide_documentation"
+        ];
+        "<Tab>" = [
+          "accept"
+          "fallback"
+        ];
       };
 
       appearance = {
@@ -91,7 +110,10 @@
       fuzzy = {
         frecency.enabled = true;
         implementation = "prefer_rust_with_warning"; # "rust" | "lua" | "prefer_rust..."
-        sorts = [ "score" "sort_text" ];
+        sorts = [
+          "score"
+          "sort_text"
+        ];
         use_proximity = true;
       };
 
@@ -100,7 +122,12 @@
       };
 
       sources = {
-        default = [ "lsp" "path" "snippets" "buffer" ];
+        default = [
+          "lsp"
+          "path"
+          "snippets"
+          "buffer"
+        ];
 
         providers = {
           lsp = {

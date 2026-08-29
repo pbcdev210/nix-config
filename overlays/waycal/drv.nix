@@ -1,16 +1,17 @@
 # copy from https://github.com/gvolpe/nix-config
-{ lib
-, stdenv
-, rustPlatform
-, sources
-, pkg-config
-, glib
-, gtk4
-, gtk4-layer-shell
-, gdk-pixbuf
-, graphene
-, cairo
-, wrapGAppsHook4
+{
+  lib,
+  stdenv,
+  rustPlatform,
+  sources,
+  pkg-config,
+  glib,
+  gtk4,
+  gtk4-layer-shell,
+  gdk-pixbuf,
+  graphene,
+  cairo,
+  wrapGAppsHook4,
 }:
 
 let

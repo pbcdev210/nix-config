@@ -19,9 +19,21 @@
     };
 
     binds = {
-      "Mod+Ctrl+Space".action.spawn = [ "nsticky" "sticky" "toggle-active" ];
-      "Mod+Shift+Space".action.spawn = [ "nsticky" "stage" "toggle-active" ];
-      "Mod+Shift+R".action.spawn = [ "nsticky" "stage" "restore" ];
+      "Mod+Ctrl+Space".action.spawn = [
+        "nsticky"
+        "sticky"
+        "toggle-active"
+      ];
+      "Mod+Shift+Space".action.spawn = [
+        "nsticky"
+        "stage"
+        "toggle-active"
+      ];
+      "Mod+Shift+R".action.spawn = [
+        "nsticky"
+        "stage"
+        "restore"
+      ];
     };
   };
 }

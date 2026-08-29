@@ -5,5 +5,7 @@
 
   plugins.treesitter.settings.ensure_installed = [ "java" ];
 
-  plugins.conform-nvim.settings.formatters_by_ft = { java = [ "google-java-format" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = {
+    java = [ "google-java-format" ];
+  };
 }

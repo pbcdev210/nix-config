@@ -9,8 +9,14 @@
 
         icons_enabled = true;
 
-        component_separators = { left = ""; right = ""; };
-        section_separators = { left = ""; right = ""; };
+        component_separators = {
+          left = "";
+          right = "";
+        };
+        section_separators = {
+          left = "";
+          right = "";
+        };
 
         globalstatus = true;
 
@@ -36,7 +42,12 @@
           {
             __unkeyed-1 = "diagnostics";
             sources = [ "nvim_diagnostic" ];
-            symbols = { error = settings.glyphs.level.error; warn = settings.glyphs.level.warn; info = settings.glyphs.level.info; hint = settings.glyphs.level.hint; };
+            symbols = {
+              error = settings.glyphs.level.error;
+              warn = settings.glyphs.level.warn;
+              info = settings.glyphs.level.info;
+              hint = settings.glyphs.level.hint;
+            };
           }
         ];
 
@@ -65,17 +76,18 @@
             };
           }
 
-
         ];
 
-        lualine_b = [{
-          __unkeyed-1 = "diff";
-          symbols = {
-            added = settings.glyphs.git.diff.added;
-            modified = settings.glyphs.git.diff.modified;
-            removed = settings.glyphs.git.diff.removed;
-          };
-        }];
+        lualine_b = [
+          {
+            __unkeyed-1 = "diff";
+            symbols = {
+              added = settings.glyphs.git.diff.added;
+              modified = settings.glyphs.git.diff.modified;
+              removed = settings.glyphs.git.diff.removed;
+            };
+          }
+        ];
 
         lualine_c = [
           "encoding"

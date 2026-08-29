@@ -11,4 +11,3 @@
     cmake = [ "gersemi" ];
   };
 }
-

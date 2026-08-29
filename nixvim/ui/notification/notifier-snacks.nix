@@ -5,19 +5,38 @@
 
     timeout = 3000;
 
-    width = { min = 40; max = 0.4; };
-    height = { min = 1; max = 0.6; };
+    width = {
+      min = 40;
+      max = 0.4;
+    };
+    height = {
+      min = 1;
+      max = 0.6;
+    };
 
-    margin = { top = 0; right = 1; bottom = 0; };
+    margin = {
+      top = 0;
+      right = 1;
+      bottom = 0;
+    };
     padding = true;
     gap = 0;
 
-    sort = [ "level" "added" ];
+    sort = [
+      "level"
+      "added"
+    ];
 
     level.__raw = "vim.log.levels.TRACE";
 
     icons = {
-      inherit (settings.glyphs.level) error warn info debug trace;
+      inherit (settings.glyphs.level)
+        error
+        warn
+        info
+        debug
+        trace
+        ;
     };
 
     keep.__raw = ''

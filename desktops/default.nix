@@ -2,5 +2,3 @@
   nixos = ./${desktop}/nixos;
   home = ./${desktop}/home;
 }
-
-

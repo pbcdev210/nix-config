@@ -5,7 +5,9 @@
     autoEnableSources = true;
 
     settings = {
-      experimental = { ghost_text = true; };
+      experimental = {
+        ghost_text = true;
+      };
 
       snippet.expand.__raw = ''
         function(args)
@@ -97,14 +99,31 @@
       };
 
       sources = [
-        { name = "nvim_lsp"; priority = 1000; }
-        { name = "luasnip"; priority = 750; }
-        { name = "buffer"; priority = 500; }
-        { name = "path"; priority = 250; }
+        {
+          name = "nvim_lsp";
+          priority = 1000;
+        }
+        {
+          name = "luasnip";
+          priority = 750;
+        }
+        {
+          name = "buffer";
+          priority = 500;
+        }
+        {
+          name = "path";
+          priority = 250;
+        }
       ];
 
       formatting = {
-        fields = [ "icon" "abbr" "kind" "menu" ];
+        fields = [
+          "icon"
+          "abbr"
+          "kind"
+          "menu"
+        ];
         format = lib.mkForce ''
           require('lspkind').cmp_format({
             maxwidth = {

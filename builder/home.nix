@@ -1,4 +1,8 @@
-{ mkPkgs, mkHomeModules, argv }:
+{
+  mkPkgs,
+  mkHomeModules,
+  argv,
+}:
 let
   inherit (argv) inputs settings;
 
@@ -25,34 +29,52 @@ let
   };
 in
 {
-  mk = { name, system, profile, desktop, extraModule ? [ ] }:
+  mk =
+    {
+      name,
+      system,
+      profile,
+      desktop,
+      extraModule ? [ ],
+    }:
     let
       pkgs = mkPkgs {
         inherit system;
       };
 
-      modules = mkHomeModules { inherit profile desktop; extraHomeModules = extraModule; } ++ [
-        configOptions
-        {
-          standalone = true;
-          inherit profile desktop name;
+      modules =
+        mkHomeModules {
+          inherit profile desktop;
+          extraHomeModules = extraModule;
         }
-      ];
+        ++ [
+          configOptions
+          {
+            standalone = true;
+            inherit profile desktop name;
+          }
+        ];
     in
     inputs.home-manager.lib.homeManagerConfiguration {
       inherit modules pkgs;
       extraSpecialArgs = argv;
     };
 
-  mkNonStandalone = { config, ... }:
+  mkNonStandalone =
+    { config, ... }:
     let
-      modules = mkHomeModules { inherit (config) profile desktop; extraHomeModules = [ ]; } ++ [
-        configOptions
-        {
-          standalone = false;
-          inherit (config) profile desktop name;
+      modules =
+        mkHomeModules {
+          inherit (config) profile desktop;
+          extraHomeModules = [ ];
         }
-      ];
+        ++ [
+          configOptions
+          {
+            standalone = false;
+            inherit (config) profile desktop name;
+          }
+        ];
     in
     {
       useGlobalPkgs = true;

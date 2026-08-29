@@ -6,18 +6,32 @@
     shellAliases = settings.tools.alias;
 
     plugins = [
-      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
-      { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
-      { name = "done"; src = pkgs.fishPlugins.done.src; }
-      { name = "colored-man-pages"; src = pkgs.fishPlugins.colored-man-pages.src; }
-      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
+      {
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair.src;
+      }
+      {
+        name = "done";
+        src = pkgs.fishPlugins.done.src;
+      }
+      {
+        name = "colored-man-pages";
+        src = pkgs.fishPlugins.colored-man-pages.src;
+      }
+      {
+        name = "grc";
+        src = pkgs.fishPlugins.grc.src;
+      }
     ];
 
     shellInitLast = ''
       set fish_greeting ""
     '';
   };
-
 
   xdg.configFile."fish/functions/fish_user_key_bindings.fish".text = ''
     function fish_user_key_bindings

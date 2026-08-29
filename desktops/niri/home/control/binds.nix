@@ -37,37 +37,65 @@ in
 
     "XF86AudioPlay" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "--player=spotify" "play-pause" ];
+      action.spawn = [
+        player-control
+        "--player=spotify"
+        "play-pause"
+      ];
     };
     "XF86AudioStop" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "--player=spotify" "stop" ];
+      action.spawn = [
+        player-control
+        "--player=spotify"
+        "stop"
+      ];
     };
     "XF86AudioPrev" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "--player=spotify" "previous" ];
+      action.spawn = [
+        player-control
+        "--player=spotify"
+        "previous"
+      ];
     };
     "XF86AudioNext" = {
       allow-when-locked = true;
-      action.spawn = [ player-control "--player=spotify" "next" ];
+      action.spawn = [
+        player-control
+        "--player=spotify"
+        "next"
+      ];
     };
 
     "XF86MonBrightnessUp" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightness-control}/bin/brightness-control" "--inc" ];
+      action.spawn = [
+        "${brightness-control}/bin/brightness-control"
+        "--inc"
+      ];
     };
     "XF86MonBrightnessDown" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightness-control}/bin/brightness-control" "--dec" ];
+      action.spawn = [
+        "${brightness-control}/bin/brightness-control"
+        "--dec"
+      ];
     };
 
     "XF86HomePage" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightness-control}/bin/brightness-control" "--inc" ];
+      action.spawn = [
+        "${brightness-control}/bin/brightness-control"
+        "--inc"
+      ];
     };
     "XF86Mail" = {
       allow-when-locked = true;
-      action.spawn = [ "${brightness-control}/bin/brightness-control" "--dec" ];
+      action.spawn = [
+        "${brightness-control}/bin/brightness-control"
+        "--dec"
+      ];
     };
   };
 }

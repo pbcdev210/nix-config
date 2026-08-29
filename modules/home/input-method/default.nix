@@ -19,7 +19,6 @@
   xdg.configFile."fcitx5/conf/notifications.conf".source = ./fcitx5/conf/notifications.conf;
   xdg.configFile."fcitx5/profile".source = ./fcitx5/profile;
 
-
   home.sessionVariables = {
     GTK_IM_MODULE = lib.mkForce "fcitx";
     QT_IM_MODULE = lib.mkForce "fcitx";

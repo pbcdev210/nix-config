@@ -72,7 +72,10 @@
         file = [
           { __unkeyed-1 = "indent"; }
           { __unkeyed-1 = "icon"; }
-          { __unkeyed-1 = "name"; useGitStatusColors = true; }
+          {
+            __unkeyed-1 = "name";
+            useGitStatusColors = true;
+          }
         ];
       };
     };

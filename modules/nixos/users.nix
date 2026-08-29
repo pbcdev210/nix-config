@@ -1,4 +1,10 @@
-{ pkgs, settings, config, ... }: {
+{
+  pkgs,
+  settings,
+  config,
+  ...
+}:
+{
   users.users.${settings.identity.username} = {
     isNormalUser = true;
     description = "user main";

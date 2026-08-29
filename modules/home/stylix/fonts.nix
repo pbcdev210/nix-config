@@ -37,4 +37,3 @@
     pkgs.dejavu_fonts
   ];
 }
-

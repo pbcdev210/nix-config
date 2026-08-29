@@ -12,7 +12,9 @@
     };
   };
 
-  plugins.conform-nvim.settings.formatters_by_ft = { py = [ "ruff_format" ]; };
+  plugins.conform-nvim.settings.formatters_by_ft = {
+    py = [ "ruff_format" ];
+  };
 
   plugins.treesitter.settings.ensure_installed = [ "python" ];
 }
