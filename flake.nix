@@ -89,11 +89,26 @@
               desktop = "niri";
               system = "x86_64-linux";
             };
+
+            "pbcdev@dp7530" = builder.mkHome {
+              name = "pbcdev@dp7530";
+              profile = "desktop";
+              desktop = "niri";
+              system = "x86_64-linux";
+            };
           };
 
           nixosConfigurations = {
             default = builder.mkNixos {
               name = "default";
+              profile = "desktop";
+              desktop = "niri";
+              host = "dp7530";
+              system = "x86_64-linux";
+            };
+
+            dp7530 = builder.mkNixos {
+              name = "dp7530";
               profile = "desktop";
               desktop = "niri";
               host = "dp7530";
