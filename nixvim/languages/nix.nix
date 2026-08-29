@@ -16,4 +16,6 @@
   plugins.conform-nvim.settings.formatters_by_ft = { nix = [ "alejandra" ]; };
 
   plugins.treesitter.settings.ensure_installed = [ "nix" ];
+
+  extraPackages = [ pkgs.alejandra ];
 }
