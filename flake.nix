@@ -33,7 +33,6 @@
 
             nixos = with inputs; [
               chaotic.nixosModules.default
-              home-manager.nixosModules.home-manager
             ];
 
             nixvim = [ ];
@@ -41,13 +40,9 @@
 
           extraOverlays = with inputs; [
             chaotic.overlays.default
-
-            treesitter-kanata.overlays.default
             vscode-extensions.overlays.default
-            nur.overlays.default
-
             nix-firefox-addons.overlays.default
-            sklauncher.overlays.default
+            nur.overlays.default
           ];
 
           inherit inputs;
