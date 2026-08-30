@@ -4,8 +4,9 @@
     myPkgs = {
       volume-control = final.callPackage ./volume-control argv;
       brightness-control = final.callPackage ./brightness-control argv;
-      vivaldi-backup = final.callPackage ./vivaldi-backup argv;
+      vivaldi-sync = final.callPackage ./vivaldi-sync argv;
       audio-manager = final.callPackage ./audio-manager argv;
+      vaultwarden-sync = final.callPackage ./vaultwarden-sync argv;
     };
   })
 ]

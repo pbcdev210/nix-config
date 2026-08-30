@@ -4,6 +4,6 @@
     vivaldi
     vivaldi-ffmpeg-codecs
 
-    myPkgs.vivaldi-backup
+    myPkgs.vivaldi-sync
   ];
 }
