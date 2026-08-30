@@ -5,12 +5,7 @@
   ...
 }:
 let
-  dataDir = settings.dirs.data;
-  dbFile = "${config.services.vaultwarden.backupDir}/db.sqlite3";
-  rsaFile = "${config.services.vaultwarden.backupDir}/rsa_key.pem";
 
-  hashFile = "${dataDir}/vaultwarden.sha256";
-  encryptedBackup = "${dataDir}/vaultwarden.backup.tar.gz.age";
 in
 {
   services.vaultwarden = {
@@ -26,7 +21,7 @@ in
       INVITATIONS_ALLOWED = false;
     };
 
-    backupDir = "/var/backup/vaultwarden";
+    # backupDir = "/var/backup/vaultwarden";
   };
 
   systemd.services.ngrok-vaultwarden = {
@@ -40,93 +35,42 @@ in
     };
   };
 
-  systemd.services.vaultwarden-backup-github = {
+  systemd.services.vaultwarden-backup-nix = {
     description = "Vaultwarden Backup";
     after = [
       "network.target"
       "vaultwarden.service"
     ];
-
-    script = ''
-      set -e
-
-      if [ ! -f "${dbFile}" ]; then
-          echo "ERROR: ${dbFile} not fond"
-          exit 1
-      fi
-
-      if [ ! -f "${rsaFile}" ]; then
-        echo "ERROR: ${rsaFile} not fond"
-        exit 1
-      fi
-
-      if ! ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" rev-parse --git-dir > /dev/null 2>&1; then
-        rm -rf "${dataDir}"
-        echo "INFO: Clone repo ${settings.repo.github}"
-        ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git clone ${settings.repo.github} ${dataDir}
-      else
-        ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" fetch
-
-        if [ "$(${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" rev-parse HEAD)" != "$(${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" rev-parse @{u})" ]; then
-          echo "INFO: Pull repo"
-          ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.git}/bin/git -C "${dataDir}" pull
-        fi
-      fi
-
-      CURRENT_HASH=$(${pkgs.coreutils}/bin/cat "${dbFile}" "${rsaFile}" | ${pkgs.coreutils}/bin/sha256sum | ${pkgs.gawk}/bin/awk '{print $1}')
-
-      OLD_HASH=""
-      if [ -f "${hashFile}" ]; then
-          OLD_HASH=$(${pkgs.gawk}/bin/awk '{print $1}' "${hashFile}")
-      fi
-
-      echo "INFO: Current hash: $CURRENT_HASH"
-      echo "INFO: Old hash: $OLD_HASH"
-
-      if [ "$CURRENT_HASH" != "$OLD_HASH" ]; then
-          echo "INFO: Database changed!"
-
-          echo "$CURRENT_HASH" > "${hashFile}"
-          ${pkgs.gnutar}/bin/tar cf - \
-              -C ${config.services.vaultwarden.backupDir} \
-              db.sqlite3 rsa_key.pem | \
-          ${pkgs.gzip}/bin/gzip > /tmp/vaultwarden-core.tar.gz
-
-          ${pkgs.age}/bin/age -e -r "${settings.age.publicKey}" -o "${encryptedBackup}" /tmp/vaultwarden-core.tar.gz
-
-          rm /tmp/vaultwarden-core.tar.gz
-
-          chown ${settings.identity.username}:wheel "${encryptedBackup}" "${hashFile}"
-
-          ${pkgs.sudo}/bin/sudo -u ${settings.identity.username} ${pkgs.bash}/bin/bash << EOF
-            cd ${settings.dirs.nixConfigBot}
-
-            ${pkgs.git}/bin/git reset
-            ${pkgs.git}/bin/git add ${encryptedBackup} ${hashFile}
-
-            ${pkgs.git}/bin/git commit -m "[bot] update vaultwarden backup
-            time: \$(date +'%Y-%m-%d %H:%M:%S')"
-            ${pkgs.git}/bin/git push origin main
-            echo "INFO: Push on github"
-      EOF
-      else
-        echo "INFO: Database unchanged"
-      fi
-    '';
-
     serviceConfig = {
       Type = "oneshot";
       User = "root";
     };
+
+    script = ''
+      VAULTWARDEN_STATE_DIR="/var/lib/vaultwarden"
+      export VAULTWARDEN_STATE_DIR
+      ${pkgs.myPkgs.vaultwarden-sync}/bin/vaultwarden-sync export
+    '';
   };
 
-  systemd.timers.vaultwarden-backup-github = {
+  systemd.timers.vaultwarden-backup-nix = {
     description = "Timer for automated Vaultwarden backup";
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnBootSec = "15min";
       OnUnitActiveSec = "72h";
       Persistent = true;
     };
   };
+
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "vaultwarden-sync" ''
+      VAULTWARDEN_SERVICE="vaultwarden.service"
+      VAULTWARDEN_STATE_DIR="/var/lib/vaultwarden"
+
+      export VAULTWARDEN_SERVICE
+      export VAULTWARDEN_STATE_DIR
+
+      ${pkgs.myPkgs.vaultwarden-sync}/bin/vaultwarden-sync "$@"
+    '')
+  ];
 }
