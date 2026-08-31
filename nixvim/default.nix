@@ -7,16 +7,16 @@
     ./edit
     ./file
     ./git
-    ./img
     ./languages
     ./learn
     ./terminal
     ./ui
     ./utils
-    ./windown
     ./workspace
 
     ./direnv.nix
+    ./img.nix
     ./neovide.nix
+    ./windown.nix
   ];
 }
