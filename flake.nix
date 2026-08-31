@@ -236,6 +236,13 @@
       flake = false;
     };
 
+    # ghostty
+
+    ghostty-cursor-shaders = {
+      url = "github:sahaj-b/ghostty-cursor-shaders";
+      flake = false;
+    };
+
     # miscelaneous
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";

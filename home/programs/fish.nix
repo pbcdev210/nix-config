@@ -62,4 +62,5 @@
   programs.kitty.shellIntegration.enableFishIntegration = true;
   programs.tirith.enableFishIntegration = true;
   programs.nix-your-shell.enableFishIntegration = true;
+  programs.ghostty.enableFishIntegration = true;
 }

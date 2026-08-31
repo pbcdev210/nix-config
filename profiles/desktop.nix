@@ -38,6 +38,7 @@
         "${p}/fish.nix"
         "${p}/fzf.nix"
         "${p}/gh.nix"
+        "${p}/ghostty.nix"
         "${p}/git.nix"
         "${p}/kitty.nix"
         "${p}/lazygit.nix"
