@@ -43,6 +43,7 @@
             vscode-extensions.overlays.default
             nix-firefox-addons.overlays.default
             nur.overlays.default
+            treesitter-kanata.overlays.default
           ];
 
           inherit inputs;

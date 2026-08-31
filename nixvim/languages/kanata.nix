@@ -1,5 +1,4 @@
-{ inputs, pkgs, ... }: {
-  extraPlugins = with inputs; [
-    treesitter-kanata.packages.${pkgs.stdenv.system}.default
-  ];
+{
+  filetype.extension.kbd = "kanata";
+  plugins.treesitter.languageRegister.kanata = "kbd";
 }
