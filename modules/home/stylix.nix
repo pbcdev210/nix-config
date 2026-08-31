@@ -1,5 +1,33 @@
-{ pkgs, config, ... }:
 {
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
+{
+  stylix = {
+    enable = true;
+
+    base16Scheme = "${inputs.schemes}/base16/nightfox-carbonfox.yaml";
+
+    polarity = "dark";
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 22;
+    };
+
+    opacity = {
+      terminal = 0.5;
+      applications = 0.9;
+      desktop = 0.9;
+      popups = 0.95;
+    };
+
+    autoEnable = false;
+  };
+
   stylix.fonts = {
     serif = {
       package = pkgs.noto-fonts;
@@ -35,5 +63,9 @@
     config.stylix.fonts.emoji.package
     pkgs.inter
     pkgs.dejavu_fonts
+  ];
+
+  imports = [
+    inputs.stylix.homeModules.default
   ];
 }

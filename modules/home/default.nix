@@ -6,8 +6,8 @@
 
   imports = [
     ./input-method
-    ./stylix
     ./gtk.nix
+    ./stylix.nix
     ./systemd.nix
     ./xdg.nix
   ];
