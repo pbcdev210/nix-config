@@ -20,5 +20,6 @@
 
     updatetime = 300;
     mouse = "a";
+    exrc = true;
   };
 }
