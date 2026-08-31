@@ -2,6 +2,8 @@
   pkgs,
   settings,
   inputs,
+  config,
+  osConfig,
   ...
 }:
 {
@@ -15,9 +17,8 @@
     settings = {
       dixBinary = "${pkgs.dix}/bin/dix";
       flakeDir = settings.dirs.nixConfig;
-      # TODO: use dynamic name
-      homeFlake = "default";
-      nixosFlake = "default";
+      homeFlake = config.name;
+      nixosFlake = osConfig.name;
       styleCss = null;
       showDemo = false;
     };

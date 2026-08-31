@@ -49,7 +49,7 @@
         "${p}/packages.nix"
         "${p}/ripgrep.nix"
         "${p}/starship.nix"
-        "${p}/sunix.nix"
+        # "${p}/sunix.nix"
         "${p}/superfile.nix"
         "${p}/tirith.nix"
         "${p}/vscode.nix"
