@@ -99,10 +99,10 @@ class Config:
     # --- Defaults -----------------------------------------------------------
     PRIMARY_PLAYER = "spotify"
     TRANSIENT_PLAYER = "*"          # '*' = any other MPRIS player
-    CHECK_INTERVAL = 2.0            # seconds between self-healing poll cycles
+    CHECK_INTERVAL = 0.2            # seconds between self-healing poll cycles
     FADE_STEPS = 10
     FADE_DURATION = 0.5             # seconds, total fade time
-    RESTORE_GRACE_PERIOD = 1.5      # seconds of silence before un-ducking
+    RESTORE_GRACE_PERIOD = 0.5      # seconds of silence before un-ducking
     VOLUME_FULL = 1.0
     VOLUME_DUCKED = 0.5
     VOLUME_MUTED = 0.0
