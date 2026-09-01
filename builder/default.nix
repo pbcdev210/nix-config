@@ -10,7 +10,11 @@ let
   }
   // argv';
   inherit (argv) dirs;
-  overlays = extraOverlays ++ (import "${dirs.overlays}" argv) ++ (import "${dirs.pkgs}" argv);
+  overlays =
+    extraOverlays
+    ++ [ (final: prev: argv) ]
+    ++ (import "${dirs.overlays}" argv)
+    ++ (import "${dirs.pkgs}" argv);
 
   mkPkgs =
     { system }:
