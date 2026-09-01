@@ -953,6 +953,27 @@
         "url": "https://github.com/cptpiepmatz/nu-plugin-highlight"
       }
     },
+    "obsidian-extensions": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix_2"
+      },
+      "locked": {
+        "lastModified": 1788256050,
+        "narHash": "sha256-J0fRRF+aAEBqcsCKojLigZVwHeqTWiSstavgT+gfz5w=",
+        "owner": "karaolidis",
+        "repo": "nix-obsidian-extensions",
+        "rev": "832531f1b94097f75c45ff4424600df089449afa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "karaolidis",
+        "repo": "nix-obsidian-extensions",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -1020,13 +1041,14 @@
         "nsticky": "nsticky",
         "nur": "nur",
         "nushell-highlight": "nushell-highlight",
+        "obsidian-extensions": "obsidian-extensions",
         "plasma-manager": "plasma-manager",
         "schemes": "schemes",
         "sklauncher": "sklauncher",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "sunix": "sunix",
-        "treefmt-nix": "treefmt-nix_2",
+        "treefmt-nix": "treefmt-nix_3",
         "treesitter-kanata": "treesitter-kanata",
         "vscode-extensions": "vscode-extensions",
         "waycal": "waycal",
@@ -1337,6 +1359,27 @@
       }
     },
     "treefmt-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "obsidian-extensions",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785360170,
+        "narHash": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_3": {
       "inputs": {
         "nixpkgs": "nixpkgs_5"
       },

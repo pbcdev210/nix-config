@@ -13,6 +13,7 @@
         "${r}/flatpak"
 
         "${a}/claude-desktop.nix"
+        "${a}/obsidian.nix"
         "${a}/sklauncher.nix"
         "${a}/spotify.nix"
         "${a}/vivaldi.nix"

@@ -44,6 +44,7 @@
             nix-firefox-addons.overlays.default
             nur.overlays.default
             treesitter-kanata.overlays.default
+            obsidian-extensions.overlays.default
           ];
 
           inherit inputs;
@@ -92,6 +93,13 @@
               desktop = "niri";
               system = "x86_64-linux";
             };
+
+            "tunglinh@tldesktop" = {
+              name = "tunglinh";
+              profile = "tl";
+              destkop = "plasma6";
+              system = "x86_64-linux";
+            };
           };
 
           nixosConfigurations = {
@@ -110,6 +118,15 @@
               host = "dp7530";
               system = "x86_64-linux";
             };
+
+            tldesktop = builder.mkNixos {
+              name = "dp7530";
+              profile = "desktop";
+              desktop = "niri";
+              host = "dp7530";
+              system = "x86_64-linux";
+            };
+
           };
         };
       }
@@ -241,6 +258,13 @@
     ghostty-cursor-shaders = {
       url = "github:sahaj-b/ghostty-cursor-shaders";
       flake = false;
+    };
+
+    # obsidian
+
+    obsidian-extensions = {
+      url = "github:karaolidis/nix-obsidian-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # miscelaneous
