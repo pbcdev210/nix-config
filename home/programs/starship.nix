@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ settings, pkgs, ... }:
 {
   programs.starship = {
     enable = true;
@@ -14,5 +14,7 @@
       };
     };
   };
+
+  home.packages = [ pkgs.starship ];
   stylix.targets.starship.enable = true;
 }
