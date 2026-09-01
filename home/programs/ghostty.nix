@@ -16,6 +16,9 @@
 
       scrollback-limit = 50000000;
 
+      font-family = config.stylix.fonts.monospace.name;
+      font-size = config.stylix.fonts.sizes.terminal;
+
       keybind = [
         "alt+shift+a=new_tab"
         "alt+shift+s=close_surface"
@@ -40,6 +43,6 @@
 
   stylix.targets.ghostty = {
     enable = true;
-    fonts.override.font-family = config.stylix.fonts.monospace.name;
+    fonts.enable = false;
   };
 }
