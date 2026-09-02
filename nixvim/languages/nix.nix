@@ -7,7 +7,7 @@
         nixpkgs.expr = "import <nixpkgs> { }";
         nixos.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").nixosConfigurations.default.options'';
         home_manager.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").homeConfigurations.default.options'';
-        nixvim.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").legacyPackages.${pkgs.stdenv.system}.nixvimEval.options'';
+        nixvim.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").${pkgs.stdenv.system}.nixvimConfiguration.options'';
       };
     };
   };

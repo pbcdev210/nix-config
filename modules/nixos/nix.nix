@@ -31,4 +31,16 @@
     allowNonTCPUDP = false;
     allowPrivateNetworks = false;
   };
+
+  nix.registry = {
+    # nix-config.to = {
+    #   type = "path";
+    #   path = settings.dirs.nixConfig;
+    # };
+
+    nixpkgs.to = {
+      type = "path";
+      path = settings.dirs.nixConfig;
+    };
+  };
 }

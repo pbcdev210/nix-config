@@ -52,12 +52,14 @@
       in
       {
         systems = [ "x86_64-linux" ];
-        imports = [ inputs.treefmt-nix.flakeModule ];
+        imports = [
+          inputs.treefmt-nix.flakeModule
+          ./modules/flake/nixvimConfiguration.nix
+        ];
 
         perSystem =
           { system, ... }:
           let
-            nixvimConfiguration = builder.nixvim { inherit system; };
             pkgs = builder.mkPkgs { inherit system; };
           in
           {
@@ -71,9 +73,9 @@
                 # ruff.enable = true;
               };
             };
+            nixvimConfiguration = builder.nixvim { inherit system; };
 
-            packages.nixvim = nixvimConfiguration.config.build.package;
-            legacyPackages.nixvimEval = nixvimConfiguration;
+            legacyPackages = pkgs;
 
             # devShells.default = import ./devshell.nix { inherit pkgs; };
           };
@@ -97,7 +99,7 @@
             "tunglinh@tldesktop" = {
               name = "tunglinh";
               profile = "tl";
-              destkop = "plasma6";
+              desktop = "plasma6";
               system = "x86_64-linux";
             };
           };
@@ -120,10 +122,10 @@
             };
 
             tldesktop = builder.mkNixos {
-              name = "dp7530";
-              profile = "desktop";
-              desktop = "niri";
-              host = "dp7530";
+              name = "tldekstop";
+              profile = "tl";
+              desktop = "plasma6";
+              host = "tldekstop";
               system = "x86_64-linux";
             };
 

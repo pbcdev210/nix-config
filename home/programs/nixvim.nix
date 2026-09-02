@@ -1,13 +1,10 @@
 {
   config,
-  inputs,
   pkgs,
   ...
 }:
 {
-  home.packages = [
-    inputs.self.packages.${pkgs.stdenv.system}.nixvim
-  ];
+  home.packages = with pkgs; [ nixvim ];
 
   programs.neovide = {
     enable = true;
