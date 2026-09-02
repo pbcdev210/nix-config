@@ -76,6 +76,7 @@
             nixvimConfiguration = builder.nixvim { inherit system; };
 
             legacyPackages = pkgs;
+            packages = pkgs.myPkgs;
 
             # devShells.default = import ./devshell.nix { inherit pkgs; };
           };
