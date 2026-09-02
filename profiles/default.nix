@@ -1,5 +1,5 @@
 { profile }:
 {
-  nixos = (import ./${profile}.nix).nixos;
-  home = (import ./${profile}.nix).home;
+  inherit ((import ./${profile}.nix)) nixos;
+  inherit ((import ./${profile}.nix)) home;
 }

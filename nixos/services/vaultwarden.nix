@@ -4,9 +4,6 @@
   config,
   ...
 }:
-let
-
-in
 {
   services.vaultwarden = {
     enable = true;

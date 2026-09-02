@@ -24,6 +24,7 @@
         # "${p}/firefox"
         # "${p}/floorp"
         "${p}/nushell"
+        "${p}/statix"
         "${p}/wezterm"
         "${p}/zsh"
 
