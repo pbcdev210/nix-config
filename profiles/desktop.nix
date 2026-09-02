@@ -3,7 +3,7 @@
     { dirs, ... }:
     let
       a = dirs.home.apps;
-      r = dirs.home.root;
+      # r = dirs.home.root;
       p = dirs.home.programs;
       s = dirs.home.services;
       d = dirs.home.develop;
@@ -11,12 +11,15 @@
     in
     {
       imports = [
-        "${r}/flatpak"
+        # "${r}/flatpak"
 
+        "${a}/bitwarden.nix"
         "${a}/claude-desktop.nix"
+        "${a}/discord.nix"
         "${a}/obsidian.nix"
         "${a}/sklauncher.nix"
         "${a}/spotify.nix"
+        "${a}/steam.nix"
         "${a}/vivaldi.nix"
         "${a}/wps.nix"
 
@@ -78,7 +81,7 @@
       imports = [
         # "${s}/caddy.nix"
         "${s}/envfs.nix"
-        "${s}/flatpak.nix"
+        # "${s}/flatpak.nix"
         # "${s}/nginx.nix"
         "${s}/ngrok.nix"
         "${s}/vaultwarden.nix"
