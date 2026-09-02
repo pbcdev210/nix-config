@@ -17,6 +17,7 @@
     ./direnv.nix
     ./img.nix
     ./neovide.nix
+    ./obsidian.nix
     ./windown.nix
   ];
 }

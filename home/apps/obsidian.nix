@@ -6,9 +6,17 @@
 
     defaultSettings = {
       communityPlugins = with pkgs.obsidianPlugins; [
-        dataviwe
-        git
+        dataview
+        obsidian-git
+        obsidian-vimrc-support
       ];
+
+      hotkeys = { };
+    };
+
+    vaults.main = {
+      enable = true;
+      target = "/workspaces/vaults/main";
     };
   };
 
