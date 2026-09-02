@@ -7,6 +7,7 @@
       p = dirs.home.programs;
       s = dirs.home.services;
       d = dirs.home.develop;
+      i = dirs.home.ides;
     in
     {
       imports = [
@@ -55,7 +56,6 @@
         # "${p}/sunix.nix"
         "${p}/superfile.nix"
         "${p}/tirith.nix"
-        "${p}/vscode.nix"
         "${p}/zoxide.nix"
 
         "${s}/audio-manager"
@@ -63,6 +63,8 @@
         # "${s}/espanso.nix"
 
         "${d}/dotnet"
+
+        "${i}/vscode.nix"
       ];
     };
 

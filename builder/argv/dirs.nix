@@ -22,5 +22,6 @@ rec {
     services = "${root}/services";
     develop = "${root}/develop";
     apps = "${root}/apps";
+    ides = "${root}/ides";
   };
 }
