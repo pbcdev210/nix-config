@@ -270,6 +270,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # jetbrains
+
+    jetbrains-plugins = {
+      url = "github:nix-community/nix-jetbrains-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # miscelaneous
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/v0.7.0";

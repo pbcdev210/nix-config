@@ -65,6 +65,7 @@
         "${d}/dotnet"
 
         "${i}/vscode.nix"
+        "${i}/rider.nix"
       ];
     };
 
