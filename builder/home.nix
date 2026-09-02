@@ -64,10 +64,10 @@ in
     { config, ... }:
     let
       modules =
-        mkHomeModules {
+        (mkHomeModules {
           inherit (config) profile desktop;
           extraHomeModules = [ ];
-        }
+        })
         ++ [
           configOptions
           {
