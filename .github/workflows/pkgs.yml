@@ -46,6 +46,6 @@ jobs:
 
           for pkg in $(echo "$PACKAGES_JSON" | jq -r '.[]'); do
             echo "::group::Building .#packages.$SYSTEM.$pkg"
-            nix build ".#packages.$SYSTEM.$pkg" --print-build-logs
+            nix build ".#packages.$SYSTEM.$pkg" --print-build-logs --accept-flake-config
             echo "::endgroup::"
           done
