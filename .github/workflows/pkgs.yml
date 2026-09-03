@@ -1,0 +1,51 @@
+name: "Build & Push Flake Packages to Cachix"
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build-and-cache:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            # - os: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v16
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v15
+        with:
+          name: pbcdev
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      - name: Build all packages
+        run: |
+          SYSTEM=$(nix eval --raw --impure --expr 'builtins.currentSystem')
+          echo "Current runner system: $SYSTEM"
+
+          PACKAGES_JSON=$(nix eval --json ".#packages.$SYSTEM" --apply 'builtins.attrNames' 2>/dev/null || echo "[]")
+
+          if [ "$PACKAGES_JSON" = "[]" ] || [ -z "$PACKAGES_JSON" ]; then
+            echo "Không tìm thấy package nào trong 'packages.$SYSTEM'."
+            exit 0
+          fi
+
+          echo "Packages to build: $PACKAGES_JSON"
+
+          for pkg in $(echo "$PACKAGES_JSON" | jq -r '.[]'); do
+            echo "::group::Building .#packages.$SYSTEM.$pkg"
+            nix build ".#packages.$SYSTEM.$pkg" --print-build-logs
+            echo "::endgroup::"
+          done
