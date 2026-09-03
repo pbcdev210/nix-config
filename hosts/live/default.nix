@@ -2,7 +2,6 @@
 {
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
-  isoImage.compressImage = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
   boot.zfs.forceImportRoot = false;
