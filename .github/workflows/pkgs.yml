@@ -38,7 +38,7 @@ jobs:
           PACKAGES_JSON=$(nix eval --json ".#packages.$SYSTEM" --apply 'builtins.attrNames' 2>/dev/null || echo "[]")
 
           if [ "$PACKAGES_JSON" = "[]" ] || [ -z "$PACKAGES_JSON" ]; then
-            echo "Không tìm thấy package nào trong 'packages.$SYSTEM'."
+            echo "No packages found in 'packages.$SYSTEM'."
             exit 0
           fi
 
