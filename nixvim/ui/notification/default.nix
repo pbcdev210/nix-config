@@ -1,3 +1,0 @@
-{
-  imports = [ ./notifier-snacks.nix ];
-}

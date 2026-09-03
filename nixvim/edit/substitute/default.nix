@@ -1,3 +1,0 @@
-{
-  imports = [ ./grug-far.nix ];
-}

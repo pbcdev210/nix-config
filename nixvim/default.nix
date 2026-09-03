@@ -8,7 +8,6 @@
     ./file
     ./git
     ./languages
-    ./learn
     ./terminal
     ./ui
     ./utils
@@ -16,6 +15,7 @@
 
     ./direnv.nix
     ./img.nix
+    ./leetcode.nix
     ./neovide.nix
     ./obsidian.nix
     ./windown.nix

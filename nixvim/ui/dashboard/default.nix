@@ -1,3 +1,0 @@
-{
-  imports = [ ./dashboard-snacks.nix ];
-}

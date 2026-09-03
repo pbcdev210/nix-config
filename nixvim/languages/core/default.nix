@@ -1,10 +1,10 @@
 {
   imports = [
-    ./autocompletion
-    ./diagnostic
-    ./formatter
-    ./highlight
-    ./lsp
-    ./utils
+     ./autocompletion.nix
+    ./diagnostic.nix
+    ./formatter.nix
+    ./hightlight.nix
+    ./lsp.nix
+    ./utils.nix
   ];
 }

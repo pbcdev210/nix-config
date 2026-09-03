@@ -1,9 +1,9 @@
 {
   imports = [
-    ./dashboard
-    ./noice
-    ./notification
     ./statusline
     ./themes
+    ./dashboard.nix
+    ./noice.nix
+    ./notification.nix
   ];
 }

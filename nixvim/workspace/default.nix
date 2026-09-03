@@ -1,6 +1,5 @@
 {
   imports = [
-    ./session
-    ./workspace.nix
+    ./session.nix
   ];
 }
