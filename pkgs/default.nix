@@ -7,7 +7,6 @@ _: [
       audio-manager = final.callPackage ./audio-manager { };
       vaultwarden-sync = final.callPackage ./vaultwarden-sync { };
       nixvim = final.callPackage ./nixvim { };
-      nixos-live = final.callPackage ./nixos-live { };
     };
   })
 ]

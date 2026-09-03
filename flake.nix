@@ -75,7 +75,9 @@
             };
             nixvimConfiguration = builder.nixvim { inherit system; };
 
-            legacyPackages = pkgs;
+            legacyPackages = pkgs // {
+              nixos-live = inputs.self.nixosConfigurations.nixos-live.config.system.build.isoImage;
+            };
             packages = pkgs.myPkgs;
 
             # devShells.default = import ./devshell.nix { inherit pkgs; };
