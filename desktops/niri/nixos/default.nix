@@ -1,6 +1,7 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.niri.enable = true;
+  programs.niri.packages = pkgs.niri;
 
   services.displayManager.sddm.wayland.enable = true;
 
