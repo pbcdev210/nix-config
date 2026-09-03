@@ -4,7 +4,7 @@
   ...
 }:
 {
-  home.packages = with pkgs; [ nixvim ];
+  home.packages = with pkgs; [ myPkgs.nixvim ];
 
   programs.neovide = {
     enable = true;

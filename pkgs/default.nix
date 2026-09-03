@@ -1,5 +1,4 @@
-_:
-[
+_: [
   (final: prev: {
     myPkgs = {
       volume-control = final.callPackage ./volume-control { };
@@ -7,6 +6,7 @@ _:
       vivaldi-sync = final.callPackage ./vivaldi-sync { };
       audio-manager = final.callPackage ./audio-manager { };
       vaultwarden-sync = final.callPackage ./vaultwarden-sync { };
+      nixvim = final.callPackage ./nixvim { };
     };
   })
 ]
