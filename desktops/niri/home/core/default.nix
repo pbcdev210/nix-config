@@ -6,7 +6,7 @@
 
   imports = [
     ./binds.nix
-    ./windown
+    ./window
     ./inputs.nix
     ./workspace.nix
 

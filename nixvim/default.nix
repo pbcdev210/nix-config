@@ -18,6 +18,6 @@
     ./leetcode.nix
     ./neovide.nix
     ./obsidian.nix
-    ./windown.nix
+    ./window.nix
   ];
 }
