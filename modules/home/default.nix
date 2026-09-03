@@ -7,6 +7,7 @@
   imports = [
     ./input-method
     ./gtk.nix
+    ./nix.nix
     ./stylix.nix
     ./systemd.nix
     ./xdg.nix

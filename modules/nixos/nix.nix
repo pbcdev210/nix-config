@@ -1,4 +1,9 @@
-{ settings, ... }:
+{
+  settings,
+  inputs,
+  lib,
+  ...
+}:
 {
   nix.settings = {
     auto-optimise-store = true;
@@ -32,10 +37,10 @@
     allowPrivateNetworks = false;
   };
 
-  nix.registry = {
-    # nix-config.to = {
-    #   type = "path";
-    #   path = settings.dirs.nixConfig;
-    # };
+  nix.registry.nixpkgs = lib.mkDefault {
+    to = {
+      type = "flake";
+      flake = inputs.nixpkgs;
+    };
   };
 }

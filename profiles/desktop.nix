@@ -1,4 +1,3 @@
-{ settings, ... }:
 {
   home =
     { dirs, ... }:
@@ -71,11 +70,6 @@
         "${i}/vscode.nix"
         "${i}/rider.nix"
       ];
-
-      nixpkgs.to = {
-        type = "path";
-        path = settings.dirs.nixConfig;
-      };
     };
 
   nixos =
