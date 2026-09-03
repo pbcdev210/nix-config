@@ -21,7 +21,13 @@ let
     import inputs.nixpkgs {
       inherit overlays;
       localSystem = system;
-      config.allowUnfree = true;
+      config = {
+        allowUnfree = true;
+        allowBroken = true;
+        problems.handlers = {
+          zfs.broken = "ignore";
+        };
+      };
     };
 
   mkNixosModules =

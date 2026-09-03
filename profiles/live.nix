@@ -1,4 +1,3 @@
-{ settings, ... }:
 {
   home =
     { dirs, ... }:
@@ -7,31 +6,31 @@
       # r = dirs.home.root;
       p = dirs.home.programs;
       s = dirs.home.services;
-      d = dirs.home.develop;
-      i = dirs.home.ides;
+      # d = dirs.home.develop;
+      # i = dirs.home.ides;
     in
     {
       imports = [
         # "${r}/flatpak"
 
-        "${a}/bitwarden.nix"
-        "${a}/claude-desktop.nix"
-        "${a}/discord.nix"
-        "${a}/obsidian.nix"
-        "${a}/sklauncher.nix"
+        # "${a}/bitwarden.nix"
+        # "${a}/claude-desktop.nix"
+        # "${a}/discord.nix"
+        # "${a}/obsidian.nix"
+        # "${a}/sklauncher.nix"
         "${a}/spotify.nix"
-        "${a}/steam.nix"
+        # "${a}/steam.nix"
         "${a}/vivaldi.nix"
-        "${a}/wps.nix"
+        # "${a}/wps.nix"
 
-        "${p}/emacs"
+        # "${p}/emacs"
         "${p}/fastfetch"
         # "${p}/firefox"
         # "${p}/floorp"
         "${p}/nushell"
         "${p}/statix"
-        "${p}/wezterm"
-        "${p}/zsh"
+        # "${p}/wezterm"
+        # "${p}/zsh"
 
         "${p}/atuin.nix"
         "${p}/bash.nix"
@@ -49,33 +48,28 @@
         "${p}/git.nix"
         "${p}/kitty.nix"
         "${p}/lazygit.nix"
-        "${p}/mpv.nix"
+        # "${p}/mpv.nix"
         "${p}/nh.nix"
-        "${p}/nix-index.nix"
-        "${p}/nix-your-shell.nix"
+        # "${p}/nix-index.nix"
+        # "${p}/nix-your-shell.nix"
         "${p}/nixvim.nix"
         "${p}/packages.nix"
         "${p}/ripgrep.nix"
         "${p}/starship.nix"
         # "${p}/sunix.nix"
         "${p}/superfile.nix"
-        "${p}/tirith.nix"
+        # "${p}/tirith.nix"
         "${p}/zoxide.nix"
 
         "${s}/audio-manager"
         "${s}/clipse.nix"
         # "${s}/espanso.nix"
 
-        "${d}/dotnet"
+        # "${d}/dotnet"
 
-        "${i}/vscode.nix"
-        "${i}/rider.nix"
+        # "${i}/vscode.nix"
+        # "${i}/rider.nix"
       ];
-
-      nixpkgs.to = {
-        type = "path";
-        path = settings.dirs.nixConfig;
-      };
     };
 
   nixos =
@@ -89,8 +83,8 @@
         "${s}/envfs.nix"
         # "${s}/flatpak.nix"
         # "${s}/nginx.nix"
-        "${s}/ngrok.nix"
-        "${s}/vaultwarden.nix"
+        # "${s}/ngrok.nix"
+        # "${s}/vaultwarden.nix"
       ];
     };
 }

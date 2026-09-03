@@ -130,6 +130,13 @@
               system = "x86_64-linux";
             };
 
+            nixos-live = builder.mkNixos {
+              name = "live";
+              profile = "live";
+              desktop = "niri";
+              host = "live";
+              system = "x86_64-linux";
+            };
           };
         };
       }

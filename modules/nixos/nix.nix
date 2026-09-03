@@ -37,10 +37,5 @@
     #   type = "path";
     #   path = settings.dirs.nixConfig;
     # };
-
-    nixpkgs.to = {
-      type = "path";
-      path = settings.dirs.nixConfig;
-    };
   };
 }
