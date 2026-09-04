@@ -76,6 +76,7 @@
     { dirs, ... }:
     let
       s = dirs.nixos.services;
+      v = dirs.nixos.virtualisation;
     in
     {
       imports = [
@@ -85,6 +86,8 @@
         # "${s}/nginx.nix"
         "${s}/ngrok.nix"
         "${s}/vaultwarden.nix"
+
+        "${v}/libvirtd.nix"
       ];
     };
 }

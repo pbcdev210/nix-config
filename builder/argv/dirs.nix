@@ -14,6 +14,7 @@ rec {
   nixos = rec {
     root = "${nixConfig}/nixos";
     services = "${root}/services";
+    virtualisation = "${root}/virtualisation";
   };
 
   home = rec {
