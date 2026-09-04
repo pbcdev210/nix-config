@@ -40,7 +40,7 @@
   nix.registry.nixpkgs = lib.mkDefault {
     to = {
       type = "flake";
-      flake = inputs.nixpkgs;
+      flake = inputs.self;
     };
   };
 }

@@ -1,6 +1,7 @@
 {
   extraModules,
   extraOverlays,
+  nixpkgsConfig,
   inputs,
 }:
 let
@@ -10,25 +11,6 @@ let
   }
   // argv';
   inherit (argv) dirs;
-  overlays =
-    extraOverlays
-    ++ [ (final: prev: argv) ]
-    ++ (import "${dirs.overlays}" argv)
-    ++ (import "${dirs.pkgs}" argv);
-
-  mkPkgs =
-    { system }:
-    import inputs.nixpkgs {
-      inherit overlays;
-      localSystem = system;
-      config = {
-        allowUnfree = true;
-        allowBroken = true;
-        problems.handlers = {
-          zfs.broken = "ignore";
-        };
-      };
-    };
 
   mkNixosModules =
     {
@@ -67,6 +49,18 @@ let
     ++ [
       "${dirs.nixConfig}/nixvim"
     ];
+
+  inherit
+    (import ./pkgs.nix {
+      inherit
+        extraOverlays
+        nixpkgsConfig
+        inputs
+        argv
+        ;
+    })
+    mkPkgs
+    ;
 
   home = import ./home.nix { inherit mkPkgs mkHomeModules argv; };
   nixos = import ./nixos.nix {

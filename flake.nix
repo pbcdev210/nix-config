@@ -25,31 +25,40 @@
 
   outputs =
     inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } (
-      let
-        builder = import ./builder {
-          extraModules = {
-            home = [ ];
+    let
+      builder = import ./builder {
+        extraModules = {
+          home = [ ];
 
-            nixos = with inputs; [
-              chaotic.nixosModules.default
-            ];
-
-            nixvim = [ ];
-          };
-
-          extraOverlays = with inputs; [
-            chaotic.overlays.default
-            vscode-extensions.overlays.default
-            nix-firefox-addons.overlays.default
-            nur.overlays.default
-            treesitter-kanata.overlays.default
-            obsidian-extensions.overlays.default
+          nixos = with inputs; [
+            chaotic.nixosModules.default
           ];
 
-          inherit inputs;
+          nixvim = [ ];
         };
-      in
+
+        extraOverlays = with inputs; [
+          chaotic.overlays.default
+          vscode-extensions.overlays.default
+          nix-firefox-addons.overlays.default
+          nur.overlays.default
+          treesitter-kanata.overlays.default
+          obsidian-extensions.overlays.default
+        ];
+
+        nixpkgsConfig = {
+          allowUnfree = true;
+          allowBroken = true;
+          problems.handlers = {
+            zfs.broken = "ignore";
+          };
+        };
+
+        inherit inputs;
+      };
+    in
+    (flake-parts.lib.mkFlake { inherit inputs; }
+
       {
         systems = [ "x86_64-linux" ];
         imports = [
@@ -75,9 +84,7 @@
             };
             nixvimConfiguration = builder.nixvim { inherit system; };
 
-            legacyPackages = pkgs // {
-              nixos-live = inputs.self.nixosConfigurations.nixos-live.config.system.build.isoImage;
-            };
+            legacyPackages = pkgs;
             packages = pkgs.myPkgs;
 
             # devShells.default = import ./devshell.nix { inherit pkgs; };
@@ -99,8 +106,8 @@
               system = "x86_64-linux";
             };
 
-            "tunglinh@tldesktop" = {
-              name = "tunglinh";
+            "tunglinh@tldesktop" = builder.mkHome {
+              name = "tunglinh@tldesktop";
               profile = "tl";
               desktop = "plasma6";
               system = "x86_64-linux";
@@ -140,9 +147,20 @@
               system = "x86_64-linux";
             };
           };
+
+          inherit (builder) mkPkgs;
         };
       }
-    );
+    )
+    // {
+      # disguised nixpkgs
+      __functor =
+        self: args:
+        builder.mkPkgs {
+          system = args.localSystem or builtins.currentSystem;
+          extraArgsNixpkgs = args;
+        };
+    };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

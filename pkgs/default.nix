@@ -1,4 +1,4 @@
-_: [
+{ inputs, ... }: [
   (final: prev: {
     myPkgs = {
       volume-control = final.callPackage ./volume-control { };
@@ -8,5 +8,7 @@ _: [
       vaultwarden-sync = final.callPackage ./vaultwarden-sync { };
       nixvim = final.callPackage ./nixvim { };
     };
+
+    nixos-live = inputs.self.nixosConfigurations.nixos-live.config.system.build.isoImage;
   })
 ]
