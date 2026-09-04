@@ -1,5 +1,7 @@
 @define-color background-color #1a1a1a;
-@define-color bar-background-color #292b2e;
+/* @define-color background-color rgba(26, 26, 26, 0.8); */
+/* @define-color bar-background-color #292b2e; */
+@define-color bar-background-color rgba(41, 43, 46, 0.6);
 @define-color bar-foreground-color #fdf6e3;
 
 window#waybar {
