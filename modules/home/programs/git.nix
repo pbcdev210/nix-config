@@ -8,7 +8,7 @@
     enable = true;
     settings = {
       user = {
-        name = base.name;
+        inherit (base) name;
         email = base.email.main;
       };
       init = {

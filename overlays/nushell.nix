@@ -1,5 +1,5 @@
 { inputs, ... }:
-final: prev: {
+(final: prev: {
   nushellPlugins = prev.nushellPlugins // {
     highlight = prev.rustPlatform.buildRustPackage {
       pname = "nu-plugin-highlight";
@@ -10,4 +10,4 @@ final: prev: {
       meta.mainProgram = "nu_plugin_highlight";
     };
   };
-}
+})

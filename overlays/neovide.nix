@@ -1,5 +1,5 @@
-{ inputs, ... }:
-final: prev: {
+_:
+(final: prev: {
 
   neovide = prev.symlinkJoin {
     name = "neovide-wrapped";
@@ -11,4 +11,4 @@ final: prev: {
       ''} $out/bin/neovide
     '';
   };
-}
+})
