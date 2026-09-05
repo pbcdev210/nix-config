@@ -1,4 +1,5 @@
 { inputs, pkgs, ... }:
+
 {
   programs.niri = {
     enable = true;
@@ -50,6 +51,11 @@
       ];
     }
   ];
+
+  programs.niri.settings = {
+    gestures.hot-corners.enable = false;
+  };
+
   home.packages = [ pkgs.xwayland-satellite ];
 
   stylix.targets.niri.enable = true;
