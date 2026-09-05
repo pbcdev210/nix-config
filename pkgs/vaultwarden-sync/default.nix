@@ -1,4 +1,4 @@
-{ pkgs, settings, ... }:
+{ pkgs, base, ... }:
 pkgs.writeShellApplication {
   name = "vaultwarden-sync";
 
@@ -13,11 +13,11 @@ pkgs.writeShellApplication {
   ];
 
   text = ''
-    NIX_CONFIG_DIR="${settings.dirs.nixConfigBot}"
+    NIX_CONFIG_DIR="${base.paths.dotfilesBot}"
     DATA_DIR="data"
-    AGE_PUBLIC_KEY="${settings.age.publicKey}"
-    AGE_PRIVATE_KEY_PATH="${settings.age.privateKeyPath}"
-    USER_MAIN="${settings.identity.username}"
+    AGE_PUBLIC_KEY="${base.age.publicKey}"
+    AGE_PRIVATE_KEY_PATH="${base.age.privateKeyPath}"
+    USER_MAIN="${base.username}"
     VAULTWARDEN_USER="vaultwarden"
 
     export NIX_CONFIG_DIR

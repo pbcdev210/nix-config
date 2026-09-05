@@ -1,13 +1,13 @@
-{ settings, pkgs, ... }: {
+{ base, pkgs, ... }: {
   plugins.lsp.servers.nixd = {
     enable = true;
     settings.nixd = {
       formatting.command = [ "nixfmt" ];
       options = {
         nixpkgs.expr = "import <nixpkgs> { }";
-        nixos.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").nixosConfigurations.default.options'';
-        home_manager.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").homeConfigurations.default.options'';
-        nixvim.expr = ''(builtins.getFlake "path:${settings.dirs.nixConfig}").${pkgs.stdenv.system}.nixvimConfiguration.options'';
+        nixos.expr = ''(builtins.getFlake "path:${base.paths.dotfiles}").nixosConfigurations.default.options'';
+        home_manager.expr = ''(builtins.getFlake "path:${base.paths.dotfiles}").homeConfigurations.default.options'';
+        nixvim.expr = ''(builtins.getFlake "path:${base.paths.dotfiles}").${pkgs.stdenv.system}.nixvimConfiguration.options'';
       };
     };
   };

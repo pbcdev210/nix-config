@@ -1,9 +1,9 @@
-{ settings, ... }:
+{ base, ... }:
 {
   programs.bash = {
     enable = true;
 
-    shellAliases = settings.tools.alias;
+    shellAliases = base.tools.alias;
   };
 
   programs.zoxide.enableBashIntegration = true;

@@ -1,6 +1,6 @@
 {
   pkgs,
-  settings,
+  base,
   inputs,
   config,
   osConfig,
@@ -16,7 +16,7 @@
 
     settings = {
       dixBinary = "${pkgs.dix}/bin/dix";
-      flakeDir = settings.dirs.nixConfig;
+      flakeDir = base.paths.dotfiles;
       homeFlake = config.name;
       nixosFlake = osConfig.name;
       styleCss = null;

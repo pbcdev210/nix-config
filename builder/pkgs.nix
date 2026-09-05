@@ -5,13 +5,13 @@
   argv,
 }:
 let
-  inherit (argv) dirs;
+  inherit (argv) base;
 
   overlays =
     extraOverlays
     ++ [ (final: prev: argv) ]
-    ++ (import "${dirs.overlays}" argv)
-    ++ (import "${dirs.pkgs}" argv);
+    ++ (import "${base.overlays}" argv)
+    ++ (import "${base.pkgs}" argv);
   config = nixpkgsConfig;
 in
 {

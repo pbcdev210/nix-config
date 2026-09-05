@@ -5,12 +5,12 @@
   inputs,
 }:
 let
-  argv' = import ./argv { inherit inputs; };
+  argv' = import ./argv.nix { inherit inputs; };
   argv = {
     argv = argv';
   }
   // argv';
-  inherit (argv) dirs;
+  inherit (argv) base;
 
   mkNixosModules =
     {
@@ -22,10 +22,10 @@ let
     extraModules.nixos
     ++ extraNixosModules
     ++ [
-      "${dirs.modules}/nixos"
-      (import dirs.hosts { inherit host; })
-      (import dirs.profiles { inherit profile; }).nixos
-      (import dirs.desktops { inherit desktop; }).nixos
+      "${base.modules}/nixos"
+      (import base.hosts { inherit host; })
+      (import base.profiles { inherit profile; }).nixos
+      (import base.desktops { inherit desktop; }).nixos
     ];
 
   mkHomeModules =
@@ -37,9 +37,9 @@ let
     extraModules.home
     ++ extraHomeModules
     ++ [
-      "${dirs.modules}/home"
-      (import dirs.profiles { inherit profile; }).home
-      (import dirs.desktops { inherit desktop; }).home
+      "${base.modules}/home"
+      (import base.profiles { inherit profile; }).home
+      (import base.desktops { inherit desktop; }).home
     ];
 
   mkNixvimModules =
@@ -47,7 +47,7 @@ let
     extraModules.nixvim
     ++ extraNixvimModules
     ++ [
-      "${dirs.nixConfig}/nixvim"
+      "${base.flake}/nixvim"
     ];
 
   inherit

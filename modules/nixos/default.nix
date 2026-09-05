@@ -1,9 +1,9 @@
-{ settings, pkgs, ... }:
+{ base, pkgs, ... }:
 {
   system.stateVersion = "26.05";
 
-  time.timeZone = settings.timeZone;
-  i18n.defaultLocale = settings.locale;
+  time.timeZone = base.timeZone;
+  i18n.defaultLocale = base.locale;
 
   environment.systemPackages = [ pkgs.mkcert ];
 

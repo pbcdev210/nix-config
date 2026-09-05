@@ -4,7 +4,7 @@
   argv,
 }:
 let
-  inherit (argv) inputs settings;
+  inherit (argv) inputs base;
 
   configOptions = { lib, ... }: {
     options.standalone = lib.mkOption {
@@ -83,7 +83,7 @@ in
 
       extraSpecialArgs = argv;
 
-      users.${settings.identity.username} = {
+      users.${base.username} = {
         imports = modules;
       };
     };

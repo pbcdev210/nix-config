@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ base, ... }:
 {
   plugins.neo-tree = {
     enable = true;
@@ -30,7 +30,7 @@
           title = "";
           title_pos = "none";
 
-          #border = settings.glyphs.border;
+          #border = base.glyphs.border;
           border = "single";
 
           position = {
@@ -52,13 +52,13 @@
       default_component_configs = {
         git_status = {
           symbols = {
-            added = settings.glyphs.git.diff.added;
-            conflict = settings.glyphs.git.diff.conflict;
-            deleted = settings.glyphs.git.diff.removed;
-            ignored = settings.glyphs.git.diff.ignored;
-            modified = settings.glyphs.git.diff.modified;
-            renamed = settings.glyphs.git.diff.renamed;
-            untracked = settings.glyphs.git.diff.untracked;
+            added = base.glyphs.git.diff.added;
+            conflict = base.glyphs.git.diff.conflict;
+            deleted = base.glyphs.git.diff.removed;
+            ignored = base.glyphs.git.diff.ignored;
+            modified = base.glyphs.git.diff.modified;
+            renamed = base.glyphs.git.diff.renamed;
+            untracked = base.glyphs.git.diff.untracked;
           };
         };
         created.enabled = false;

@@ -1,13 +1,12 @@
 {
   inputs,
-  settings,
-  dirs,
+  base,
   ...
 }:
 {
   sops = {
-    defaultSopsFile = "${dirs.data}/main.enc.yaml";
-    age.keyFile = settings.age.privateKeyPath;
+    defaultSopsFile = "${base.data}/main.enc.yaml";
+    age.keyFile = base.age.privateKeyPath;
 
     secrets."hashedPassword" = { };
   };

@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ base, ... }:
 {
   plugins.snacks.settings.notifier = {
     enabled = true;
@@ -30,7 +30,7 @@
     level.__raw = "vim.log.levels.TRACE";
 
     icons = {
-      inherit (settings.glyphs.level)
+      inherit (base.glyphs.level)
         error
         warn
         info

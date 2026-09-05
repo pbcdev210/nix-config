@@ -1,7 +1,6 @@
 {
   pkgs,
-  settings,
-  dirs,
+  base,
   ...
 }:
 {
@@ -9,8 +8,8 @@
     enable = true;
     settings = {
       user = {
-        name = settings.identity.name;
-        email = settings.identity.email.main;
+        name = base.name;
+        email = base.email.main;
       };
       init = {
         defaultBranch = "main";
@@ -30,9 +29,9 @@
       gpg.format = "ssh";
       commit.gpgSign = true;
 
-      user.signingKey = "${settings.dirs.home}/.ssh/id_ed25519.pub";
+      user.signingKey = "${base.paths.home}/.ssh/id_ed25519.pub";
     };
-    inherit (settings) ignores;
+    inherit (base) ignores;
   };
 
   programs.delta.enableGitIntegration = true;

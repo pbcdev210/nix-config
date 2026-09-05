@@ -1,4 +1,4 @@
-{ config, dirs, ... }:
+{ config, base, ... }:
 {
   programs.wezterm = {
     enable = true;
@@ -7,7 +7,7 @@
       background = [
         {
           source = {
-            File = config.lib.file.mkOutOfStoreSymlink "${dirs.assets}/kawaii-cat-girl.png";
+            File = config.lib.file.mkOutOfStoreSymlink "${base.assets}/kawaii-cat-girl.png";
           };
           hsb = {
             brightness = 0.10;

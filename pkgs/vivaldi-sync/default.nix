@@ -1,4 +1,4 @@
-{ settings, pkgs, ... }:
+{ base, pkgs, ... }:
 
 pkgs.writeShellApplication {
   name = "vivaldi-sync";
@@ -10,13 +10,13 @@ pkgs.writeShellApplication {
   ];
 
   text = ''
-    NIX_CONFIG_DIR="${settings.dirs.nixConfigBot}"
+    NIX_CONFIG_DIR="${base.paths.dotfilesBot}"
     DATA_DIR="data"
     export NIX_CONFIG_DIR
     export DATA_DIR
 
-    AGE_PUBLIC_KEY="${settings.age.publicKey}"
-    AGE_PRIVATE_KEY_PATH="${settings.age.privateKeyPath}"
+    AGE_PUBLIC_KEY="${base.age.publicKey}"
+    AGE_PRIVATE_KEY_PATH="${base.age.privateKeyPath}"
     export AGE_PUBLIC_KEY
     export AGE_PRIVATE_KEY_PATH
 

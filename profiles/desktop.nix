@@ -1,13 +1,13 @@
 {
   home =
-    { dirs, ... }:
+    { base, ... }:
     let
-      a = dirs.home.apps;
-      # r = dirs.home.root;
-      p = dirs.home.programs;
-      s = dirs.home.services;
-      d = dirs.home.develop;
-      i = dirs.home.ides;
+      a = base.home.apps;
+      # r = base.home.root;
+      p = base.home.programs;
+      s = base.home.services;
+      d = base.home.develop;
+      i = base.home.ides;
     in
     {
       imports = [
@@ -72,10 +72,10 @@
     };
 
   nixos =
-    { dirs, ... }:
+    { base, ... }:
     let
-      s = dirs.nixos.services;
-      v = dirs.nixos.virtualisation;
+      s = base.nixos.services;
+      v = base.nixos.virtualisation;
     in
     {
       imports = [

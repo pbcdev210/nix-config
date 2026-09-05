@@ -1,4 +1,4 @@
-{ lib, settings, ... }:
+{ lib, base, ... }:
 {
   plugins.blink-cmp = {
     enable = true;
@@ -189,12 +189,12 @@
         completion = {
           side_padding = 1;
           scrollbar = true;
-          border = settings.glyphs.border;
+          border = base.glyphs.border;
           winhighlight = "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
         };
 
         documentation = {
-          border = settings.glyphs.border;
+          border = base.glyphs.border;
           winhighlight = "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
         };
       };

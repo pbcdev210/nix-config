@@ -1,12 +1,12 @@
 {
   home =
-    { dirs, lib, ... }:
+    { base, lib, ... }:
     let
-      a = dirs.home.apps;
-      r = dirs.home.root;
-      p = dirs.home.programs;
-      s = dirs.home.services;
-      # d = dirs.home.develop;
+      a = base.home.apps;
+      r = base.home.root;
+      p = base.home.programs;
+      s = base.home.services;
+      # d = base.home.develop;
     in
     {
       home.username = lib.mkForce "tunglinh";
@@ -66,9 +66,9 @@
     };
 
   nixos =
-    { dirs, ... }:
+    { base, ... }:
     let
-      s = dirs.nixos.services;
+      s = base.nixos.services;
     in
     {
       imports = [

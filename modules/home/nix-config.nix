@@ -1,7 +1,7 @@
-{ settings, ... }:
+{ base, ... }:
 {
   nix.registry.nixpkgs.to = {
     type = "path";
-    path = settings.dirs.nixConfig;
+    path = base.paths.dotfiles;
   };
 }

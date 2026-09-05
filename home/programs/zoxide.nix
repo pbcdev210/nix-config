@@ -1,12 +1,12 @@
-{ pkgs, settings, ... }:
+{ pkgs, base, ... }:
 let
   zoxidePaths = [
-    settings.dirs.home
-    "${settings.dirs.home}/.config"
+    base.paths.home
+    "${base.paths.home}/.config"
 
     "/workspaces"
-    settings.dirs.nixConfig
-    settings.dirs.nixConfigBot
+    base.paths.dotfiles
+    base.paths.dotfilesBot
   ];
 in
 {

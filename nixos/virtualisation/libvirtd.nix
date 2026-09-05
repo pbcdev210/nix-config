@@ -1,4 +1,4 @@
-{ settings, pkgs, ... }:
+{ base, pkgs, ... }:
 {
   virtualisation.libvirtd = {
     enable = true;
@@ -16,6 +16,6 @@
     OVMF
   ];
 
-  users.users.${settings.identity.username}.extraGroups = [ "libvirtd" ];
+  users.users.${base.username}.extraGroups = [ "libvirtd" ];
   programs.dconf.enable = true;
 }

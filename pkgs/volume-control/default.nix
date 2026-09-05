@@ -1,4 +1,4 @@
-{ pkgs, dirs, ... }:
+{ pkgs, base, ... }:
 
 pkgs.writeShellApplication {
   name = "volume-control";
@@ -11,7 +11,7 @@ pkgs.writeShellApplication {
   ];
 
   text = ''
-    export iDIR="${dirs.assets}/icons"
+    export iDIR="${base.assets}/icons"
     bash ${./volume-control.sh} "$@"
   '';
 }

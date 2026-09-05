@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  settings,
+  base,
   ...
 }:
 {
@@ -31,7 +31,7 @@
       }
     ];
 
-    shellAliases = settings.tools.alias;
+    shellAliases = base.tools.alias;
 
     dotDir = "${config.xdg.configHome}/zsh";
 

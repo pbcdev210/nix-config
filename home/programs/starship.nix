@@ -1,4 +1,4 @@
-{ settings, pkgs, ... }:
+{ base, pkgs, ... }:
 {
   programs.starship = {
     enable = true;
@@ -9,8 +9,8 @@
       format = "$directory$git_branch$git_status$dotnet$line_break$character";
 
       character = {
-        success_symbol = "${settings.glyphs.nix.logo} ${settings.glyphs.prompt}";
-        error_symbol = "[${settings.glyphs.level.error}](bold #ff5555)  ${settings.glyphs.prompt}";
+        success_symbol = "${base.glyphs.nix.logo} ${base.glyphs.prompt}";
+        error_symbol = "[${base.glyphs.level.error}](bold #ff5555)  ${base.glyphs.prompt}";
       };
     };
   };

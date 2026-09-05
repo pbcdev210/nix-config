@@ -1,9 +1,9 @@
-{ settings, ... }:
+{ base, ... }:
 {
   plugins.snacks.settings.picker = {
     enabled = true;
 
-    prompt = settings.glyphs.prompt;
+    prompt = base.glyphs.prompt;
 
     layout = {
       layout = {
@@ -21,23 +21,23 @@
     icons = {
       git = {
         enabled = true;
-        commit = settings.glyphs.git.commit;
-        staged = settings.glyphs.git.staged;
-        added = settings.glyphs.git.diff.added;
-        modified = settings.glyphs.git.diff.modified;
-        removed = settings.glyphs.git.diff.removed;
-        deleted = settings.glyphs.git.diff.removed;
-        conflict = settings.glyphs.git.diff.conflict;
-        ignored = settings.glyphs.git.diff.ignored;
-        untracked = settings.glyphs.git.diff.untracked;
-        renamed = settings.glyphs.git.diff.renamed;
+        commit = base.glyphs.git.commit;
+        staged = base.glyphs.git.staged;
+        added = base.glyphs.git.diff.added;
+        modified = base.glyphs.git.diff.modified;
+        removed = base.glyphs.git.diff.removed;
+        deleted = base.glyphs.git.diff.removed;
+        conflict = base.glyphs.git.diff.conflict;
+        ignored = base.glyphs.git.diff.ignored;
+        untracked = base.glyphs.git.diff.untracked;
+        renamed = base.glyphs.git.diff.renamed;
       };
 
       diagnostics = {
-        Error = settings.glyphs.level.error;
-        Warn = settings.glyphs.level.warn;
-        Hint = settings.glyphs.level.hint;
-        Info = settings.glyphs.level.info;
+        Error = base.glyphs.level.error;
+        Warn = base.glyphs.level.warn;
+        Hint = base.glyphs.level.hint;
+        Info = base.glyphs.level.info;
       };
 
     };

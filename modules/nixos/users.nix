@@ -1,19 +1,19 @@
 {
   pkgs,
-  settings,
+  base,
   config,
   ...
 }:
 {
-  users.users.${settings.identity.username} = {
+  users.users.${base.username} = {
     isNormalUser = true;
     description = "user main";
     extraGroups = [
       "wheel"
       "networkmanager"
     ];
-    shell = pkgs."${settings.tools.shell}";
-    home = settings.dirs.home;
+    shell = pkgs."${base.tools.shell}";
+    home = base.paths.home;
     hashedPasswordFile = config.sops.secrets."hashedPassword".path;
   };
 }

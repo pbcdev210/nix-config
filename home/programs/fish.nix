@@ -1,9 +1,9 @@
-{ settings, pkgs, ... }:
+{ base, pkgs, ... }:
 {
   programs.fish = {
     enable = true;
 
-    shellAliases = settings.tools.alias;
+    shellAliases = base.tools.alias;
 
     plugins = [
       {

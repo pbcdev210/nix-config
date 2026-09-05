@@ -1,4 +1,4 @@
-{ pkgs, dirs, ... }:
+{ pkgs, base, ... }:
 {
   home.packages = with pkgs; [
     awww
@@ -10,7 +10,7 @@
       command = [
         "awww"
         "img"
-        "${dirs.assets}/kawaii-cat-girl.png"
+        "${base.assets}/kawaii-cat-girl.png"
       ];
     }
   ];

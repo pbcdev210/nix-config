@@ -1,5 +1,5 @@
 {
-  settings,
+  base,
   inputs,
   lib,
   ...
@@ -7,7 +7,7 @@
 {
   nix.settings = {
     auto-optimise-store = true;
-    trusted-users = [ settings.identity.username ];
+    trusted-users = [ base.username ];
     experimental-features = [
       "nix-command"
       "flakes"

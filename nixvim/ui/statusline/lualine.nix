@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ base, ... }:
 {
   plugins.lualine = {
     enable = true;
@@ -34,7 +34,7 @@
         lualine_b = [
           {
             __unkeyed-1 = "branch";
-            icon = settings.glyphs.git.branch.icon;
+            icon = base.glyphs.git.branch.icon;
           }
         ];
 
@@ -43,10 +43,10 @@
             __unkeyed-1 = "diagnostics";
             sources = [ "nvim_diagnostic" ];
             symbols = {
-              error = settings.glyphs.level.error;
-              warn = settings.glyphs.level.warn;
-              info = settings.glyphs.level.info;
-              hint = settings.glyphs.level.hint;
+              error = base.glyphs.level.error;
+              warn = base.glyphs.level.warn;
+              info = base.glyphs.level.info;
+              hint = base.glyphs.level.hint;
             };
           }
         ];
@@ -69,10 +69,10 @@
             path = 0;
 
             symbols = {
-              modified = settings.glyphs.file.modified;
-              readonly = settings.glyphs.file.modified;
-              unnamed = settings.glyphs.file.unnamed;
-              newfile = settings.glyphs.file.newfile;
+              modified = base.glyphs.file.modified;
+              readonly = base.glyphs.file.modified;
+              unnamed = base.glyphs.file.unnamed;
+              newfile = base.glyphs.file.newfile;
             };
           }
 
@@ -82,9 +82,9 @@
           {
             __unkeyed-1 = "diff";
             symbols = {
-              added = settings.glyphs.git.diff.added;
-              modified = settings.glyphs.git.diff.modified;
-              removed = settings.glyphs.git.diff.removed;
+              added = base.glyphs.git.diff.added;
+              modified = base.glyphs.git.diff.modified;
+              removed = base.glyphs.git.diff.removed;
             };
           }
         ];
@@ -102,7 +102,7 @@
         lualine_y = [
           {
             __unkeyed-1 = "lsp_status";
-            icon = settings.glyphs.lsp.icon;
+            icon = base.glyphs.lsp.icon;
 
             fmt.__raw = ''
               function()

@@ -1,6 +1,6 @@
 {
   pkgs,
-  settings,
+  base,
   config,
   ...
 }:
@@ -28,7 +28,7 @@
     serviceConfig = {
       ExecStart = "${pkgs.ngrok}/bin/ngrok http 8222 --domain=glider-crafter-retrace.ngrok-free.dev";
       Restart = "always";
-      User = settings.identity.username;
+      User = base.username;
     };
   };
 

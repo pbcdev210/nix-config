@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ base, ... }:
 {
   programs.superfile = {
     enable = true;
@@ -6,7 +6,7 @@
     firstUseCheck = true;
 
     settings = {
-      file_editor = settings.tools.editor;
+      file_editor = base.tools.editor;
       nerdfont = true;
       transparent_background = true;
     };
