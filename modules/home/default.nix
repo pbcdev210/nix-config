@@ -7,7 +7,7 @@
   imports = [
     ./input-method
     ./gtk.nix
-    ./nix.nix
+    ./nix-config.nix
     ./theme.nix
     ./systemd.nix
   ];

@@ -13,7 +13,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./networking.nix
-    ./nix.nix
+    ./nix-config.nix
     ./security.nix
     ./shell.nix
     ./sops.nix
