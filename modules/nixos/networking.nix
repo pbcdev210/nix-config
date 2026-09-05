@@ -1,12 +1,17 @@
 {
-  settings,
   config,
   ...
 }:
 {
   networking = {
     hostName = config.name;
-    nameservers = settings.network.dns.ipv4 ++ settings.network.dns.ipv6;
+
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+      "2606:4700:4700::1111"
+      "2001:4860:4860::8888"
+    ];
 
     firewall = {
       enable = true;
@@ -15,7 +20,7 @@
         80
         443
       ];
-      allowedUDPPorts = [ 51820 ];
+      allowedUDPPorts = [ 51820 ]; # WireGuard
     };
 
     nftables = {
@@ -25,31 +30,23 @@
 
     networkmanager = {
       enable = true;
-      insertNameservers = settings.network.dns.ipv4 ++ settings.network.dns.ipv6;
       dns = "systemd-resolved";
       wifi.backend = "iwd";
     };
 
-    wireless = {
-      enable = false;
-      iwd = {
-        enable = true;
-        settings = {
-          Settings.AutoConnect = true;
-          Network.EnableIPv6 = true;
-        };
-      };
-    };
+    wireless.enable = false;
   };
 
   services.resolved = {
     enable = true;
+    dnssec = "allow-downgrade";
+    domains = [ "~." ];
+    fallbackDns = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
     settings = {
-      Resolve = {
-        DNSSEC = "allow-downgrade";
-        DNSOverTLS = true;
-        DNS = config.networking.nameservers;
-      };
+      Resolve.DNSOverTLS = "true";
     };
   };
 }

@@ -14,20 +14,6 @@ rec {
 
   tools = import ./tools.nix;
 
-  network = {
-    dns = {
-      ipv4 = [
-        "1.1.1.1"
-        "8.8.8.8"
-      ];
-
-      ipv6 = [
-        "2606:4700:4700::1111"
-        "2001:4860:4860::8888"
-      ];
-    };
-  };
-
   dirs = rec {
     home = "/home/${identity.username}";
     nixConfig = "/workspaces/nix-config";
