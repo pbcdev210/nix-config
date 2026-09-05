@@ -5,8 +5,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    nvtopPackages.amd # gpu status cli
-    waycal # minimal calendar pop-up
+    myPkgs.waycal
     playerctl
   ];
 

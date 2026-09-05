@@ -1,12 +1,13 @@
 { inputs, ... }: [
   (final: prev: {
     myPkgs = {
-      volume-control = final.callPackage ./volume-control { };
-      brightness-control = final.callPackage ./brightness-control { };
-      vivaldi-sync = final.callPackage ./vivaldi-sync { };
       audio-manager = final.callPackage ./audio-manager { };
+      brightness-control = final.callPackage ./brightness-control { };
       vaultwarden-sync = final.callPackage ./vaultwarden-sync { };
-      nixvim = final.callPackage ./nixvim { };
+      vivaldi-sync = final.callPackage ./vivaldi-sync { };
+      volume-control = final.callPackage ./volume-control { };
+      nixvim = final.callPackage ./nixvim.nix { };
+      waycal = final.callPackage ./waycal.nix { };
     };
 
     nixos-live = inputs.self.nixosConfigurations.nixos-live.config.system.build.isoImage;

@@ -1,4 +1,3 @@
-# copy from https://github.com/gvolpe/nix-config
 {
   lib,
   stdenv,
@@ -44,7 +43,6 @@ rustPlatform.buildRustPackage {
     description = "A tiny Waybar calendar popup for wlr-layer-shell compositors";
     homepage = "https://github.com/forrestknight/waycal";
     license = licenses.mit;
-    maintainers = with maintainers; [ gvolpe ];
     mainProgram = "waycal";
   };
 }
