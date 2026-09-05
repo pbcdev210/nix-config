@@ -1083,7 +1083,7 @@
         "obsidian-extensions": "obsidian-extensions",
         "plasma-manager": "plasma-manager",
         "schemes": "schemes",
-        "sklauncher": "sklauncher",
+        "sklauncher-appimage-x86_64-linux": "sklauncher-appimage-x86_64-linux",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "sunix": "sunix",
@@ -1132,37 +1132,16 @@
         "type": "github"
       }
     },
-    "sklauncher": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "sklauncher-appimage": "sklauncher-appimage"
-      },
-      "locked": {
-        "lastModified": 1787327429,
-        "narHash": "sha256-cKwNCkXBplgeyQszH3I3mF26PPm26LFxnbGNkJ58/zI=",
-        "owner": "pbcdev210",
-        "repo": "sklauncher-flake",
-        "rev": "97c4099cdae0815c3afd45afe833963235de4fc8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pbcdev210",
-        "repo": "sklauncher-flake",
-        "type": "github"
-      }
-    },
-    "sklauncher-appimage": {
+    "sklauncher-appimage-x86_64-linux": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-kN39li4YHOFfdbigk/off5GouJFMx+1tDvUpVbNOMU0=",
+        "narHash": "sha256-tkOTWGFoEl6Wxc+SEoOBDZlibtde7TWffE9SguAWhkU=",
         "type": "file",
-        "url": "https://github.com/sklauncher/binaries/releases/download/v4.0.43/SKlauncher-4.0.43-x86_64.AppImage"
+        "url": "https://github.com/sklauncher/binaries/releases/download/v4.0.47/SKlauncher-4.0.47-x86_64.AppImage"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/sklauncher/binaries/releases/download/v4.0.43/SKlauncher-4.0.43-x86_64.AppImage"
+        "url": "https://github.com/sklauncher/binaries/releases/download/v4.0.47/SKlauncher-4.0.47-x86_64.AppImage"
       }
     },
     "sops-nix": {

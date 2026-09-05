@@ -1,6 +1,6 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
-  home.packages = with inputs; [
-    sklauncher.packages.${pkgs.stdenv.hostPlatform.system}.default
+  home.packages = with pkgs; [
+    myPkgs.sklauncher
   ];
 }

@@ -320,9 +320,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sklauncher = {
-      url = "github:pbcdev210/sklauncher-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+    sklauncher-appimage-x86_64-linux = {
+      url = "https://github.com/sklauncher/binaries/releases/download/v4.0.47/SKlauncher-4.0.47-x86_64.AppImage";
+      flake = false;
     };
 
     wps-office = {
