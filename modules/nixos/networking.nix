@@ -39,14 +39,14 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
-    domains = [ "~." ];
-    fallbackDns = [
-      "1.1.1.1"
-      "8.8.8.8"
-    ];
-    settings = {
-      Resolve.DNSOverTLS = "true";
+    settings.Resolve = {
+      DNSSEC = "allow-downgrade";
+      DNSOverTLS = "true";
+      Domains = [ "~." ];
+      FallbackDNS = [
+        "1.1.1.1"
+        "8.8.8.8"
+      ];
     };
   };
 }
