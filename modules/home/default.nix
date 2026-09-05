@@ -6,8 +6,10 @@
 
   imports = [
     ./input-method
+    ./services
     ./gtk.nix
     ./nix-config.nix
+    ./sops.nix
     ./theme.nix
     ./systemd.nix
   ];
