@@ -7,8 +7,8 @@ rec {
     username = "pbcdev";
 
     email = {
-      main = "baochaupham4096@gmail.com";
-      sub = "baochaupham3205@gmail.com";
+      main = "pbc210.dev@gmail.com";
+      sub = "baochaupham4096@gmail.com";
     };
   };
 
