@@ -6,6 +6,7 @@
 
   imports = [
     ./input-method
+    ./programs
     ./services
     ./gtk.nix
     ./nix-config.nix
