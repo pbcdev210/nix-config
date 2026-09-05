@@ -6,4 +6,6 @@
 
     myPkgs.vivaldi-sync
   ];
+
+  home.sessionVariables.BROWSER = "vivaldi";
 }

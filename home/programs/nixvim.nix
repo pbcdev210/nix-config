@@ -14,4 +14,6 @@
       wayland-app-id = "neovim";
     };
   };
+
+  home.sessionVariables.EDITOR = "nvim";
 }
