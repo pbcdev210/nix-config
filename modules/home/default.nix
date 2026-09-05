@@ -8,8 +8,7 @@
     ./input-method
     ./gtk.nix
     ./nix.nix
-    ./stylix.nix
+    ./theme.nix
     ./systemd.nix
-    ./xdg.nix
   ];
 }
