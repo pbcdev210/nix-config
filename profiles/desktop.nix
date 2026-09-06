@@ -64,7 +64,7 @@
         "${s}/clipse.nix"
         # "${s}/espanso.nix"
 
-        "${d}/dotnet"
+        "${d}/dotnet.nix"
 
         "${i}/vscode.nix"
         "${i}/rider.nix"
