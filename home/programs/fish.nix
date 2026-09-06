@@ -36,7 +36,7 @@
   xdg.configFile."fish/functions/fish_user_key_bindings.fish".text = ''
     function fish_user_key_bindings
       bind ctrl-space _atuin_bind_up
-      bind alt-tab complete-and-search
+      bind alt-a complete-and-search
       bind tab accept-autosuggestion
       bind alt-q _fzf_search_directory
       bind alt-l clear-screen
