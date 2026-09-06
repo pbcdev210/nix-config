@@ -1,7 +1,7 @@
 {
   imports = [
-    ./layout
     ./rules
-    ./binds
+    ./layout.nix
+    ./binds.nix
   ];
 }

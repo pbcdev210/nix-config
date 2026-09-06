@@ -1,6 +1,6 @@
 {
   imports = [
     #./mpvpaper
-    ./awww
+    ./awww.nix
   ];
 }

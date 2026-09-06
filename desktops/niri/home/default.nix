@@ -5,8 +5,8 @@
     ./core
     ./launcher
     ./notification
-    ./screenshot
     ./status-bar
     ./wallpaper
+    ./screenshot.nix
   ];
 }

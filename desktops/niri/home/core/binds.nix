@@ -5,5 +5,4 @@
     "Mod+grave".action.spawn = base.tools.term;
     "Mod+Tab".action.toggle-overview = { };
   };
-
 }
