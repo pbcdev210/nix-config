@@ -50,6 +50,11 @@ rec {
     ides = "${root}/ides";
   };
 
+  nixvim = rec {
+    root = "${flake}/nixvim";
+    languages = "${root}/languages";
+  };
+
   paths = rec {
     home = "/home/${username}";
     dotfiles = "/workspaces/nix-config";
