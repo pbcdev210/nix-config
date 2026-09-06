@@ -1,2 +1,11 @@
-{ inputs, pkgs, ... }:
-  inputs.self.nixvimConfiguration.${pkgs.stdenv.system}.config.build.package
+{
+  pkgs,
+  builder,
+  ...
+}:
+{
+  ecode = builder.mkNvimPkg {
+    profile = "ecode";
+    inherit pkgs;
+  };
+}

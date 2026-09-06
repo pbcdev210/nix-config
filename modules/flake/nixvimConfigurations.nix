@@ -1,4 +1,4 @@
-{ lib, flake-parts-lib, ... }:
+  { lib, flake-parts-lib, ... }:
 let
   configurationType = lib.mkOptionType {
     name = "configuration";
@@ -9,13 +9,13 @@ let
   };
 in
 flake-parts-lib.mkTransposedPerSystemModule {
-  name = "nixvimConfiguration";
+  name = "nixvimConfigurations";
   option = lib.mkOption {
-    type = configurationType;
+    type = lib.types.lazyAttrsOf configurationType;
     default = { };
     description = ''
       An attribute set of Nixvim configurations.
     '';
   };
-  file = ./nixvimConfiguration.nix;
+  file = ./nixvimConfigurations.nix;
 }

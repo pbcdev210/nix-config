@@ -1,4 +1,4 @@
-{ inputs, ... }: [
+{ inputs, argv, ... }: [
   (final: prev: {
     myPkgs = {
       audio-manager = final.callPackage ./audio-manager { };
@@ -7,9 +7,10 @@
       vivaldi-sync = final.callPackage ./vivaldi-sync { };
       volume-control = final.callPackage ./volume-control { };
       nixvim = final.callPackage ./nixvim.nix { };
-      sklauncher = final.callPackage ./sklauncher.nix {};
+      sklauncher = final.callPackage ./sklauncher.nix { };
       waycal = final.callPackage ./waycal.nix { };
-    };
+    }
+    // (import ./nixvim.nix (argv // { pkgs = final; }));
 
     nixos-live = inputs.self.nixosConfigurations.nixos-live.config.system.build.isoImage;
   })

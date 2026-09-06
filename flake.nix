@@ -63,7 +63,7 @@
         systems = [ "x86_64-linux" ];
         imports = [
           inputs.treefmt-nix.flakeModule
-          ./modules/flake/nixvimConfiguration.nix
+          ./modules/flake/nixvimConfigurations.nix
         ];
 
         perSystem =
@@ -82,7 +82,13 @@
                 # ruff.enable = true;
               };
             };
-            nixvimConfiguration = builder.nixvim { inherit system; };
+
+            nixvimConfigurations = {
+              ecode = builder.mkNixvim {
+                profile = "ecode";
+                inherit system;
+              };
+            };
 
             legacyPackages = pkgs;
             packages = pkgs.myPkgs;
